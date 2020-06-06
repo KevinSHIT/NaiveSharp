@@ -14,6 +14,7 @@
             <e p="Naive.cs" t="Include" />
             <e p="Privoxy.cs" t="Include" />
           </e>
+          <e p="Replace.cs" t="Include" />
         </e>
         <e p="DesignMap" t="Include">
           <e p="Config.md" t="Include" />

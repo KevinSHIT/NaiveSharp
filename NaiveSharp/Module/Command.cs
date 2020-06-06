@@ -2,6 +2,7 @@
 {
     public class Command
     {
+        
         public static void RunNaive()
         {
             

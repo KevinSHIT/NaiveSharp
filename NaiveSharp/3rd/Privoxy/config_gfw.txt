@@ -1,0 +1,5 @@
+listen-address 127.0.0.1:{HTTP_OUT_LISTEN}
+show-on-task-bar 0
+activity-animation 0
+hide-console
+actionsfile temp\gfwlist.action

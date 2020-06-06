@@ -53,6 +53,7 @@
     <Compile Include="ConstText\Path\Config.cs" />
     <Compile Include="ConstText\Path\Naive.cs" />
     <Compile Include="ConstText\Path\Privoxy.cs" />
+    <Compile Include="ConstText\Replace.cs" />
     <Compile Include="Extension\Dictionary.cs" />
     <Compile Include="Extension\String.cs" />
     <Compile Include="MainWindow.cs">

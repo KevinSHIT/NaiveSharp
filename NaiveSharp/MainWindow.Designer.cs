@@ -23,8 +23,8 @@
         #region Windows 窗体设计器生成的代码
 
         /// <summary>
-        /// 设计器支持所需的方法 - 不要修改
-        /// 使用代码编辑器修改此方法的内容。
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -57,7 +57,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsername.Location = new System.Drawing.Point(88, 6);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(338, 21);
@@ -65,7 +65,7 @@
             // 
             // txtHost
             // 
-            this.txtHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtHost.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHost.Location = new System.Drawing.Point(88, 72);
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(338, 21);
@@ -73,7 +73,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.Location = new System.Drawing.Point(88, 39);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(338, 21);
@@ -331,32 +331,31 @@
             this.tblScheme.PerformLayout();
             this.tblOperate.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.TextBox txtUsername;
-        private System.Windows.Forms.TextBox txtHost;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.RadioButton rdoGlobal;
-        private System.Windows.Forms.RadioButton rdoGfwlist;
-        private System.Windows.Forms.RadioButton rdoGeoIP;
-        private System.Windows.Forms.TableLayoutPanel tblInfo;
-        private System.Windows.Forms.TableLayoutPanel tblProxyMode;
-        private System.Windows.Forms.Label lblUsername;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.Label lblHost;
-        private System.Windows.Forms.Label lblProxyMode;
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.Button lblExit;
-        private System.Windows.Forms.Button lblStop;
-        private System.Windows.Forms.TableLayoutPanel tblScheme;
+        private System.Windows.Forms.Label lblHost;
+        private System.Windows.Forms.Label lblPassword;
+        private System.Windows.Forms.Label lblProxyMode;
+        private System.Windows.Forms.Button lblSave;
         private System.Windows.Forms.Label lblScheme;
+        private System.Windows.Forms.Button lblStop;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.RadioButton rdoGeoIP;
+        private System.Windows.Forms.RadioButton rdoGfwlist;
+        private System.Windows.Forms.RadioButton rdoGlobal;
         private System.Windows.Forms.RadioButton rdoHttps;
         private System.Windows.Forms.RadioButton rdoQuic;
+        private System.Windows.Forms.TableLayoutPanel tblInfo;
         private System.Windows.Forms.TableLayoutPanel tblOperate;
-        private System.Windows.Forms.Button lblSave;
+        private System.Windows.Forms.TableLayoutPanel tblProxyMode;
+        private System.Windows.Forms.TableLayoutPanel tblScheme;
+        private System.Windows.Forms.TextBox txtHost;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.TextBox txtUsername;
+
+        #endregion
     }
 }
 
