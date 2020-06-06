@@ -1,6 +1,6 @@
 ﻿namespace NaiveSharp
 {
-    partial class MainWindows
+    partial class MainWindow
     {
         /// <summary>
         /// 必需的设计器变量。
@@ -34,25 +34,25 @@
             this.rdoGlobal = new System.Windows.Forms.RadioButton();
             this.rdoGfwlist = new System.Windows.Forms.RadioButton();
             this.rdoGeoIP = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblInfo = new System.Windows.Forms.TableLayoutPanel();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblHost = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblProxyMode = new System.Windows.Forms.TableLayoutPanel();
             this.lblProxyMode = new System.Windows.Forms.Label();
             this.btnRun = new System.Windows.Forms.Button();
             this.lblExit = new System.Windows.Forms.Button();
             this.lblStop = new System.Windows.Forms.Button();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblScheme = new System.Windows.Forms.TableLayoutPanel();
             this.lblScheme = new System.Windows.Forms.Label();
             this.rdoHttps = new System.Windows.Forms.RadioButton();
             this.rdoQuic = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tblOperate = new System.Windows.Forms.TableLayoutPanel();
             this.lblSave = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
+            this.tblInfo.SuspendLayout();
+            this.tblProxyMode.SuspendLayout();
+            this.tblScheme.SuspendLayout();
+            this.tblOperate.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -103,6 +103,7 @@
             this.rdoGfwlist.TabIndex = 5;
             this.rdoGfwlist.Text = "GFWList";
             this.rdoGfwlist.UseVisualStyleBackColor = true;
+            this.rdoGfwlist.CheckedChanged += new System.EventHandler(this.rdoGfwlist_CheckedChanged);
             // 
             // rdoGeoIP
             // 
@@ -114,27 +115,28 @@
             this.rdoGeoIP.TabIndex = 6;
             this.rdoGeoIP.Text = "GeoIP";
             this.rdoGeoIP.UseVisualStyleBackColor = true;
+            this.rdoGeoIP.CheckedChanged += new System.EventHandler(this.rdoGeoIP_CheckedChanged);
             // 
-            // tableLayoutPanel1
+            // tblInfo
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tableLayoutPanel1.Controls.Add(this.lblUsername, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtUsername, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtPassword, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtHost, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblPassword, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblHost, 0, 2);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 38);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(429, 100);
-            this.tableLayoutPanel1.TabIndex = 7;
+            this.tblInfo.ColumnCount = 2;
+            this.tblInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tblInfo.Controls.Add(this.lblUsername, 0, 0);
+            this.tblInfo.Controls.Add(this.txtUsername, 1, 0);
+            this.tblInfo.Controls.Add(this.txtPassword, 1, 1);
+            this.tblInfo.Controls.Add(this.txtHost, 1, 2);
+            this.tblInfo.Controls.Add(this.lblPassword, 0, 1);
+            this.tblInfo.Controls.Add(this.lblHost, 0, 2);
+            this.tblInfo.Location = new System.Drawing.Point(12, 38);
+            this.tblInfo.Name = "tblInfo";
+            this.tblInfo.RowCount = 3;
+            this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblInfo.Size = new System.Drawing.Size(429, 100);
+            this.tblInfo.TabIndex = 7;
             // 
             // lblUsername
             // 
@@ -166,24 +168,24 @@
             this.lblHost.TabIndex = 11;
             this.lblHost.Text = "Host";
             // 
-            // tableLayoutPanel2
+            // tblProxyMode
             // 
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.004F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
-            this.tableLayoutPanel2.Controls.Add(this.lblProxyMode, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.rdoGeoIP, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.rdoGlobal, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.rdoGfwlist, 2, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 144);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(429, 30);
-            this.tableLayoutPanel2.TabIndex = 8;
+            this.tblProxyMode.ColumnCount = 4;
+            this.tblProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.004F));
+            this.tblProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
+            this.tblProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
+            this.tblProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
+            this.tblProxyMode.Controls.Add(this.lblProxyMode, 0, 0);
+            this.tblProxyMode.Controls.Add(this.rdoGeoIP, 3, 0);
+            this.tblProxyMode.Controls.Add(this.rdoGlobal, 1, 0);
+            this.tblProxyMode.Controls.Add(this.rdoGfwlist, 2, 0);
+            this.tblProxyMode.Location = new System.Drawing.Point(12, 144);
+            this.tblProxyMode.Name = "tblProxyMode";
+            this.tblProxyMode.RowCount = 1;
+            this.tblProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tblProxyMode.Size = new System.Drawing.Size(429, 30);
+            this.tblProxyMode.TabIndex = 8;
             // 
             // lblProxyMode
             // 
@@ -225,21 +227,21 @@
             this.lblStop.Text = "Stop";
             this.lblStop.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel3
+            // tblScheme
             // 
-            this.tableLayoutPanel3.ColumnCount = 3;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel3.Controls.Add(this.lblScheme, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.rdoHttps, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.rdoQuic, 2, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(12, 12);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(429, 20);
-            this.tableLayoutPanel3.TabIndex = 12;
+            this.tblScheme.ColumnCount = 3;
+            this.tblScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tblScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tblScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
+            this.tblScheme.Controls.Add(this.lblScheme, 0, 0);
+            this.tblScheme.Controls.Add(this.rdoHttps, 1, 0);
+            this.tblScheme.Controls.Add(this.rdoQuic, 2, 0);
+            this.tblScheme.Location = new System.Drawing.Point(12, 12);
+            this.tblScheme.Name = "tblScheme";
+            this.tblScheme.RowCount = 1;
+            this.tblScheme.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblScheme.Size = new System.Drawing.Size(429, 20);
+            this.tblScheme.TabIndex = 12;
             // 
             // lblScheme
             // 
@@ -263,6 +265,7 @@
             this.rdoHttps.TabStop = true;
             this.rdoHttps.Text = "HTTPS";
             this.rdoHttps.UseVisualStyleBackColor = true;
+            this.rdoHttps.CheckedChanged += new System.EventHandler(this.rdoHttps_CheckedChanged);
             // 
             // rdoQuic
             // 
@@ -275,23 +278,23 @@
             this.rdoQuic.Text = "QUIC";
             this.rdoQuic.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel4
+            // tblOperate
             // 
-            this.tableLayoutPanel4.ColumnCount = 4;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel4.Controls.Add(this.lblSave, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.btnRun, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblExit, 3, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblStop, 2, 0);
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(12, 180);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(429, 34);
-            this.tableLayoutPanel4.TabIndex = 13;
+            this.tblOperate.ColumnCount = 4;
+            this.tblOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tblOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tblOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tblOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tblOperate.Controls.Add(this.lblSave, 0, 0);
+            this.tblOperate.Controls.Add(this.btnRun, 1, 0);
+            this.tblOperate.Controls.Add(this.lblExit, 3, 0);
+            this.tblOperate.Controls.Add(this.lblStop, 2, 0);
+            this.tblOperate.Location = new System.Drawing.Point(12, 180);
+            this.tblOperate.Name = "tblOperate";
+            this.tblOperate.RowCount = 1;
+            this.tblOperate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblOperate.Size = new System.Drawing.Size(429, 34);
+            this.tblOperate.TabIndex = 13;
             // 
             // lblSave
             // 
@@ -302,27 +305,28 @@
             this.lblSave.TabIndex = 14;
             this.lblSave.Text = "Save";
             this.lblSave.UseVisualStyleBackColor = true;
+            this.lblSave.Click += new System.EventHandler(this.lblSave_Click);
             // 
-            // MainWindows
+            // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(460, 225);
-            this.Controls.Add(this.tableLayoutPanel4);
-            this.Controls.Add(this.tableLayoutPanel3);
-            this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "MainWindows";
+            this.Controls.Add(this.tblOperate);
+            this.Controls.Add(this.tblScheme);
+            this.Controls.Add(this.tblProxyMode);
+            this.Controls.Add(this.tblInfo);
+            this.Name = "MainWindow";
             this.Text = "Naive# - by Kevin";
             this.Load += new System.EventHandler(this.MainWindows_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tblInfo.ResumeLayout(false);
+            this.tblInfo.PerformLayout();
+            this.tblProxyMode.ResumeLayout(false);
+            this.tblProxyMode.PerformLayout();
+            this.tblScheme.ResumeLayout(false);
+            this.tblScheme.PerformLayout();
+            this.tblOperate.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -335,8 +339,8 @@
         private System.Windows.Forms.RadioButton rdoGlobal;
         private System.Windows.Forms.RadioButton rdoGfwlist;
         private System.Windows.Forms.RadioButton rdoGeoIP;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tblInfo;
+        private System.Windows.Forms.TableLayoutPanel tblProxyMode;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblHost;
@@ -344,11 +348,11 @@
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.Button lblExit;
         private System.Windows.Forms.Button lblStop;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.TableLayoutPanel tblScheme;
         private System.Windows.Forms.Label lblScheme;
         private System.Windows.Forms.RadioButton rdoHttps;
         private System.Windows.Forms.RadioButton rdoQuic;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.TableLayoutPanel tblOperate;
         private System.Windows.Forms.Button lblSave;
     }
 }

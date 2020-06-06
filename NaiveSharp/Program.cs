@@ -16,7 +16,8 @@ namespace NaiveSharp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWindows());
+            Shared.Form.MainWindow = new MainWindow();
+            Application.Run(Shared.Form.MainWindow);
         }
     }
 }

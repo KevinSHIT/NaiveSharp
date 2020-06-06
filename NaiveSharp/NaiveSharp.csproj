@@ -55,11 +55,11 @@
     <Compile Include="ConstText\Path\Privoxy.cs" />
     <Compile Include="Extension\Dictionary.cs" />
     <Compile Include="Extension\String.cs" />
-    <Compile Include="MainWindows.cs">
+    <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainWindows.Designer.cs">
-      <DependentUpon>MainWindows.cs</DependentUpon>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
     <Compile Include="Module\Command.cs" />
     <Compile Include="Module\Config.cs" />
@@ -72,8 +72,9 @@
     <Compile Include="Module\Update.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainWindows.resx">
-      <DependentUpon>MainWindows.cs</DependentUpon>
+    <Compile Include="Shared\Form.cs" />
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

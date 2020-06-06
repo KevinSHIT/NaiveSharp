@@ -24,8 +24,9 @@
           <e p="Dictionary.cs" t="Include" />
           <e p="String.cs" t="Include" />
         </e>
-        <e p="MainWindows.cs" t="Include" />
-        <e p="MainWindows.Designer.cs" t="Include" />
+        <e p="MainWindow.cs" t="Include" />
+        <e p="MainWindow.Designer.cs" t="Include" />
+        <e p="MainWindow.resx" t="Include" />
         <e p="Module" t="Include">
           <e p="Command.cs" t="Include" />
           <e p="Config.cs" t="Include" />
@@ -33,6 +34,7 @@
           <e p="IniHelper.cs" t="Include" />
           <e p="NaiveCommandHelper.cs" t="Include" />
           <e p="Nshelper.cs" t="Include" />
+          <e p="Operation.cs" t="Include" />
           <e p="Proxy.cs" t="Include" />
           <e p="Update.cs" t="Include" />
         </e>
@@ -45,6 +47,9 @@
           <e p="Resources.resx" t="Include" />
           <e p="Settings.Designer.cs" t="Include" />
           <e p="Settings.settings" t="Include" />
+        </e>
+        <e p="Shared" t="Include">
+          <e p="Form.cs" t="Include" />
         </e>
       </e>
       <e p="NaiveSharp.sln" t="IncludeFlat" />

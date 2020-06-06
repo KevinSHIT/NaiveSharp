@@ -1,6 +1,9 @@
-﻿using System;
+﻿using NaiveSharp.ConstText;
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,15 +12,14 @@ namespace NaiveSharp.Module
 {
     public class Operation
     {
-        public enum RunMode
+        public static void Save()
         {
-            Global,
-            GFWList,
-            GeoIP
+            File.WriteAllText(PATH.NODE_NS, Config.ConvertToNs());
         }
 
-        public static void Run(RunMode rm, int port)
+        public static void Run()
         {
+            Save();
 
         }
 
@@ -27,7 +29,7 @@ namespace NaiveSharp.Module
             Process[] myproc = Process.GetProcesses();
             foreach (Process item in myproc)
             {
-                if (item.ProcessName.ToLower() == "trojan" ||
+                if (item.ProcessName.ToLower() == "naive" ||
                     item.ProcessName.ToLower() == "privoxy" ||
                     item.ProcessName.ToLower() == "clash")
                 {
