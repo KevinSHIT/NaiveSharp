@@ -1,14 +1,40 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\a7498\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\a7498\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_NaiveSharp.478221024.00" t="ExcludeRecursive" />
+    <e p="C:\Users\a7498\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\a7498\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_NaiveSharp.478221024.00" t="ExcludeRecursive" />
     <e p="G:\GitHub\NaiveSharp" t="IncludeFlat">
       <e p="NaiveSharp" t="IncludeRecursive">
         <e p="App.config" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="ConstText" t="Include">
+          <e p="Path" t="Include">
+            <e p="Clash.cs" t="Include" />
+            <e p="Config.cs" t="Include" />
+            <e p="Naive.cs" t="Include" />
+            <e p="Privoxy.cs" t="Include" />
+          </e>
+        </e>
+        <e p="DesignMap" t="Include">
+          <e p="Config.md" t="Include" />
+          <e p="File.md" t="Include" />
+          <e p="Node.md" t="Include" />
+        </e>
+        <e p="Extension" t="Include">
+          <e p="Dictionary.cs" t="Include" />
+          <e p="String.cs" t="Include" />
+        </e>
         <e p="Form1.cs" t="Include" />
         <e p="Form1.Designer.cs" t="Include" />
+        <e p="Module" t="Include">
+          <e p="Command.cs" t="Include" />
+          <e p="Config.cs" t="Include" />
+          <e p="Encoder.cs" t="Include" />
+          <e p="IniHelper.cs" t="Include" />
+          <e p="Nshelper.cs" t="Include" />
+          <e p="Proxy.cs" t="Include" />
+          <e p="Update.cs" t="Include" />
+        </e>
         <e p="NaiveSharp.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
