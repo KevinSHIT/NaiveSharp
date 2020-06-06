@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NaiveSharp.Module;
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,16 @@ namespace NaiveSharp
         public MainWindows()
         {
             InitializeComponent();
+        }
+
+        private void MainWindows_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rdoGlobal_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.RunMode = Operation.RunMode.Global;
         }
     }
 }

@@ -67,10 +67,14 @@
     <Compile Include="Module\IniHelper.cs" />
     <Compile Include="Module\NaiveCommandHelper.cs" />
     <Compile Include="Module\Nshelper.cs" />
+    <Compile Include="Module\Operation.cs" />
     <Compile Include="Module\Proxy.cs" />
     <Compile Include="Module\Update.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainWindows.resx">
+      <DependentUpon>MainWindows.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
