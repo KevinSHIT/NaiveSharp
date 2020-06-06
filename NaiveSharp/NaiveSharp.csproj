@@ -55,16 +55,17 @@
     <Compile Include="ConstText\Path\Privoxy.cs" />
     <Compile Include="Extension\Dictionary.cs" />
     <Compile Include="Extension\String.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="MainWindows.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainWindows.Designer.cs">
+      <DependentUpon>MainWindows.cs</DependentUpon>
     </Compile>
     <Compile Include="Module\Command.cs" />
     <Compile Include="Module\Config.cs" />
     <Compile Include="Module\Encoder.cs" />
     <Compile Include="Module\IniHelper.cs" />
+    <Compile Include="Module\NaiveCommandHelper.cs" />
     <Compile Include="Module\Nshelper.cs" />
     <Compile Include="Module\Proxy.cs" />
     <Compile Include="Module\Update.cs" />

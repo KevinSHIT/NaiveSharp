@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace NaiveSharp
 {
-    public partial class Form1 : Form
+    public partial class MainWindows : Form
     {
-        public Form1()
+        public MainWindows()
         {
             InitializeComponent();
         }

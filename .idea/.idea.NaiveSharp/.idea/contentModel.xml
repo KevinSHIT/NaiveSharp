@@ -24,13 +24,14 @@
           <e p="Dictionary.cs" t="Include" />
           <e p="String.cs" t="Include" />
         </e>
-        <e p="Form1.cs" t="Include" />
-        <e p="Form1.Designer.cs" t="Include" />
+        <e p="MainWindows.cs" t="Include" />
+        <e p="MainWindows.Designer.cs" t="Include" />
         <e p="Module" t="Include">
           <e p="Command.cs" t="Include" />
           <e p="Config.cs" t="Include" />
           <e p="Encoder.cs" t="Include" />
           <e p="IniHelper.cs" t="Include" />
+          <e p="NaiveCommandHelper.cs" t="Include" />
           <e p="Nshelper.cs" t="Include" />
           <e p="Proxy.cs" t="Include" />
           <e p="Update.cs" t="Include" />
