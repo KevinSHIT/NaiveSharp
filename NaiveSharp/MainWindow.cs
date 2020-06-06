@@ -24,7 +24,7 @@ namespace NaiveSharp
         {
 
         }
-        
+
         private void rdoHttps_CheckedChanged(object sender, EventArgs e)
         {
             if (rdoHttps.Checked)
@@ -64,9 +64,27 @@ namespace NaiveSharp
         }
         #endregion
 
+        #region Operation Controller
         private void lblSave_Click(object sender, EventArgs e)
         {
-
+            Operation.Save();
         }
+
+        private void btnRun_Click(object sender, EventArgs e)
+        {
+            Operation.Run();
+        }
+
+        private void lblStop_Click(object sender, EventArgs e)
+        {
+            Operation.Stop();
+        }
+
+        private void lblExit_Click(object sender, EventArgs e)
+        {
+            Operation.Stop();
+            Environment.Exit(0);
+        }
+        #endregion
     }
 }

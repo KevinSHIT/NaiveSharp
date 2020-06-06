@@ -206,6 +206,7 @@
             this.btnRun.TabIndex = 9;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
+            this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
             // lblExit
             // 
@@ -216,6 +217,7 @@
             this.lblExit.TabIndex = 10;
             this.lblExit.Text = "Exit";
             this.lblExit.UseVisualStyleBackColor = true;
+            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
             // 
             // lblStop
             // 
@@ -226,6 +228,7 @@
             this.lblStop.TabIndex = 11;
             this.lblStop.Text = "Stop";
             this.lblStop.UseVisualStyleBackColor = true;
+            this.lblStop.Click += new System.EventHandler(this.lblStop_Click);
             // 
             // tblScheme
             // 
