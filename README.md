@@ -49,4 +49,4 @@ License: GPLv3
 ```
 
 -----
-Build with ❤️ & .NET 4.7.2
+Proudly build with ❤️ & .NET Framework 4.7.2
