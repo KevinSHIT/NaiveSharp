@@ -89,6 +89,7 @@ namespace NaiveSharp
 
         #endregion
 
+        #region TextBox -> Config
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
