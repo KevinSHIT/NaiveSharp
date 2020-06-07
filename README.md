@@ -4,6 +4,10 @@
 
 NaiveProxy Windows Client
 
+## Screenshot(s)
+
+![NaiveSharp0.1Prev](Screenshots/ns01prev.jpg)
+
 ## TODO
 
 - [x] base framework
