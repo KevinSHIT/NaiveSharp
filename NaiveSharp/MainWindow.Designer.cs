@@ -59,7 +59,7 @@
             // txtUsername
             // 
             this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsername.Location = new System.Drawing.Point(73, 6);
+            this.txtUsername.Location = new System.Drawing.Point(73, 39);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(278, 21);
             this.txtUsername.TabIndex = 4;
@@ -68,7 +68,7 @@
             // txtHost
             // 
             this.txtHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHost.Location = new System.Drawing.Point(73, 72);
+            this.txtHost.Location = new System.Drawing.Point(73, 6);
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(278, 21);
             this.txtHost.TabIndex = 6;
@@ -77,7 +77,7 @@
             // txtPassword
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPassword.Location = new System.Drawing.Point(73, 39);
+            this.txtPassword.Location = new System.Drawing.Point(73, 72);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(278, 21);
             this.txtPassword.TabIndex = 5;
@@ -126,12 +126,12 @@
             this.tblInfo.ColumnCount = 2;
             this.tblInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tblInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tblInfo.Controls.Add(this.lblUsername, 0, 0);
-            this.tblInfo.Controls.Add(this.txtUsername, 1, 0);
-            this.tblInfo.Controls.Add(this.txtPassword, 1, 1);
-            this.tblInfo.Controls.Add(this.txtHost, 1, 2);
-            this.tblInfo.Controls.Add(this.lblPassword, 0, 1);
-            this.tblInfo.Controls.Add(this.lblHost, 0, 2);
+            this.tblInfo.Controls.Add(this.txtHost, 1, 0);
+            this.tblInfo.Controls.Add(this.txtPassword, 1, 2);
+            this.tblInfo.Controls.Add(this.txtUsername, 1, 1);
+            this.tblInfo.Controls.Add(this.lblUsername, 0, 1);
+            this.tblInfo.Controls.Add(this.lblPassword, 0, 2);
+            this.tblInfo.Controls.Add(this.lblHost, 0, 0);
             this.tblInfo.Location = new System.Drawing.Point(12, 38);
             this.tblInfo.Name = "tblInfo";
             this.tblInfo.RowCount = 3;
@@ -146,7 +146,7 @@
             // 
             this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(3, 10);
+            this.lblUsername.Location = new System.Drawing.Point(3, 43);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(53, 12);
             this.lblUsername.TabIndex = 9;
@@ -156,7 +156,7 @@
             // 
             this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(3, 43);
+            this.lblPassword.Location = new System.Drawing.Point(3, 77);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(53, 12);
             this.lblPassword.TabIndex = 10;
@@ -166,7 +166,7 @@
             // 
             this.lblHost.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHost.AutoSize = true;
-            this.lblHost.Location = new System.Drawing.Point(3, 77);
+            this.lblHost.Location = new System.Drawing.Point(3, 10);
             this.lblHost.Name = "lblHost";
             this.lblHost.Size = new System.Drawing.Size(29, 12);
             this.lblHost.TabIndex = 11;
