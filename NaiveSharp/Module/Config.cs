@@ -16,7 +16,7 @@ namespace NaiveSharp.Module
 
         public static string ConvertToNs()
         {
-            return NaiveCommandHelper.Proxy(Scheme, Username, Password, Host).ToBase64();
+            return NaiveCmdBuilder.Proxy(Scheme, Username, Password, Host).ToBase64();
         }
 
     }

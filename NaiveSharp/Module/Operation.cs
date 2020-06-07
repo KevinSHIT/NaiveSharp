@@ -20,7 +20,21 @@ namespace NaiveSharp.Module
         public static void Run()
         {
             Save();
-
+            Command.InitializeTmp();
+            switch (Config.RunMode.ToLower())
+            {
+                case "global":
+                    Command.RunNaive("http");
+                    Proxy.Set(1080);
+                    return;
+                case "geoip":
+                    Command.RunClash();
+                    break;
+                case "gfwlist":
+                    Command.RunPrivoxy();
+                    break;
+            }
+            Proxy.Set(1081);
         }
 
         public static void Stop()

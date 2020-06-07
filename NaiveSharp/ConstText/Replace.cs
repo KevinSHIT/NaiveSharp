@@ -1,5 +1,8 @@
-﻿namespace NaiveSharp.ConstText
+﻿using System;
+
+namespace NaiveSharp.ConstText
 {
+    [Obsolete("DO NOT USE AT PRESENT!!!!")]
     public static class REPLACE
     {
         // In "config.yaml", "config.txt"
@@ -10,6 +13,6 @@
         
         // NOT USE NOW
         // In "config.yaml"
-        // public const string SOCKS_OUT = "{SOCKS_OUT_LISTEN}";
+        public const string SOCKS_OUT = "{SOCKS_OUT_LISTEN}";
     }
 }

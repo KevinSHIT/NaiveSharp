@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace NaiveSharp.Module
 {
-    public class NaiveCommandHelper
+    public class NaiveCmdBuilder
     {
         public static string Proxy(string scheme, string user, string pass, string domain)
         {
@@ -18,6 +18,5 @@ namespace NaiveSharp.Module
             string v = ub.ToString();
             return v.Substring(0, v.Length - 1);
         }
-        
     }
 }

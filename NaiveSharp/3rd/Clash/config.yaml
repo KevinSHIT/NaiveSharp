@@ -1,4 +1,4 @@
-port: {HTTP_OUT_LISTEN}
+port: 1081
 socks-port: 0 # Not use
 udp: true
 allow-lan: false
@@ -19,7 +19,7 @@ dns:
 
 
 Proxy:
-- { name: "naive", type: socks5, server: "127.0.0.1", port: {SOCKS_IN_LISTEN}, udp: true}
+- { name: "naive", type: socks5, server: "127.0.0.1", port: 1080, udp: true}
 
 Proxy Group:
 - { name: "Proxy", type: select, proxies: ["naive"] }

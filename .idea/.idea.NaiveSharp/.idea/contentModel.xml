@@ -13,6 +13,7 @@
             <e p="Config.cs" t="Include" />
             <e p="Naive.cs" t="Include" />
             <e p="Privoxy.cs" t="Include" />
+            <e p="tmp.cs" t="Include" />
           </e>
           <e p="Replace.cs" t="Include" />
         </e>
@@ -33,7 +34,7 @@
           <e p="Config.cs" t="Include" />
           <e p="Encoder.cs" t="Include" />
           <e p="IniHelper.cs" t="Include" />
-          <e p="NaiveCommandHelper.cs" t="Include" />
+          <e p="NaiveCmdBuilder.cs" t="Include" />
           <e p="Nshelper.cs" t="Include" />
           <e p="Operation.cs" t="Include" />
           <e p="Proxy.cs" t="Include" />

@@ -53,6 +53,7 @@
     <Compile Include="ConstText\Path\Config.cs" />
     <Compile Include="ConstText\Path\Naive.cs" />
     <Compile Include="ConstText\Path\Privoxy.cs" />
+    <Compile Include="ConstText\Path\tmp.cs" />
     <Compile Include="ConstText\Replace.cs" />
     <Compile Include="Extension\Dictionary.cs" />
     <Compile Include="Extension\String.cs" />
@@ -66,7 +67,7 @@
     <Compile Include="Module\Config.cs" />
     <Compile Include="Module\Encoder.cs" />
     <Compile Include="Module\IniHelper.cs" />
-    <Compile Include="Module\NaiveCommandHelper.cs" />
+    <Compile Include="Module\NaiveCmdBuilder.cs" />
     <Compile Include="Module\Nshelper.cs" />
     <Compile Include="Module\Operation.cs" />
     <Compile Include="Module\Proxy.cs" />
