@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+
 using NaiveSharp.ConstText;
 
 namespace NaiveSharp.Module
@@ -23,11 +24,10 @@ namespace NaiveSharp.Module
                 p.StartInfo.Arguments += " --padding";
             }
 
-            MessageBox.Show(p.StartInfo.Arguments);
-
             if (Config.Debug)
             {
                 p.StartInfo.Arguments += " --log";
+                MessageBox.Show(p.StartInfo.Arguments);
                 p.StartInfo.UseShellExecute = true;
             }
             else
@@ -49,11 +49,21 @@ namespace NaiveSharp.Module
             p.Start();
         }
 
-        public static void RunPrivoxy()
+        public static void RunPrivoxyWithGFWList()
         {
             var p = new Process();
             p.StartInfo.FileName = "cmd.exe";
             p.StartInfo.Arguments = $"/c START /MIN {PATH.PRIVOXY_EXE} {PATH.PRIVOXY_CONF_GFW_TXT}";
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.CreateNoWindow = true;
+            p.Start();
+        }
+
+        public static void RunPrivoxy()
+        {
+            var p = new Process();
+            p.StartInfo.FileName = "cmd.exe";
+            p.StartInfo.Arguments = $"/c START /MIN {PATH.PRIVOXY_EXE} {PATH.PRIVOXY_CONF_DEF_INI}";
             p.StartInfo.UseShellExecute = false;
             p.StartInfo.CreateNoWindow = true;
             p.Start();

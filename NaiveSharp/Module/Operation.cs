@@ -24,14 +24,22 @@ namespace NaiveSharp.Module
             switch (Config.RunMode.ToLower())
             {
                 case "global":
-                    Command.RunNaive("http");
-                    Proxy.Set(1080);
-                    return;
+                    if (!Config.Padding)
+                    {
+                        Command.RunNaive("http");
+                        Proxy.Set(1080);
+                        return;
+                    }
+                    Command.RunNaive("socks");
+                    Command.RunPrivoxy();
+                    break;
                 case "geoip":
+                    Command.RunNaive("socks");
                     Command.RunClash();
                     break;
                 case "gfwlist":
-                    Command.RunPrivoxy();
+                    Command.RunNaive("socks");
+                    Command.RunPrivoxyWithGFWList();
                     break;
             }
             Proxy.Set(1081);
