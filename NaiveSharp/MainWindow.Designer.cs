@@ -340,7 +340,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainWindow";
-            this.Text = "Naive# - by Kevin";
+            this.Text = "Naive# 0.1 Preview";
             this.Load += new System.EventHandler(this.MainWindows_Load);
             this.tblInfo.ResumeLayout(false);
             this.tblInfo.PerformLayout();
