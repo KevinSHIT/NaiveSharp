@@ -1,9 +1,8 @@
-﻿using System;
+﻿using NaiveSharp.ConstText;
+
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
-
-using NaiveSharp.ConstText;
 
 namespace NaiveSharp.Module
 {

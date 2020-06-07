@@ -136,16 +136,21 @@ namespace NaiveSharp
         private void lblSave_Click(object sender, EventArgs e)
         {
             Operation.Save();
+
+            MessageBox.Show("Node information saved.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnRun_Click(object sender, EventArgs e)
         {
             Operation.Run();
+
+            MessageBox.Show("NaiveProxy runs successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void lblStop_Click(object sender, EventArgs e)
         {
             Operation.Stop();
+            MessageBox.Show("NaiveProxy stop successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void lblExit_Click(object sender, EventArgs e)
@@ -179,7 +184,6 @@ namespace NaiveSharp
         {
             Config.Padding = chkPadding.Checked;
         }
-
 
     }
 }
