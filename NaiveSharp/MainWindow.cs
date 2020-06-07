@@ -1,7 +1,7 @@
 ﻿using NaiveSharp.Module;
+
 using System;
 using System.IO;
-using System.Net;
 using System.Windows.Forms;
 using NaiveSharp.ConstText;
 using System.Data;
@@ -42,6 +42,18 @@ namespace NaiveSharp
             x[0] = x[0].FromBase64();
 
             var uri = new Uri(x[0]);
+
+            switch (uri.Scheme)
+            {
+                case "https":
+                    rdoHttps.Checked = true;
+                    rdoQuic.Checked = false;
+                    break;
+                default:
+                    rdoHttps.Checked = false;
+                    rdoQuic.Checked = true;
+                    break;
+            }
 
             chkPadding.Checked = bool.Parse(x[1]);
             txtHost.Text = uri.Host;
@@ -167,7 +179,7 @@ namespace NaiveSharp
         {
             Config.Padding = chkPadding.Checked;
         }
-        
-       
+
+
     }
 }
