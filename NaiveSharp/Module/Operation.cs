@@ -40,8 +40,8 @@ namespace NaiveSharp.Module
         public static void Stop()
         {
 
-            Process[] myproc = Process.GetProcesses();
-            foreach (Process item in myproc)
+            Process[] procs = Process.GetProcesses();
+            foreach (Process item in procs)
             {
                 if (item.ProcessName.ToLower() == "naive" ||
                     item.ProcessName.ToLower() == "privoxy" ||
