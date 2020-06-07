@@ -47,7 +47,7 @@ namespace NaiveSharp.Module
 
         public static void Stop()
         {
-
+            Proxy.Reset();
             Process[] procs = Process.GetProcesses();
             foreach (Process item in procs)
             {
@@ -58,8 +58,6 @@ namespace NaiveSharp.Module
                     item.Kill();
                 }
             }
-
-            Proxy.Reset();
         }
     }
 }
