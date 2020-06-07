@@ -1,14 +1,10 @@
 ﻿using NaiveSharp.Module;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Net;
 using System.Windows.Forms;
+using NaiveSharp.ConstText;
+using System.Data;
 
 namespace NaiveSharp
 {
@@ -17,11 +13,70 @@ namespace NaiveSharp
         public MainWindow()
         {
             InitializeComponent();
+            if (File.Exists(PATH.CONFIG_NODE_NS))
+            {
+                try
+                {
+                    LoadFromNs(File.ReadAllText(PATH.CONFIG_NODE_NS));
+                }
+                catch
+                {
+                    File.Delete(PATH.CONFIG_NODE_NS);
+                }
+            }
         }
+
+        public void LoadFromNs(string ns)
+        {
+            if (string.IsNullOrWhiteSpace(ns))
+            {
+                return;
+            }
+
+            var x = ns.Trim().Split(' ');
+            if (x.Length != 2)
+            {
+                return;
+            }
+
+            x[0] = x[0].FromBase64();
+
+            var uri = new Uri(x[0]);
+
+            chkPadding.Checked = bool.Parse(x[1]);
+            txtHost.Text = uri.Host;
+            string userinfo = uri.UserInfo.Trim();
+            if (string.IsNullOrWhiteSpace(userinfo))
+            {
+                txtPassword.Text =
+                    txtUsername.Text = "";
+            }
+            else
+            {
+                var vv = userinfo.Split(':');
+                switch (vv.Length)
+                {
+                    case 1:
+                        txtUsername.Text = vv[0];
+                        break;
+                    case 2:
+                        txtUsername.Text = vv[0].FromUrlEncode();
+                        txtPassword.Text = vv[1].FromUrlEncode();
+                        break;
+                    default:
+                        throw new DataException();
+                }
+            }
+        }
+
 
         private void MainWindows_Load(object sender, EventArgs e)
         {
-            
+            if (System.IO.File.Exists("DEBUG"))
+            {
+                Config.Debug = true;
+                this.Text = "[DEBUG]" + this.Text;
+            }
         }
 
         private void rdoHttps_CheckedChanged(object sender, EventArgs e)
@@ -107,5 +162,12 @@ namespace NaiveSharp
         }
 
         #endregion
+
+        private void chkPadding_CheckedChanged(object sender, EventArgs e)
+        {
+            Config.Padding = chkPadding.Checked;
+        }
+        
+       
     }
 }

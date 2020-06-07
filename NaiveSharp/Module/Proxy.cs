@@ -26,7 +26,7 @@ namespace NaiveSharp.Module
             InternetConnectionOption[] options = new InternetConnectionOption[optionCount];
 
             options[0].m_Option = PerConnOption.INTERNET_PER_CONN_FLAGS;
-            options[0].m_Value.m_Int = (int) ((optionCount < 2)
+            options[0].m_Value.m_Int = (int)((optionCount < 2)
                 ? PerConnFlags.PROXY_TYPE_DIRECT
                 : (PerConnFlags.PROXY_TYPE_DIRECT | PerConnFlags.PROXY_TYPE_PROXY));
 
@@ -56,7 +56,7 @@ namespace NaiveSharp.Module
 
             list.options = optionsPtr;
 
-            IntPtr ipcoListPtr = Marshal.AllocCoTaskMem((Int32) list.dwSize);
+            IntPtr ipcoListPtr = Marshal.AllocCoTaskMem((Int32)list.dwSize);
             Marshal.StructureToPtr(list, ipcoListPtr, false);
 
             int returnvalue = NativeMethods.InternetSetOption(IntPtr.Zero,

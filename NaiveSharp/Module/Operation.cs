@@ -1,12 +1,7 @@
 ﻿using NaiveSharp.ConstText;
 
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NaiveSharp.Module
 {
@@ -14,13 +9,18 @@ namespace NaiveSharp.Module
     {
         public static void Save()
         {
-            File.WriteAllText(PATH.NODE_NS, Config.ConvertToNs());
+            if (!Directory.Exists(PATH.CONFIG))
+            {
+                Directory.CreateDirectory(PATH.CONFIG);
+            }
+            File.WriteAllText(PATH.CONFIG_NODE_NS, Config.ConvertToNs());
         }
 
         public static void Run()
         {
+            Stop();
             Save();
-            Command.InitializeTmp();
+            // Command.InitializeTmp();
             switch (Config.RunMode.ToLower())
             {
                 case "global":

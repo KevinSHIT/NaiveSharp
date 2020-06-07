@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms;
 using NaiveSharp.ConstText;
 
 namespace NaiveSharp.Module
@@ -17,8 +18,24 @@ namespace NaiveSharp.Module
                                     NaiveCmdBuilder.Proxy(Config.Scheme, Config.Username, Config.Password,
                                         Config.Host) +
                                     " --listen=" + proto.ToLower() + "://127.0.0.1:1080";
-            p.StartInfo.UseShellExecute = false;
-            p.StartInfo.CreateNoWindow = true;
+            if (Config.Padding)
+            {
+                p.StartInfo.Arguments += " --padding";
+            }
+
+            MessageBox.Show(p.StartInfo.Arguments);
+
+            if (Config.Debug)
+            {
+                p.StartInfo.Arguments += " --log";
+                p.StartInfo.UseShellExecute = true;
+            }
+            else
+            {
+                p.StartInfo.UseShellExecute = false;
+                p.StartInfo.CreateNoWindow = true;
+            }
+
             p.Start();
         }
 
@@ -41,7 +58,6 @@ namespace NaiveSharp.Module
             p.StartInfo.CreateNoWindow = true;
             p.Start();
         }
-
 
         public static void InitializeTmp()
         {

@@ -1,13 +1,13 @@
 # Naive \#
 
-### THIS PROJECT IS UNDER DEVELOPING
+**THIS PROJECT IS UNDER DEVELOPING**
 
 NaiveProxy Windows Client
 
 ## TODO
 
-- [ ] base framework
-- [ ] bypass
+- [x] base framework
+- [x] bypass
 - [ ] node tree
 
 ## Credit

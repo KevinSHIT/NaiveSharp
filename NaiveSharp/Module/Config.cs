@@ -1,6 +1,4 @@
-﻿using System.Data;
-
-namespace NaiveSharp.Module
+﻿namespace NaiveSharp.Module
 {
     public class Config
     {
@@ -14,9 +12,13 @@ namespace NaiveSharp.Module
 
         public static string Scheme { set; get; } = "https";
 
+        public static bool Padding { set; get; } = true;
+
+        public static bool Debug { get; set; } = false;
+
         public static string ConvertToNs()
         {
-            return NaiveCmdBuilder.Proxy(Scheme, Username, Password, Host).ToBase64();
+            return NaiveCmdBuilder.Proxy(Scheme, Username, Password, Host).ToBase64() + " " + Padding;
         }
 
     }
