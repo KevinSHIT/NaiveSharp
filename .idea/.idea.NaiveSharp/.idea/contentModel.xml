@@ -20,6 +20,10 @@
         <e p="Controller" t="Include">
           <e p="Command.cs" t="Include" />
           <e p="Encoder.cs" t="Include" />
+          <e p="Extension" t="Include">
+            <e p="Dictionary.cs" t="Include" />
+            <e p="String.cs" t="Include" />
+          </e>
           <e p="IniHelper.cs" t="Include" />
           <e p="NaiveCmdBuilder.cs" t="Include" />
           <e p="Net.cs" t="Include" />
@@ -32,10 +36,6 @@
           <e p="Config.md" t="Include" />
           <e p="File.md" t="Include" />
           <e p="Node.md" t="Include" />
-        </e>
-        <e p="Extension" t="Include">
-          <e p="Dictionary.cs" t="Include" />
-          <e p="String.cs" t="Include" />
         </e>
         <e p="Model" t="Include">
           <e p="Config.cs" t="Include" />
