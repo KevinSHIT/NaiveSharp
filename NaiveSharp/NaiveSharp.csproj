@@ -71,10 +71,10 @@
     <Compile Include="ConstText\Path\Privoxy.cs" />
     <Compile Include="ConstText\Path\tmp.cs" />
     <Compile Include="ConstText\Replace.cs" />
-    <Compile Include="Extension\Dictionary.cs" />
-    <Compile Include="Extension\String.cs" />
     <Compile Include="Controller\Command.cs" />
     <Compile Include="Controller\Encoder.cs" />
+    <Compile Include="Controller\Extension\Dictionary.cs" />
+    <Compile Include="Controller\Extension\String.cs" />
     <Compile Include="Controller\IniHelper.cs" />
     <Compile Include="Controller\NaiveCmdBuilder.cs" />
     <Compile Include="Controller\Net.cs" />

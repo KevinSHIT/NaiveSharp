@@ -1,4 +1,6 @@
-﻿namespace NaiveSharp.Model
+﻿using NaiveSharp.Controller.Extension;
+
+namespace NaiveSharp.Model
 {
     public class Config
     {

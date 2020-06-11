@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NaiveSharp
+namespace NaiveSharp.Controller.Extension
 {
     public static class Dictionary
     {
