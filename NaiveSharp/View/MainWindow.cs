@@ -1,4 +1,5 @@
-﻿using NaiveSharp.Module;
+﻿using NaiveSharp.Controller;
+using NaiveSharp.Model;
 
 using System;
 using System.IO;
@@ -6,7 +7,7 @@ using System.Windows.Forms;
 using NaiveSharp.ConstText;
 using System.Data;
 
-namespace NaiveSharp
+namespace NaiveSharp.View
 {
     public partial class MainWindow : Form
     {

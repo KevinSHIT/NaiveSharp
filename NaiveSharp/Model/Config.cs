@@ -1,4 +1,4 @@
-﻿namespace NaiveSharp.Module
+﻿namespace NaiveSharp.Model
 {
     public class Config
     {
@@ -18,7 +18,7 @@
 
         public static string ConvertToNs()
         {
-            return NaiveCmdBuilder.Proxy(Scheme, Username, Password, Host).ToBase64() + " " + Padding;
+            return Controller.NaiveCmdBuilder.Proxy(Scheme, Username, Password, Host).ToBase64() + " " + Padding;
         }
 
     }

@@ -1,4 +1,4 @@
-﻿namespace NaiveSharp.Module
+﻿namespace NaiveSharp.Controller
 {
     public class Update
     {

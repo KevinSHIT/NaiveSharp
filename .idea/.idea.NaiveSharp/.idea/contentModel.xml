@@ -17,6 +17,17 @@
           </e>
           <e p="Replace.cs" t="Include" />
         </e>
+        <e p="Controller" t="Include">
+          <e p="Command.cs" t="Include" />
+          <e p="Encoder.cs" t="Include" />
+          <e p="IniHelper.cs" t="Include" />
+          <e p="NaiveCmdBuilder.cs" t="Include" />
+          <e p="Net.cs" t="Include" />
+          <e p="Nshelper.cs" t="Include" />
+          <e p="Operation.cs" t="Include" />
+          <e p="Proxy.cs" t="Include" />
+          <e p="Update.cs" t="Include" />
+        </e>
         <e p="DesignMap" t="Include">
           <e p="Config.md" t="Include" />
           <e p="File.md" t="Include" />
@@ -26,19 +37,8 @@
           <e p="Dictionary.cs" t="Include" />
           <e p="String.cs" t="Include" />
         </e>
-        <e p="MainWindow.cs" t="Include" />
-        <e p="MainWindow.Designer.cs" t="Include" />
-        <e p="MainWindow.resx" t="Include" />
-        <e p="Module" t="Include">
-          <e p="Command.cs" t="Include" />
+        <e p="Model" t="Include">
           <e p="Config.cs" t="Include" />
-          <e p="Encoder.cs" t="Include" />
-          <e p="IniHelper.cs" t="Include" />
-          <e p="NaiveCmdBuilder.cs" t="Include" />
-          <e p="Nshelper.cs" t="Include" />
-          <e p="Operation.cs" t="Include" />
-          <e p="Proxy.cs" t="Include" />
-          <e p="Update.cs" t="Include" />
         </e>
         <e p="NaiveSharp.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
@@ -50,8 +50,10 @@
           <e p="Settings.Designer.cs" t="Include" />
           <e p="Settings.settings" t="Include" />
         </e>
-        <e p="Shared" t="Include">
-          <e p="Form.cs" t="Include" />
+        <e p="View" t="Include">
+          <e p="MainWindow.cs" t="Include" />
+          <e p="MainWindow.Designer.cs" t="Include" />
+          <e p="MainWindow.resx" t="Include" />
         </e>
       </e>
       <e p="NaiveSharp.sln" t="IncludeFlat" />

@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace NaiveSharp.Module
+namespace NaiveSharp.Controller
 {
     public static class IniHelper
     {

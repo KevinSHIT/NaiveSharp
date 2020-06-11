@@ -1,9 +1,10 @@
 ﻿using NaiveSharp.ConstText;
+using NaiveSharp.Model;
 
 using System.Diagnostics;
 using System.IO;
 
-namespace NaiveSharp.Module
+namespace NaiveSharp.Controller
 {
     public class Operation
     {

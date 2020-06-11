@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace NaiveSharp.Module
+namespace NaiveSharp.Controller
 {
     class Proxy
     {

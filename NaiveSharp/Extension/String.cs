@@ -1,4 +1,4 @@
-﻿using static NaiveSharp.Module.Encoder;
+﻿using static NaiveSharp.Controller.Encoder;
 
 namespace NaiveSharp
 {

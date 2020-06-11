@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NaiveSharp.Module
+namespace NaiveSharp.Controller
 {
     public class NaiveCmdBuilder
     {

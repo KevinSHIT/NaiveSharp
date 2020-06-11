@@ -73,26 +73,24 @@
     <Compile Include="ConstText\Replace.cs" />
     <Compile Include="Extension\Dictionary.cs" />
     <Compile Include="Extension\String.cs" />
-    <Compile Include="MainWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainWindow.Designer.cs">
-      <DependentUpon>MainWindow.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Module\Command.cs" />
-    <Compile Include="Module\Config.cs" />
-    <Compile Include="Module\Encoder.cs" />
-    <Compile Include="Module\IniHelper.cs" />
-    <Compile Include="Module\NaiveCmdBuilder.cs" />
-    <Compile Include="Module\Nshelper.cs" />
-    <Compile Include="Module\Operation.cs" />
-    <Compile Include="Module\Proxy.cs" />
-    <Compile Include="Module\Update.cs" />
+    <Compile Include="Controller\Command.cs" />
+    <Compile Include="Controller\Encoder.cs" />
+    <Compile Include="Controller\IniHelper.cs" />
+    <Compile Include="Controller\NaiveCmdBuilder.cs" />
+    <Compile Include="Controller\Net.cs" />
+    <Compile Include="Controller\Nshelper.cs" />
+    <Compile Include="Controller\Operation.cs" />
+    <Compile Include="Controller\Proxy.cs" />
+    <Compile Include="Controller\Update.cs" />
+    <Compile Include="Model\Config.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainWindow.resx">
+    <Compile Include="View\MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
-    </EmbeddedResource>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -102,6 +100,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -131,6 +132,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace NaiveSharp.Module
+namespace NaiveSharp.Controller
 {
     public class Nshelper
     {

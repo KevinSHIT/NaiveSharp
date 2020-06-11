@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace NaiveSharp.Module
+namespace NaiveSharp.Controller
 {
     public static class Encoder
     {
