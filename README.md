@@ -1,8 +1,8 @@
-# Naive \#
+# Naive \# [![Build status](https://ci.appveyor.com/api/projects/status/6da9k8p6dvwhse7s/branch/master?svg=true)](https://ci.appveyor.com/project/KevinZonda/naivesharp/branch/master)
 
 **THIS PROJECT IS UNDER DEVELOPING**
 
-NaiveProxy Windows Client
+A NaiveProxy Windows Client
 
 ## Screenshot(s)
 
