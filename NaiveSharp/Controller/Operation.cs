@@ -6,7 +6,7 @@ using System.IO;
 
 namespace NaiveSharp.Controller
 {
-    public class Operation
+    public static class Operation
     {
         public static void Save()
         {

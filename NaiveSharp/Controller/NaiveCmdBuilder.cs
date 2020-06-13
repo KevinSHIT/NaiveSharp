@@ -2,7 +2,7 @@
 
 namespace NaiveSharp.Controller
 {
-    public class NaiveCmdBuilder
+    public static class NaiveCmdBuilder
     {
         public static string Proxy(string scheme, string user, string pass, string domain)
         {

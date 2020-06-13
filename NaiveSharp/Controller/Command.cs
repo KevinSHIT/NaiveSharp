@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace NaiveSharp.Controller
 {
-    public class Command
+    public static class Command
     {
         // proto only accept http & socks
         public static void RunNaive(string proto)

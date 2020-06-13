@@ -1,4 +1,5 @@
 ﻿using NaiveSharp.Controller.Extension;
+using NaiveSharp.Model;
 
 using System;
 using System.Collections.Generic;
@@ -60,13 +61,27 @@ namespace NaiveSharp.Controller
                 if (tmp.EndsWith("true"))
                 {
                     config.Padding = true;
-                }else
+                }
+                else
                 {
                     config.Padding = false;
                 }
             }
             return config;
         }
+
+        public static string Generate()
+            => new UriBuilder()
+            {
+                Scheme = "naive+" + Config.Scheme,
+                Host = Config.Host,
+                UserName = Config.Username,
+                Password = Config.Password,
+                Query = "padding=" + Config.Padding.ToString().ToLower(),
+                Fragment = Config.Name
+
+            }.ToString();
+
     }
 
     public struct NaiveConfig
@@ -82,5 +97,6 @@ namespace NaiveSharp.Controller
         public string Scheme;
 
         public bool Padding;
+
     }
 }

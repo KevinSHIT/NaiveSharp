@@ -6,6 +6,8 @@ namespace NaiveSharp.Model
     {
         public static string RunMode { set; get; } = "global";
 
+        public static string Name { set; get; } = string.Empty;
+
         public static string Username { set; get; } = string.Empty;
 
         public static string Password { set; get; } = string.Empty;

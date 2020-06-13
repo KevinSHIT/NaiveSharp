@@ -54,12 +54,15 @@
             this.lblSave = new System.Windows.Forms.Button();
             this.icnNotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.stbName = new System.Windows.Forms.ToolStripTextBox();
+            this.smiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tss1 = new System.Windows.Forms.ToolStripSeparator();
             this.smiRun = new System.Windows.Forms.ToolStripMenuItem();
             this.smiStop = new System.Windows.Forms.ToolStripMenuItem();
             this.smiExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.smiAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.stbName = new System.Windows.Forms.ToolStripTextBox();
+            this.tss2 = new System.Windows.Forms.ToolStripSeparator();
+            this.smiCopyShareLink = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiLoadShareLink = new System.Windows.Forms.ToolStripMenuItem();
             this.tblInfo.SuspendLayout();
             this.tblProxyMode.SuspendLayout();
             this.tblScheme.SuspendLayout();
@@ -351,46 +354,16 @@
             this.stbName,
             this.smiAbout,
             this.tss1,
+            this.smiCopyShareLink,
+            this.smiLoadShareLink,
+            this.tss2,
             this.smiRun,
             this.smiStop,
             this.smiExit});
             this.cmsNotify.Name = "cmsNotify";
             this.cmsNotify.ShowImageMargin = false;
-            this.cmsNotify.Size = new System.Drawing.Size(136, 123);
+            this.cmsNotify.Size = new System.Drawing.Size(195, 195);
             this.cmsNotify.Text = "cmsNotify";
-            // 
-            // tss1
-            // 
-            this.tss1.Name = "tss1";
-            this.tss1.Size = new System.Drawing.Size(152, 6);
-            // 
-            // smiRun
-            // 
-            this.smiRun.Name = "smiRun";
-            this.smiRun.Size = new System.Drawing.Size(155, 22);
-            this.smiRun.Text = "Run";
-            this.smiRun.Click += new System.EventHandler(this.smiRun_Click);
-            // 
-            // smiStop
-            // 
-            this.smiStop.Name = "smiStop";
-            this.smiStop.Size = new System.Drawing.Size(155, 22);
-            this.smiStop.Text = "Stop";
-            this.smiStop.Click += new System.EventHandler(this.smiStop_Click);
-            // 
-            // smiExit
-            // 
-            this.smiExit.Name = "smiExit";
-            this.smiExit.Size = new System.Drawing.Size(155, 22);
-            this.smiExit.Text = "Exit";
-            this.smiExit.Click += new System.EventHandler(this.smiExit_Click);
-            // 
-            // smiAbout
-            // 
-            this.smiAbout.Name = "smiAbout";
-            this.smiAbout.Size = new System.Drawing.Size(155, 22);
-            this.smiAbout.Text = "About...";
-            this.smiAbout.Click += new System.EventHandler(this.smiAbout_Click);
             // 
             // stbName
             // 
@@ -398,6 +371,58 @@
             this.stbName.Name = "stbName";
             this.stbName.Size = new System.Drawing.Size(100, 23);
             this.stbName.Text = "Naive #";
+            // 
+            // smiAbout
+            // 
+            this.smiAbout.Name = "smiAbout";
+            this.smiAbout.Size = new System.Drawing.Size(194, 22);
+            this.smiAbout.Text = "About...";
+            this.smiAbout.Click += new System.EventHandler(this.smiAbout_Click);
+            // 
+            // tss1
+            // 
+            this.tss1.Name = "tss1";
+            this.tss1.Size = new System.Drawing.Size(191, 6);
+            // 
+            // smiRun
+            // 
+            this.smiRun.Name = "smiRun";
+            this.smiRun.Size = new System.Drawing.Size(194, 22);
+            this.smiRun.Text = "Run";
+            this.smiRun.Click += new System.EventHandler(this.smiRun_Click);
+            // 
+            // smiStop
+            // 
+            this.smiStop.Name = "smiStop";
+            this.smiStop.Size = new System.Drawing.Size(194, 22);
+            this.smiStop.Text = "Stop";
+            this.smiStop.Click += new System.EventHandler(this.smiStop_Click);
+            // 
+            // smiExit
+            // 
+            this.smiExit.Name = "smiExit";
+            this.smiExit.Size = new System.Drawing.Size(194, 22);
+            this.smiExit.Text = "Exit";
+            this.smiExit.Click += new System.EventHandler(this.smiExit_Click);
+            // 
+            // tss2
+            // 
+            this.tss2.Name = "tss2";
+            this.tss2.Size = new System.Drawing.Size(191, 6);
+            // 
+            // smiCopyShareLink
+            // 
+            this.smiCopyShareLink.Name = "smiCopyShareLink";
+            this.smiCopyShareLink.Size = new System.Drawing.Size(194, 22);
+            this.smiCopyShareLink.Text = "Copy your config";
+            this.smiCopyShareLink.Click += new System.EventHandler(this.smiCopyShareLink_Click);
+            // 
+            // smiLoadShareLink
+            // 
+            this.smiLoadShareLink.Name = "smiLoadShareLink";
+            this.smiLoadShareLink.Size = new System.Drawing.Size(194, 22);
+            this.smiLoadShareLink.Text = "Load config from clipboard";
+            this.smiLoadShareLink.Click += new System.EventHandler(this.smiLoadShareLink_Click);
             // 
             // MainWindow
             // 
@@ -461,6 +486,9 @@
         private System.Windows.Forms.ToolStripMenuItem smiExit;
         private System.Windows.Forms.ToolStripTextBox stbName;
         private System.Windows.Forms.ToolStripMenuItem smiAbout;
+        private System.Windows.Forms.ToolStripMenuItem smiCopyShareLink;
+        private System.Windows.Forms.ToolStripMenuItem smiLoadShareLink;
+        private System.Windows.Forms.ToolStripSeparator tss2;
     }
 }
 
