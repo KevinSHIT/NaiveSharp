@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtHost = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -50,15 +51,23 @@
             this.chkPadding = new System.Windows.Forms.CheckBox();
             this.tblOperate = new System.Windows.Forms.TableLayoutPanel();
             this.lblSave = new System.Windows.Forms.Button();
+            this.icnNotify = new System.Windows.Forms.NotifyIcon(this.components);
+            this.cmsNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.stbName = new System.Windows.Forms.ToolStripTextBox();
+            this.tss1 = new System.Windows.Forms.ToolStripSeparator();
+            this.smiRun = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiStop = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tblInfo.SuspendLayout();
             this.tblProxyMode.SuspendLayout();
             this.tblScheme.SuspendLayout();
             this.tblOperate.SuspendLayout();
+            this.cmsNotify.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsername
             // 
-            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsername.Location = new System.Drawing.Point(73, 39);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(278, 21);
@@ -67,7 +76,7 @@
             // 
             // txtHost
             // 
-            this.txtHost.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHost.Location = new System.Drawing.Point(73, 6);
             this.txtHost.Name = "txtHost";
             this.txtHost.Size = new System.Drawing.Size(278, 21);
@@ -76,7 +85,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.Location = new System.Drawing.Point(73, 72);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(278, 21);
@@ -203,7 +212,7 @@
             // 
             // btnRun
             // 
-            this.btnRun.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRun.Location = new System.Drawing.Point(91, 5);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(82, 23);
@@ -214,7 +223,7 @@
             // 
             // lblExit
             // 
-            this.lblExit.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExit.Location = new System.Drawing.Point(267, 5);
             this.lblExit.Name = "lblExit";
             this.lblExit.Size = new System.Drawing.Size(84, 23);
@@ -225,7 +234,7 @@
             // 
             // lblStop
             // 
-            this.lblStop.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStop.Location = new System.Drawing.Point(179, 5);
             this.lblStop.Name = "lblStop";
             this.lblStop.Size = new System.Drawing.Size(82, 23);
@@ -318,7 +327,7 @@
             // 
             // lblSave
             // 
-            this.lblSave.Anchor = ((System.Windows.Forms.AnchorStyles) ((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSave.Location = new System.Drawing.Point(3, 5);
             this.lblSave.Name = "lblSave";
             this.lblSave.Size = new System.Drawing.Size(82, 23);
@@ -326,6 +335,57 @@
             this.lblSave.Text = "Save";
             this.lblSave.UseVisualStyleBackColor = true;
             this.lblSave.Click += new System.EventHandler(this.lblSave_Click);
+            // 
+            // icnNotify
+            // 
+            this.icnNotify.ContextMenuStrip = this.cmsNotify;
+            this.icnNotify.Text = "NaiveSharp";
+            this.icnNotify.Visible = true;
+            // 
+            // cmsNotify
+            // 
+            this.cmsNotify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stbName,
+            this.tss1,
+            this.smiRun,
+            this.smiStop,
+            this.smiExit});
+            this.cmsNotify.Name = "cmsNotify";
+            this.cmsNotify.ShowImageMargin = false;
+            this.cmsNotify.Size = new System.Drawing.Size(156, 123);
+            // 
+            // stbName
+            // 
+            this.stbName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.stbName.Name = "stbName";
+            this.stbName.Size = new System.Drawing.Size(100, 23);
+            this.stbName.Text = "Naive #";
+            // 
+            // tss1
+            // 
+            this.tss1.Name = "tss1";
+            this.tss1.Size = new System.Drawing.Size(152, 6);
+            // 
+            // smiRun
+            // 
+            this.smiRun.Name = "smiRun";
+            this.smiRun.Size = new System.Drawing.Size(155, 22);
+            this.smiRun.Text = "Run";
+            this.smiRun.Click += new System.EventHandler(this.smiRun_Click);
+            // 
+            // smiStop
+            // 
+            this.smiStop.Name = "smiStop";
+            this.smiStop.Size = new System.Drawing.Size(155, 22);
+            this.smiStop.Text = "Stop";
+            this.smiStop.Click += new System.EventHandler(this.smiStop_Click);
+            // 
+            // smiExit
+            // 
+            this.smiExit.Name = "smiExit";
+            this.smiExit.Size = new System.Drawing.Size(155, 22);
+            this.smiExit.Text = "Exit";
+            this.smiExit.Click += new System.EventHandler(this.smiExit_Click);
             // 
             // MainWindow
             // 
@@ -349,7 +409,10 @@
             this.tblScheme.ResumeLayout(false);
             this.tblScheme.PerformLayout();
             this.tblOperate.ResumeLayout(false);
+            this.cmsNotify.ResumeLayout(false);
+            this.cmsNotify.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Button btnRun;
@@ -376,6 +439,14 @@
         public System.Windows.Forms.TextBox txtUsername;
 
         #endregion
+
+        private System.Windows.Forms.NotifyIcon icnNotify;
+        private System.Windows.Forms.ContextMenuStrip cmsNotify;
+        private System.Windows.Forms.ToolStripTextBox stbName;
+        private System.Windows.Forms.ToolStripSeparator tss1;
+        private System.Windows.Forms.ToolStripMenuItem smiRun;
+        private System.Windows.Forms.ToolStripMenuItem smiStop;
+        private System.Windows.Forms.ToolStripMenuItem smiExit;
     }
 }
 

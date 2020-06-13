@@ -78,7 +78,9 @@
     <Compile Include="Controller\IniHelper.cs" />
     <Compile Include="Controller\NaiveCmdBuilder.cs" />
     <Compile Include="Controller\Net.cs" />
+    <Compile Include="Controller\NodeList.cs" />
     <Compile Include="Controller\Nshelper.cs" />
+    <Compile Include="Controller\NsInfo.cs" />
     <Compile Include="Controller\Operation.cs" />
     <Compile Include="Controller\Proxy.cs" />
     <Compile Include="Controller\Update.cs" />

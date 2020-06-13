@@ -240,5 +240,23 @@ namespace NaiveSharp.View
         {
             Config.Padding = chkPadding.Checked;
         }
+
+        #region SMI
+        private void smiExit_Click(object sender, EventArgs e)
+        {
+            Operation.Stop();
+            Environment.Exit(0);
+        }
+
+        private void smiStop_Click(object sender, EventArgs e)
+        {
+            Operation.Stop();
+        }
+
+        private void smiRun_Click(object sender, EventArgs e)
+        {
+            Operation.Run();
+        }
+        #endregion
     }
 }
