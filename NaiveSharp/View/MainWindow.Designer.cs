@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtHost = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -340,6 +341,7 @@
             // icnNotify
             // 
             this.icnNotify.ContextMenuStrip = this.cmsNotify;
+            this.icnNotify.Icon = ((System.Drawing.Icon)(resources.GetObject("icnNotify.Icon")));
             this.icnNotify.Text = "NaiveSharp";
             this.icnNotify.Visible = true;
             // 
@@ -354,7 +356,7 @@
             this.smiExit});
             this.cmsNotify.Name = "cmsNotify";
             this.cmsNotify.ShowImageMargin = false;
-            this.cmsNotify.Size = new System.Drawing.Size(156, 145);
+            this.cmsNotify.Size = new System.Drawing.Size(136, 123);
             this.cmsNotify.Text = "cmsNotify";
             // 
             // tss1
@@ -408,6 +410,7 @@
             this.Controls.Add(this.tblProxyMode);
             this.Controls.Add(this.tblInfo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Naive # 0.3 Preview";

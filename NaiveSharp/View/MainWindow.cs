@@ -90,6 +90,7 @@ namespace NaiveSharp.View
                 Config.Debug = true;
                 this.Text = "[DEBUG]" + this.Text;
             }
+            icnNotify.Visible = true;
         }
 
         #region ProxyMode
