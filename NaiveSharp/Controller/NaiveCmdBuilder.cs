@@ -15,7 +15,11 @@ namespace NaiveSharp.Controller
             };
 
             string v = ub.ToString();
-            return v.Substring(0, v.Length - 1);
+            if (v.EndsWith("/"))
+            {
+                v = v.Substring(0, v.Length - 1);
+            }
+            return v;
         }
     }
 }

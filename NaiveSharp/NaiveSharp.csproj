@@ -86,6 +86,7 @@
     <Compile Include="Controller\NsInfo.cs" />
     <Compile Include="Controller\Operation.cs" />
     <Compile Include="Controller\Proxy.cs" />
+    <Compile Include="Controller\Sharelink.cs" />
     <Compile Include="Controller\Update.cs" />
     <Compile Include="Model\Config.cs" />
     <Compile Include="Program.cs" />

@@ -43,6 +43,7 @@
           <e p="Config.cs" t="Include" />
         </e>
         <e p="NaiveSharp.csproj" t="IncludeRecursive" />
+        <e p="ns.ico" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
@@ -53,6 +54,9 @@
           <e p="Settings.settings" t="Include" />
         </e>
         <e p="View" t="Include">
+          <e p="About.cs" t="Include" />
+          <e p="About.Designer.cs" t="Include" />
+          <e p="About.resx" t="Include" />
           <e p="MainWindow.cs" t="Include" />
           <e p="MainWindow.Designer.cs" t="Include" />
           <e p="MainWindow.resx" t="Include" />
