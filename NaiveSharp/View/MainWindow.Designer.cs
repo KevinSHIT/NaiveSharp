@@ -53,11 +53,12 @@
             this.lblSave = new System.Windows.Forms.Button();
             this.icnNotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.stbName = new System.Windows.Forms.ToolStripTextBox();
             this.tss1 = new System.Windows.Forms.ToolStripSeparator();
             this.smiRun = new System.Windows.Forms.ToolStripMenuItem();
             this.smiStop = new System.Windows.Forms.ToolStripMenuItem();
             this.smiExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.stbName = new System.Windows.Forms.ToolStripTextBox();
             this.tblInfo.SuspendLayout();
             this.tblProxyMode.SuspendLayout();
             this.tblScheme.SuspendLayout();
@@ -346,20 +347,15 @@
             // 
             this.cmsNotify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.stbName,
+            this.smiAbout,
             this.tss1,
             this.smiRun,
             this.smiStop,
             this.smiExit});
             this.cmsNotify.Name = "cmsNotify";
             this.cmsNotify.ShowImageMargin = false;
-            this.cmsNotify.Size = new System.Drawing.Size(156, 123);
-            // 
-            // stbName
-            // 
-            this.stbName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.stbName.Name = "stbName";
-            this.stbName.Size = new System.Drawing.Size(100, 23);
-            this.stbName.Text = "Naive #";
+            this.cmsNotify.Size = new System.Drawing.Size(156, 145);
+            this.cmsNotify.Text = "cmsNotify";
             // 
             // tss1
             // 
@@ -387,6 +383,20 @@
             this.smiExit.Text = "Exit";
             this.smiExit.Click += new System.EventHandler(this.smiExit_Click);
             // 
+            // smiAbout
+            // 
+            this.smiAbout.Name = "smiAbout";
+            this.smiAbout.Size = new System.Drawing.Size(155, 22);
+            this.smiAbout.Text = "About...";
+            this.smiAbout.Click += new System.EventHandler(this.smiAbout_Click);
+            // 
+            // stbName
+            // 
+            this.stbName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.stbName.Name = "stbName";
+            this.stbName.Size = new System.Drawing.Size(100, 23);
+            this.stbName.Text = "Naive #";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -400,7 +410,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "MainWindow";
-            this.Text = "Naive# 0.3 Preview";
+            this.Text = "Naive # 0.3 Preview";
             this.Load += new System.EventHandler(this.MainWindows_Load);
             this.tblInfo.ResumeLayout(false);
             this.tblInfo.PerformLayout();
@@ -442,11 +452,12 @@
 
         private System.Windows.Forms.NotifyIcon icnNotify;
         private System.Windows.Forms.ContextMenuStrip cmsNotify;
-        private System.Windows.Forms.ToolStripTextBox stbName;
         private System.Windows.Forms.ToolStripSeparator tss1;
         private System.Windows.Forms.ToolStripMenuItem smiRun;
         private System.Windows.Forms.ToolStripMenuItem smiStop;
         private System.Windows.Forms.ToolStripMenuItem smiExit;
+        private System.Windows.Forms.ToolStripTextBox stbName;
+        private System.Windows.Forms.ToolStripMenuItem smiAbout;
     }
 }
 

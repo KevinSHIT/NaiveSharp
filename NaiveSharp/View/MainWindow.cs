@@ -83,25 +83,12 @@ namespace NaiveSharp.View
             }
         }
 
-
         private void MainWindows_Load(object sender, EventArgs e)
         {
             if (System.IO.File.Exists("DEBUG"))
             {
                 Config.Debug = true;
                 this.Text = "[DEBUG]" + this.Text;
-            }
-        }
-
-        private void rdoHttps_CheckedChanged(object sender, EventArgs e)
-        {
-            if (rdoHttps.Checked)
-            {
-                Config.Scheme = "https";
-            }
-            else
-            {
-                Config.Scheme = "quic";
             }
         }
 
@@ -217,7 +204,7 @@ namespace NaiveSharp.View
 
         #endregion
 
-        #region TextBox -> Config
+        #region Control -> Config
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
@@ -234,14 +221,27 @@ namespace NaiveSharp.View
             Config.Host = txtHost.Text;
         }
 
-        #endregion
-
         private void chkPadding_CheckedChanged(object sender, EventArgs e)
         {
             Config.Padding = chkPadding.Checked;
         }
 
+        private void rdoHttps_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoHttps.Checked)
+            {
+                Config.Scheme = "https";
+            }
+            else
+            {
+                Config.Scheme = "quic";
+            }
+        }
+
+        #endregion
+
         #region SMI
+
         private void smiExit_Click(object sender, EventArgs e)
         {
             Operation.Stop();
@@ -257,6 +257,13 @@ namespace NaiveSharp.View
         {
             Operation.Run();
         }
+
+        private void smiAbout_Click(object sender, EventArgs e)
+        {
+            var about = new View.About();
+            about.ShowDialog();
+        }
+
         #endregion
     }
 }
