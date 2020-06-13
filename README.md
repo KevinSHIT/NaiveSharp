@@ -1,8 +1,14 @@
-# Naive \#
+# Naive \# 
+
+[![Build status](https://ci.appveyor.com/api/projects/status/6da9k8p6dvwhse7s/branch/master?svg=true)](https://ci.appveyor.com/project/KevinZonda/naivesharp/branch/master)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![Telegram](https://raw.githubusercontent.com/Patrolavia/telegram-badge/master/chat.svg)](https://t.me/ohtcs)
+![Size](https://img.shields.io/github/repo-size/KevinZonda/NaiveSharp)
+![LastReleasr](https://img.shields.io/github/v/release/KevinZonda/NaiveSharp?include_prereleases)
 
 **THIS PROJECT IS UNDER DEVELOPING**
 
-NaiveProxy Windows Client
+A NaiveProxy Windows Client
 
 ## Screenshot(s)
 
