@@ -50,6 +50,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32bit>false</Prefer32bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ns.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -131,6 +134,7 @@
     <Content Include="DesignMap\Config.md" />
     <Content Include="DesignMap\File.md" />
     <Content Include="DesignMap\Node.md" />
+    <Content Include="ns.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

@@ -115,7 +115,7 @@
             this.llbLicense.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbLicense.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.llbLicense.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.llbLicense.Location = new System.Drawing.Point(265, 19);
+            this.llbLicense.Location = new System.Drawing.Point(265, 18);
             this.llbLicense.Name = "llbLicense";
             this.llbLicense.Size = new System.Drawing.Size(51, 15);
             this.llbLicense.TabIndex = 6;
