@@ -28,7 +28,7 @@ namespace NaiveSharp.Controller
                     return null;
             }
 
-            config.Host = uri.Host;
+            config.Host = uri.Host + uri.Port;
             config.Name = uri.Fragment;
             if (config.Name.Length > 1)
             {
@@ -56,7 +56,7 @@ namespace NaiveSharp.Controller
                 }
             }
             var tmp = uri.Query;
-            if (tmp.StartsWith("padding="))
+            if (tmp.StartsWith("?padding="))
             {
                 if (tmp.EndsWith("true"))
                 {
