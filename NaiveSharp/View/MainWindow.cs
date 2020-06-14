@@ -81,6 +81,10 @@ namespace NaiveSharp.View
                         throw new DataException();
                 }
             }
+            if (uri.Port > 0)
+            {
+                txtHost.Text += ":" + uri.Port;
+            }
         }
 
         private void MainWindows_Load(object sender, EventArgs e)

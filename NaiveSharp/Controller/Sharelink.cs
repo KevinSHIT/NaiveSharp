@@ -2,11 +2,7 @@
 using NaiveSharp.Model;
 
 using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NaiveSharp.Controller
 {
@@ -14,7 +10,15 @@ namespace NaiveSharp.Controller
     {
         public static NaiveConfig? LoadFromShareLink(string sharelink)
         {
-            var uri = new Uri(sharelink);
+            Uri uri;
+            try
+            {
+                uri = new Uri(sharelink);
+            }
+            catch
+            {
+                return null;
+            }
             var config = new NaiveConfig();
             switch (uri.Scheme)
             {
@@ -27,8 +31,11 @@ namespace NaiveSharp.Controller
                 default:
                     return null;
             }
-
-            config.Host = uri.Host + uri.Port;
+            config.Host = uri.Host;
+            if (uri.Port > 0)
+            {
+                config.Host += ":" + uri.Port;
+            }
             config.Name = uri.Fragment;
             if (config.Name.Length > 1)
             {
