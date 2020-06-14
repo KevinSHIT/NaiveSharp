@@ -45,7 +45,7 @@
             this.picNavBackground.Dock = System.Windows.Forms.DockStyle.Top;
             this.picNavBackground.Location = new System.Drawing.Point(0, 0);
             this.picNavBackground.Name = "picNavBackground";
-            this.picNavBackground.Size = new System.Drawing.Size(345, 54);
+            this.picNavBackground.Size = new System.Drawing.Size(347, 54);
             this.picNavBackground.TabIndex = 0;
             this.picNavBackground.TabStop = false;
             // 
@@ -128,7 +128,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 287);
+            this.ClientSize = new System.Drawing.Size(347, 283);
             this.Controls.Add(this.llbLicense);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lblCredit);

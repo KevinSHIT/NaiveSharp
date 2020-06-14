@@ -73,27 +73,30 @@
             // txtUsername
             // 
             this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsername.Location = new System.Drawing.Point(73, 39);
+            this.txtUsername.Location = new System.Drawing.Point(85, 35);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(278, 21);
+            this.txtUsername.Size = new System.Drawing.Size(325, 23);
             this.txtUsername.TabIndex = 4;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtHost
             // 
             this.txtHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHost.Location = new System.Drawing.Point(73, 6);
+            this.txtHost.Location = new System.Drawing.Point(85, 4);
+            this.txtHost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtHost.Name = "txtHost";
-            this.txtHost.Size = new System.Drawing.Size(278, 21);
+            this.txtHost.Size = new System.Drawing.Size(325, 23);
             this.txtHost.TabIndex = 6;
             this.txtHost.TextChanged += new System.EventHandler(this.txtHost_TextChanged);
             // 
             // txtPassword
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPassword.Location = new System.Drawing.Point(73, 72);
+            this.txtPassword.Location = new System.Drawing.Point(85, 66);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(278, 21);
+            this.txtPassword.Size = new System.Drawing.Size(325, 23);
             this.txtPassword.TabIndex = 5;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
@@ -102,9 +105,10 @@
             this.rdoGlobal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdoGlobal.AutoSize = true;
             this.rdoGlobal.Checked = true;
-            this.rdoGlobal.Location = new System.Drawing.Point(73, 7);
+            this.rdoGlobal.Location = new System.Drawing.Point(85, 4);
+            this.rdoGlobal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoGlobal.Name = "rdoGlobal";
-            this.rdoGlobal.Size = new System.Drawing.Size(59, 16);
+            this.rdoGlobal.Size = new System.Drawing.Size(59, 18);
             this.rdoGlobal.TabIndex = 7;
             this.rdoGlobal.TabStop = true;
             this.rdoGlobal.Text = "Global";
@@ -115,9 +119,10 @@
             // 
             this.rdoGfwlist.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoGfwlist.AutoSize = true;
-            this.rdoGfwlist.Location = new System.Drawing.Point(178, 7);
+            this.rdoGfwlist.Location = new System.Drawing.Point(213, 4);
+            this.rdoGfwlist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoGfwlist.Name = "rdoGfwlist";
-            this.rdoGfwlist.Size = new System.Drawing.Size(65, 16);
+            this.rdoGfwlist.Size = new System.Drawing.Size(68, 18);
             this.rdoGfwlist.TabIndex = 8;
             this.rdoGfwlist.Text = "GFWList";
             this.rdoGfwlist.UseVisualStyleBackColor = true;
@@ -127,9 +132,10 @@
             // 
             this.rdoGeoIP.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.rdoGeoIP.AutoSize = true;
-            this.rdoGeoIP.Location = new System.Drawing.Point(298, 7);
+            this.rdoGeoIP.Location = new System.Drawing.Point(354, 4);
+            this.rdoGeoIP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoGeoIP.Name = "rdoGeoIP";
-            this.rdoGeoIP.Size = new System.Drawing.Size(53, 16);
+            this.rdoGeoIP.Size = new System.Drawing.Size(56, 18);
             this.rdoGeoIP.TabIndex = 9;
             this.rdoGeoIP.Text = "GeoIP";
             this.rdoGeoIP.UseVisualStyleBackColor = true;
@@ -146,23 +152,24 @@
             this.tblInfo.Controls.Add(this.lblUsername, 0, 1);
             this.tblInfo.Controls.Add(this.lblPassword, 0, 2);
             this.tblInfo.Controls.Add(this.lblHost, 0, 0);
-            this.tblInfo.Location = new System.Drawing.Point(12, 38);
+            this.tblInfo.Location = new System.Drawing.Point(12, 44);
+            this.tblInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblInfo.Name = "tblInfo";
             this.tblInfo.RowCount = 3;
             this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblInfo.Size = new System.Drawing.Size(354, 100);
+            this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tblInfo.Size = new System.Drawing.Size(413, 94);
             this.tblInfo.TabIndex = 7;
             // 
             // lblUsername
             // 
             this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(3, 43);
+            this.lblUsername.Location = new System.Drawing.Point(3, 39);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(53, 12);
+            this.lblUsername.Size = new System.Drawing.Size(60, 15);
             this.lblUsername.TabIndex = 9;
             this.lblUsername.Text = "Username";
             // 
@@ -170,9 +177,9 @@
             // 
             this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(3, 77);
+            this.lblPassword.Location = new System.Drawing.Point(3, 70);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(53, 12);
+            this.lblPassword.Size = new System.Drawing.Size(57, 15);
             this.lblPassword.TabIndex = 10;
             this.lblPassword.Text = "Password";
             // 
@@ -180,9 +187,9 @@
             // 
             this.lblHost.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHost.AutoSize = true;
-            this.lblHost.Location = new System.Drawing.Point(3, 10);
+            this.lblHost.Location = new System.Drawing.Point(3, 8);
             this.lblHost.Name = "lblHost";
-            this.lblHost.Size = new System.Drawing.Size(29, 12);
+            this.lblHost.Size = new System.Drawing.Size(32, 15);
             this.lblHost.TabIndex = 11;
             this.lblHost.Text = "Host";
             // 
@@ -197,30 +204,32 @@
             this.tblProxyMode.Controls.Add(this.rdoGeoIP, 3, 0);
             this.tblProxyMode.Controls.Add(this.rdoGlobal, 1, 0);
             this.tblProxyMode.Controls.Add(this.rdoGfwlist, 2, 0);
-            this.tblProxyMode.Location = new System.Drawing.Point(12, 144);
+            this.tblProxyMode.Location = new System.Drawing.Point(12, 141);
+            this.tblProxyMode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblProxyMode.Name = "tblProxyMode";
             this.tblProxyMode.RowCount = 1;
             this.tblProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tblProxyMode.Size = new System.Drawing.Size(354, 30);
+            this.tblProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tblProxyMode.Size = new System.Drawing.Size(413, 26);
             this.tblProxyMode.TabIndex = 8;
             // 
             // lblProxyMode
             // 
             this.lblProxyMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblProxyMode.AutoSize = true;
-            this.lblProxyMode.Location = new System.Drawing.Point(3, 3);
+            this.lblProxyMode.Location = new System.Drawing.Point(3, 5);
             this.lblProxyMode.Name = "lblProxyMode";
-            this.lblProxyMode.Size = new System.Drawing.Size(41, 24);
+            this.lblProxyMode.Size = new System.Drawing.Size(71, 15);
             this.lblProxyMode.TabIndex = 9;
             this.lblProxyMode.Text = "Proxy Mode";
             // 
             // btnRun
             // 
             this.btnRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRun.Location = new System.Drawing.Point(91, 5);
+            this.btnRun.Location = new System.Drawing.Point(106, 6);
+            this.btnRun.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(82, 23);
+            this.btnRun.Size = new System.Drawing.Size(97, 29);
             this.btnRun.TabIndex = 12;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
@@ -229,9 +238,10 @@
             // lblExit
             // 
             this.lblExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblExit.Location = new System.Drawing.Point(267, 5);
+            this.lblExit.Location = new System.Drawing.Point(312, 6);
+            this.lblExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(84, 23);
+            this.lblExit.Size = new System.Drawing.Size(98, 29);
             this.lblExit.TabIndex = 14;
             this.lblExit.Text = "Exit";
             this.lblExit.UseVisualStyleBackColor = true;
@@ -240,9 +250,10 @@
             // lblStop
             // 
             this.lblStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblStop.Location = new System.Drawing.Point(179, 5);
+            this.lblStop.Location = new System.Drawing.Point(209, 6);
+            this.lblStop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblStop.Name = "lblStop";
-            this.lblStop.Size = new System.Drawing.Size(82, 23);
+            this.lblStop.Size = new System.Drawing.Size(97, 29);
             this.lblStop.TabIndex = 13;
             this.lblStop.Text = "Stop";
             this.lblStop.UseVisualStyleBackColor = true;
@@ -259,20 +270,21 @@
             this.tblScheme.Controls.Add(this.rdoHttps, 1, 0);
             this.tblScheme.Controls.Add(this.rdoQuic, 2, 0);
             this.tblScheme.Controls.Add(this.chkPadding, 3, 0);
-            this.tblScheme.Location = new System.Drawing.Point(12, 12);
+            this.tblScheme.Location = new System.Drawing.Point(12, 13);
+            this.tblScheme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblScheme.Name = "tblScheme";
             this.tblScheme.RowCount = 1;
             this.tblScheme.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblScheme.Size = new System.Drawing.Size(354, 20);
+            this.tblScheme.Size = new System.Drawing.Size(413, 27);
             this.tblScheme.TabIndex = 12;
             // 
             // lblScheme
             // 
             this.lblScheme.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblScheme.AutoSize = true;
-            this.lblScheme.Location = new System.Drawing.Point(3, 4);
+            this.lblScheme.Location = new System.Drawing.Point(3, 6);
             this.lblScheme.Name = "lblScheme";
-            this.lblScheme.Size = new System.Drawing.Size(41, 12);
+            this.lblScheme.Size = new System.Drawing.Size(49, 15);
             this.lblScheme.TabIndex = 0;
             this.lblScheme.Text = "Scheme";
             // 
@@ -281,9 +293,10 @@
             this.rdoHttps.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdoHttps.AutoSize = true;
             this.rdoHttps.Checked = true;
-            this.rdoHttps.Location = new System.Drawing.Point(73, 3);
+            this.rdoHttps.Location = new System.Drawing.Point(85, 4);
+            this.rdoHttps.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoHttps.Name = "rdoHttps";
-            this.rdoHttps.Size = new System.Drawing.Size(53, 14);
+            this.rdoHttps.Size = new System.Drawing.Size(59, 19);
             this.rdoHttps.TabIndex = 1;
             this.rdoHttps.TabStop = true;
             this.rdoHttps.Text = "HTTPS";
@@ -294,9 +307,10 @@
             // 
             this.rdoQuic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoQuic.AutoSize = true;
-            this.rdoQuic.Location = new System.Drawing.Point(187, 3);
+            this.rdoQuic.Location = new System.Drawing.Point(220, 4);
+            this.rdoQuic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoQuic.Name = "rdoQuic";
-            this.rdoQuic.Size = new System.Drawing.Size(47, 14);
+            this.rdoQuic.Size = new System.Drawing.Size(53, 19);
             this.rdoQuic.TabIndex = 2;
             this.rdoQuic.Text = "QUIC";
             this.rdoQuic.UseVisualStyleBackColor = true;
@@ -304,9 +318,10 @@
             // chkPadding
             // 
             this.chkPadding.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.chkPadding.Location = new System.Drawing.Point(269, 3);
+            this.chkPadding.Location = new System.Drawing.Point(314, 4);
+            this.chkPadding.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chkPadding.Name = "chkPadding";
-            this.chkPadding.Size = new System.Drawing.Size(82, 14);
+            this.chkPadding.Size = new System.Drawing.Size(96, 19);
             this.chkPadding.TabIndex = 3;
             this.chkPadding.Text = "Padding";
             this.chkPadding.UseVisualStyleBackColor = true;
@@ -323,19 +338,21 @@
             this.tblOperate.Controls.Add(this.btnRun, 1, 0);
             this.tblOperate.Controls.Add(this.lblExit, 3, 0);
             this.tblOperate.Controls.Add(this.lblStop, 2, 0);
-            this.tblOperate.Location = new System.Drawing.Point(12, 180);
+            this.tblOperate.Location = new System.Drawing.Point(12, 171);
+            this.tblOperate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblOperate.Name = "tblOperate";
             this.tblOperate.RowCount = 1;
             this.tblOperate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblOperate.Size = new System.Drawing.Size(354, 34);
+            this.tblOperate.Size = new System.Drawing.Size(413, 42);
             this.tblOperate.TabIndex = 13;
             // 
             // lblSave
             // 
             this.lblSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSave.Location = new System.Drawing.Point(3, 5);
+            this.lblSave.Location = new System.Drawing.Point(3, 6);
+            this.lblSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblSave.Name = "lblSave";
-            this.lblSave.Size = new System.Drawing.Size(82, 23);
+            this.lblSave.Size = new System.Drawing.Size(97, 29);
             this.lblSave.TabIndex = 11;
             this.lblSave.Text = "Save";
             this.lblSave.UseVisualStyleBackColor = true;
@@ -428,16 +445,18 @@
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(377, 225);
+            this.ClientSize = new System.Drawing.Size(438, 221);
             this.Controls.Add(this.tblOperate);
             this.Controls.Add(this.tblScheme);
             this.Controls.Add(this.tblProxyMode);
             this.Controls.Add(this.tblInfo);
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Naive # 0.4 Preview";
