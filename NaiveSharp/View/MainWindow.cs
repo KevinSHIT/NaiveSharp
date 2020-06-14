@@ -298,5 +298,30 @@ namespace NaiveSharp.View
             txtPassword.Text = y.Value.Password;
             chkPadding.Checked = y.Value.Padding;
         }
+
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                Hide();
+                if (Config.IsFirstTimeHide)
+                {
+                    icnNotify.ShowBalloonTip(1000, "Naive # Tip", "Hey! Naive # is still running under background!", ToolTipIcon.Info);
+                    Config.IsFirstTimeHide = false;
+                }
+                e.Cancel = true;
+            }
+        }
+
+        private void cmsNotify_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+        }
+
+        private void icnNotify_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            Show();
+            //Focus();
+        }
     }
 }

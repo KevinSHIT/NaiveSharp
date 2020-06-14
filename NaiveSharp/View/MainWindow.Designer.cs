@@ -57,12 +57,12 @@
             this.stbName = new System.Windows.Forms.ToolStripTextBox();
             this.smiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.tss1 = new System.Windows.Forms.ToolStripSeparator();
+            this.smiCopyShareLink = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiLoadShareLink = new System.Windows.Forms.ToolStripMenuItem();
+            this.tss2 = new System.Windows.Forms.ToolStripSeparator();
             this.smiRun = new System.Windows.Forms.ToolStripMenuItem();
             this.smiStop = new System.Windows.Forms.ToolStripMenuItem();
             this.smiExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tss2 = new System.Windows.Forms.ToolStripSeparator();
-            this.smiCopyShareLink = new System.Windows.Forms.ToolStripMenuItem();
-            this.smiLoadShareLink = new System.Windows.Forms.ToolStripMenuItem();
             this.tblInfo.SuspendLayout();
             this.tblProxyMode.SuspendLayout();
             this.tblScheme.SuspendLayout();
@@ -347,6 +347,7 @@
             this.icnNotify.Icon = ((System.Drawing.Icon)(resources.GetObject("icnNotify.Icon")));
             this.icnNotify.Text = "NaiveSharp";
             this.icnNotify.Visible = true;
+            this.icnNotify.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.icnNotify_MouseDoubleClick);
             // 
             // cmsNotify
             // 
@@ -362,8 +363,9 @@
             this.smiExit});
             this.cmsNotify.Name = "cmsNotify";
             this.cmsNotify.ShowImageMargin = false;
-            this.cmsNotify.Size = new System.Drawing.Size(195, 195);
+            this.cmsNotify.Size = new System.Drawing.Size(195, 173);
             this.cmsNotify.Text = "cmsNotify";
+            this.cmsNotify.Opening += new System.ComponentModel.CancelEventHandler(this.cmsNotify_Opening);
             // 
             // stbName
             // 
@@ -383,6 +385,25 @@
             // 
             this.tss1.Name = "tss1";
             this.tss1.Size = new System.Drawing.Size(191, 6);
+            // 
+            // smiCopyShareLink
+            // 
+            this.smiCopyShareLink.Name = "smiCopyShareLink";
+            this.smiCopyShareLink.Size = new System.Drawing.Size(194, 22);
+            this.smiCopyShareLink.Text = "Copy your config";
+            this.smiCopyShareLink.Click += new System.EventHandler(this.smiCopyShareLink_Click);
+            // 
+            // smiLoadShareLink
+            // 
+            this.smiLoadShareLink.Name = "smiLoadShareLink";
+            this.smiLoadShareLink.Size = new System.Drawing.Size(194, 22);
+            this.smiLoadShareLink.Text = "Load config from clipboard";
+            this.smiLoadShareLink.Click += new System.EventHandler(this.smiLoadShareLink_Click);
+            // 
+            // tss2
+            // 
+            this.tss2.Name = "tss2";
+            this.tss2.Size = new System.Drawing.Size(191, 6);
             // 
             // smiRun
             // 
@@ -405,25 +426,6 @@
             this.smiExit.Text = "Exit";
             this.smiExit.Click += new System.EventHandler(this.smiExit_Click);
             // 
-            // tss2
-            // 
-            this.tss2.Name = "tss2";
-            this.tss2.Size = new System.Drawing.Size(191, 6);
-            // 
-            // smiCopyShareLink
-            // 
-            this.smiCopyShareLink.Name = "smiCopyShareLink";
-            this.smiCopyShareLink.Size = new System.Drawing.Size(194, 22);
-            this.smiCopyShareLink.Text = "Copy your config";
-            this.smiCopyShareLink.Click += new System.EventHandler(this.smiCopyShareLink_Click);
-            // 
-            // smiLoadShareLink
-            // 
-            this.smiLoadShareLink.Name = "smiLoadShareLink";
-            this.smiLoadShareLink.Size = new System.Drawing.Size(194, 22);
-            this.smiLoadShareLink.Text = "Load config from clipboard";
-            this.smiLoadShareLink.Click += new System.EventHandler(this.smiLoadShareLink_Click);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -439,6 +441,7 @@
             this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Naive # 0.3 Preview";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindows_Load);
             this.tblInfo.ResumeLayout(false);
             this.tblInfo.PerformLayout();

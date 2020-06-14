@@ -20,6 +20,8 @@ namespace NaiveSharp.Model
 
         public static bool Debug { get; set; } = false;
 
+        public static bool IsFirstTimeHide { get; set; } = true;
+
         public static string ConvertToNs()
         {
             return Controller.NaiveCmdBuilder.Proxy(Scheme, Username, Password, Host).ToBase64() + " " + Padding;
