@@ -440,7 +440,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainWindow";
-            this.Text = "Naive # 0.3 Preview";
+            this.Text = "Naive # 0.4 Preview";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindows_Load);
             this.tblInfo.ResumeLayout(false);
