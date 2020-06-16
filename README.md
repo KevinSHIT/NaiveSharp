@@ -20,6 +20,22 @@ A NaiveProxy Windows Client
 - [x] bypass
 - [ ] node tree
 
+## About Sharelink
+
+At present, [@klzgrad](https://github.com/klzgrad) haven't given an official URI specification. But we need this future, for compatibility, NaiveSharp uses the same specification with [QvPlugin-NaiveProxy](https://github.com/Qv2ray/QvPlugin-NaiveProxy).
+
+It looks like
+
+```
+naive+https://what:happened@test.someone.cf?padding=false#Naive!
+naive+https://some.public.rs?padding=true#Public-01
+naive+quic://manhole:114514@quic.test.me
+```
+
+You can get more information from [This issue](https://github.com/klzgrad/naiveproxy/issues/86#issue-638085031).
+
+Thanks [@DuckSoft](https://github.com/DuckSoft) provides this specification. If [@klzgrad](https://github.com/klzgrad) provides specification, I will support it too.
+
 ## Credit
 
 - [Igniter](https://github.com/trojan-gfw/igniter)
