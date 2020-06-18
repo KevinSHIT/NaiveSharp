@@ -54,15 +54,18 @@
             this.lblSave = new System.Windows.Forms.Button();
             this.icnNotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.stbName = new System.Windows.Forms.ToolStripTextBox();
+            this.tsmMode = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmGlobal = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmGFWList = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmGeoIP = new System.Windows.Forms.ToolStripMenuItem();
             this.smiAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.tss1 = new System.Windows.Forms.ToolStripSeparator();
             this.smiCopyShareLink = new System.Windows.Forms.ToolStripMenuItem();
             this.smiLoadShareLink = new System.Windows.Forms.ToolStripMenuItem();
             this.tss2 = new System.Windows.Forms.ToolStripSeparator();
             this.smiRun = new System.Windows.Forms.ToolStripMenuItem();
             this.smiStop = new System.Windows.Forms.ToolStripMenuItem();
             this.smiExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tss1 = new System.Windows.Forms.ToolStripSeparator();
             this.tblInfo.SuspendLayout();
             this.tblProxyMode.SuspendLayout();
             this.tblScheme.SuspendLayout();
@@ -73,31 +76,31 @@
             // txtUsername
             // 
             this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsername.Location = new System.Drawing.Point(85, 35);
+            this.txtUsername.Location = new System.Drawing.Point(77, 35);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(325, 23);
-            this.txtUsername.TabIndex = 4;
+            this.txtUsername.Size = new System.Drawing.Size(292, 23);
+            this.txtUsername.TabIndex = 5;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtHost
             // 
             this.txtHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtHost.Location = new System.Drawing.Point(85, 4);
+            this.txtHost.Location = new System.Drawing.Point(77, 4);
             this.txtHost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtHost.Name = "txtHost";
-            this.txtHost.Size = new System.Drawing.Size(325, 23);
-            this.txtHost.TabIndex = 6;
+            this.txtHost.Size = new System.Drawing.Size(292, 23);
+            this.txtHost.TabIndex = 4;
             this.txtHost.TextChanged += new System.EventHandler(this.txtHost_TextChanged);
             // 
             // txtPassword
             // 
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtPassword.Location = new System.Drawing.Point(85, 66);
+            this.txtPassword.Location = new System.Drawing.Point(77, 66);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(325, 23);
-            this.txtPassword.TabIndex = 5;
+            this.txtPassword.Size = new System.Drawing.Size(292, 23);
+            this.txtPassword.TabIndex = 6;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
             // rdoGlobal
@@ -105,7 +108,7 @@
             this.rdoGlobal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdoGlobal.AutoSize = true;
             this.rdoGlobal.Checked = true;
-            this.rdoGlobal.Location = new System.Drawing.Point(85, 4);
+            this.rdoGlobal.Location = new System.Drawing.Point(77, 4);
             this.rdoGlobal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoGlobal.Name = "rdoGlobal";
             this.rdoGlobal.Size = new System.Drawing.Size(59, 18);
@@ -119,11 +122,12 @@
             // 
             this.rdoGfwlist.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoGfwlist.AutoSize = true;
-            this.rdoGfwlist.Location = new System.Drawing.Point(213, 4);
+            this.rdoGfwlist.Location = new System.Drawing.Point(188, 4);
             this.rdoGfwlist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoGfwlist.Name = "rdoGfwlist";
             this.rdoGfwlist.Size = new System.Drawing.Size(68, 18);
             this.rdoGfwlist.TabIndex = 8;
+            this.rdoGfwlist.TabStop = true;
             this.rdoGfwlist.Text = "GFWList";
             this.rdoGfwlist.UseVisualStyleBackColor = true;
             this.rdoGfwlist.CheckedChanged += new System.EventHandler(this.rdoGfwlist_CheckedChanged);
@@ -132,11 +136,12 @@
             // 
             this.rdoGeoIP.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.rdoGeoIP.AutoSize = true;
-            this.rdoGeoIP.Location = new System.Drawing.Point(354, 4);
+            this.rdoGeoIP.Location = new System.Drawing.Point(313, 4);
             this.rdoGeoIP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoGeoIP.Name = "rdoGeoIP";
             this.rdoGeoIP.Size = new System.Drawing.Size(56, 18);
             this.rdoGeoIP.TabIndex = 9;
+            this.rdoGeoIP.TabStop = true;
             this.rdoGeoIP.Text = "GeoIP";
             this.rdoGeoIP.UseVisualStyleBackColor = true;
             this.rdoGeoIP.CheckedChanged += new System.EventHandler(this.rdoGeoIP_CheckedChanged);
@@ -160,7 +165,7 @@
             this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tblInfo.Size = new System.Drawing.Size(413, 94);
+            this.tblInfo.Size = new System.Drawing.Size(372, 94);
             this.tblInfo.TabIndex = 7;
             // 
             // lblUsername
@@ -209,8 +214,8 @@
             this.tblProxyMode.Name = "tblProxyMode";
             this.tblProxyMode.RowCount = 1;
             this.tblProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tblProxyMode.Size = new System.Drawing.Size(413, 26);
+            this.tblProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tblProxyMode.Size = new System.Drawing.Size(372, 26);
             this.tblProxyMode.TabIndex = 8;
             // 
             // lblProxyMode
@@ -219,17 +224,17 @@
             this.lblProxyMode.AutoSize = true;
             this.lblProxyMode.Location = new System.Drawing.Point(3, 5);
             this.lblProxyMode.Name = "lblProxyMode";
-            this.lblProxyMode.Size = new System.Drawing.Size(71, 15);
+            this.lblProxyMode.Size = new System.Drawing.Size(38, 15);
             this.lblProxyMode.TabIndex = 9;
-            this.lblProxyMode.Text = "Proxy Mode";
+            this.lblProxyMode.Text = "Mode";
             // 
             // btnRun
             // 
             this.btnRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRun.Location = new System.Drawing.Point(106, 6);
+            this.btnRun.Location = new System.Drawing.Point(96, 6);
             this.btnRun.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnRun.Name = "btnRun";
-            this.btnRun.Size = new System.Drawing.Size(97, 29);
+            this.btnRun.Size = new System.Drawing.Size(87, 29);
             this.btnRun.TabIndex = 12;
             this.btnRun.Text = "Run";
             this.btnRun.UseVisualStyleBackColor = true;
@@ -238,10 +243,10 @@
             // lblExit
             // 
             this.lblExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblExit.Location = new System.Drawing.Point(312, 6);
+            this.lblExit.Location = new System.Drawing.Point(282, 6);
             this.lblExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(98, 29);
+            this.lblExit.Size = new System.Drawing.Size(87, 29);
             this.lblExit.TabIndex = 14;
             this.lblExit.Text = "Exit";
             this.lblExit.UseVisualStyleBackColor = true;
@@ -250,10 +255,10 @@
             // lblStop
             // 
             this.lblStop.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblStop.Location = new System.Drawing.Point(209, 6);
+            this.lblStop.Location = new System.Drawing.Point(189, 6);
             this.lblStop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblStop.Name = "lblStop";
-            this.lblStop.Size = new System.Drawing.Size(97, 29);
+            this.lblStop.Size = new System.Drawing.Size(87, 29);
             this.lblStop.TabIndex = 13;
             this.lblStop.Text = "Stop";
             this.lblStop.UseVisualStyleBackColor = true;
@@ -275,7 +280,7 @@
             this.tblScheme.Name = "tblScheme";
             this.tblScheme.RowCount = 1;
             this.tblScheme.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblScheme.Size = new System.Drawing.Size(413, 27);
+            this.tblScheme.Size = new System.Drawing.Size(372, 27);
             this.tblScheme.TabIndex = 12;
             // 
             // lblScheme
@@ -293,7 +298,7 @@
             this.rdoHttps.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdoHttps.AutoSize = true;
             this.rdoHttps.Checked = true;
-            this.rdoHttps.Location = new System.Drawing.Point(85, 4);
+            this.rdoHttps.Location = new System.Drawing.Point(77, 4);
             this.rdoHttps.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoHttps.Name = "rdoHttps";
             this.rdoHttps.Size = new System.Drawing.Size(59, 19);
@@ -307,21 +312,22 @@
             // 
             this.rdoQuic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoQuic.AutoSize = true;
-            this.rdoQuic.Location = new System.Drawing.Point(220, 4);
+            this.rdoQuic.Location = new System.Drawing.Point(196, 4);
             this.rdoQuic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoQuic.Name = "rdoQuic";
             this.rdoQuic.Size = new System.Drawing.Size(53, 19);
             this.rdoQuic.TabIndex = 2;
+            this.rdoQuic.TabStop = true;
             this.rdoQuic.Text = "QUIC";
             this.rdoQuic.UseVisualStyleBackColor = true;
             // 
             // chkPadding
             // 
             this.chkPadding.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.chkPadding.Location = new System.Drawing.Point(314, 4);
+            this.chkPadding.Location = new System.Drawing.Point(275, 4);
             this.chkPadding.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chkPadding.Name = "chkPadding";
-            this.chkPadding.Size = new System.Drawing.Size(96, 19);
+            this.chkPadding.Size = new System.Drawing.Size(94, 19);
             this.chkPadding.TabIndex = 3;
             this.chkPadding.Text = "Padding";
             this.chkPadding.UseVisualStyleBackColor = true;
@@ -343,7 +349,7 @@
             this.tblOperate.Name = "tblOperate";
             this.tblOperate.RowCount = 1;
             this.tblOperate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblOperate.Size = new System.Drawing.Size(413, 42);
+            this.tblOperate.Size = new System.Drawing.Size(372, 42);
             this.tblOperate.TabIndex = 13;
             // 
             // lblSave
@@ -352,7 +358,7 @@
             this.lblSave.Location = new System.Drawing.Point(3, 6);
             this.lblSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lblSave.Name = "lblSave";
-            this.lblSave.Size = new System.Drawing.Size(97, 29);
+            this.lblSave.Size = new System.Drawing.Size(87, 29);
             this.lblSave.TabIndex = 11;
             this.lblSave.Text = "Save";
             this.lblSave.UseVisualStyleBackColor = true;
@@ -369,27 +375,53 @@
             // cmsNotify
             // 
             this.cmsNotify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stbName,
-            this.smiAbout,
+            this.tsmMode,
+            this.smiRun,
+            this.smiStop,
             this.tss1,
             this.smiCopyShareLink,
             this.smiLoadShareLink,
             this.tss2,
-            this.smiRun,
-            this.smiStop,
+            this.smiAbout,
             this.smiExit});
             this.cmsNotify.Name = "cmsNotify";
             this.cmsNotify.ShowImageMargin = false;
-            this.cmsNotify.Size = new System.Drawing.Size(195, 173);
+            this.cmsNotify.Size = new System.Drawing.Size(195, 192);
             this.cmsNotify.Text = "cmsNotify";
             this.cmsNotify.Opening += new System.ComponentModel.CancelEventHandler(this.cmsNotify_Opening);
             // 
-            // stbName
+            // tsmMode
             // 
-            this.stbName.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.stbName.Name = "stbName";
-            this.stbName.Size = new System.Drawing.Size(100, 23);
-            this.stbName.Text = "Naive #";
+            this.tsmMode.Checked = true;
+            this.tsmMode.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.tsmMode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmGlobal,
+            this.tsmGFWList,
+            this.tsmGeoIP});
+            this.tsmMode.Name = "tsmMode";
+            this.tsmMode.Size = new System.Drawing.Size(194, 22);
+            this.tsmMode.Text = "Mode";
+            // 
+            // tsmGlobal
+            // 
+            this.tsmGlobal.Name = "tsmGlobal";
+            this.tsmGlobal.Size = new System.Drawing.Size(180, 22);
+            this.tsmGlobal.Text = "Global";
+            this.tsmGlobal.Click += new System.EventHandler(this.tsmGlobal_Click);
+            // 
+            // tsmGFWList
+            // 
+            this.tsmGFWList.Name = "tsmGFWList";
+            this.tsmGFWList.Size = new System.Drawing.Size(180, 22);
+            this.tsmGFWList.Text = "GFWList";
+            this.tsmGFWList.Click += new System.EventHandler(this.tsmGFWList_Click);
+            // 
+            // tsmGeoIP
+            // 
+            this.tsmGeoIP.Name = "tsmGeoIP";
+            this.tsmGeoIP.Size = new System.Drawing.Size(180, 22);
+            this.tsmGeoIP.Text = "GeoIP";
+            this.tsmGeoIP.Click += new System.EventHandler(this.tsmGeoIP_Click);
             // 
             // smiAbout
             // 
@@ -397,11 +429,6 @@
             this.smiAbout.Size = new System.Drawing.Size(194, 22);
             this.smiAbout.Text = "About...";
             this.smiAbout.Click += new System.EventHandler(this.smiAbout_Click);
-            // 
-            // tss1
-            // 
-            this.tss1.Name = "tss1";
-            this.tss1.Size = new System.Drawing.Size(191, 6);
             // 
             // smiCopyShareLink
             // 
@@ -443,12 +470,17 @@
             this.smiExit.Text = "Exit";
             this.smiExit.Click += new System.EventHandler(this.smiExit_Click);
             // 
+            // tss1
+            // 
+            this.tss1.Name = "tss1";
+            this.tss1.Size = new System.Drawing.Size(191, 6);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(438, 221);
+            this.ClientSize = new System.Drawing.Size(393, 221);
             this.Controls.Add(this.tblOperate);
             this.Controls.Add(this.tblScheme);
             this.Controls.Add(this.tblProxyMode);
@@ -470,7 +502,6 @@
             this.tblScheme.PerformLayout();
             this.tblOperate.ResumeLayout(false);
             this.cmsNotify.ResumeLayout(false);
-            this.cmsNotify.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -502,15 +533,18 @@
 
         private System.Windows.Forms.NotifyIcon icnNotify;
         private System.Windows.Forms.ContextMenuStrip cmsNotify;
-        private System.Windows.Forms.ToolStripSeparator tss1;
         private System.Windows.Forms.ToolStripMenuItem smiRun;
         private System.Windows.Forms.ToolStripMenuItem smiStop;
         private System.Windows.Forms.ToolStripMenuItem smiExit;
-        private System.Windows.Forms.ToolStripTextBox stbName;
         private System.Windows.Forms.ToolStripMenuItem smiAbout;
         private System.Windows.Forms.ToolStripMenuItem smiCopyShareLink;
         private System.Windows.Forms.ToolStripMenuItem smiLoadShareLink;
         private System.Windows.Forms.ToolStripSeparator tss2;
+        private System.Windows.Forms.ToolStripMenuItem tsmMode;
+        private System.Windows.Forms.ToolStripMenuItem tsmGlobal;
+        private System.Windows.Forms.ToolStripMenuItem tsmGFWList;
+        private System.Windows.Forms.ToolStripMenuItem tsmGeoIP;
+        private System.Windows.Forms.ToolStripSeparator tss1;
     }
 }
 

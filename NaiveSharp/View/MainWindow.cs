@@ -15,6 +15,7 @@ namespace NaiveSharp.View
         public MainWindow()
         {
             InitializeComponent();
+            SyncModeToSMI();
             if (File.Exists(PATH.CONFIG_NODE_NS))
             {
                 try
@@ -326,6 +327,34 @@ namespace NaiveSharp.View
         {
             Show();
             //Focus();
+        }
+
+        private void tsmGlobal_Click(object sender, EventArgs e)
+        {
+            tsmGlobal.Checked = rdoGlobal.Checked = true;
+            rdoGfwlist.Checked = rdoGeoIP.Checked = false;
+            SyncModeToSMI();
+        }
+
+        private void tsmGFWList_Click(object sender, EventArgs e)
+        {
+            tsmGFWList.Checked = rdoGfwlist.Checked = true;
+            rdoGlobal.Checked = rdoGeoIP.Checked = false;
+            SyncModeToSMI();
+        }
+
+        private void tsmGeoIP_Click(object sender, EventArgs e)
+        {
+            tsmGeoIP.Checked = rdoGeoIP.Checked = true;
+            tsmGFWList.Checked = tsmGFWList.Checked = false;
+            SyncModeToSMI();
+        }
+
+        private void SyncModeToSMI()
+        {
+            tsmGlobal.Checked = rdoGlobal.Checked;
+            tsmGeoIP.Checked = rdoGeoIP.Checked;
+            tsmGFWList.Checked = rdoGfwlist.Checked;
         }
     }
 }
