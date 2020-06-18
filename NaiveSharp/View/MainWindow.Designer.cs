@@ -386,7 +386,7 @@
             this.smiExit});
             this.cmsNotify.Name = "cmsNotify";
             this.cmsNotify.ShowImageMargin = false;
-            this.cmsNotify.Size = new System.Drawing.Size(195, 192);
+            this.cmsNotify.Size = new System.Drawing.Size(195, 170);
             this.cmsNotify.Text = "cmsNotify";
             this.cmsNotify.Opening += new System.ComponentModel.CancelEventHandler(this.cmsNotify_Opening);
             // 
@@ -491,7 +491,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
-            this.Text = "Naive # 0.4 Preview";
+            this.Text = "Naive # 0.5 Preview";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindows_Load);
             this.tblInfo.ResumeLayout(false);

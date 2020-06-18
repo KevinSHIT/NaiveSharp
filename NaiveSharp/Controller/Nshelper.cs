@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using NaiveSharp.Controller.Extension;
+﻿using NaiveSharp.Controller.Extension;
 
 namespace NaiveSharp.Controller
 {
