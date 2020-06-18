@@ -1,4 +1,6 @@
-# Naive \# 
+<img width="150" height="150" align="left" style="float: left; margin: 0 10px 0 0;" alt="MS-DOS logo" src="Screenshots/NaiveSharp.png">
+
+# Naive \#
 
 [![Build status](https://ci.appveyor.com/api/projects/status/6da9k8p6dvwhse7s/branch/master?svg=true)](https://ci.appveyor.com/project/KevinZonda/naivesharp/branch/master)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
@@ -10,7 +12,15 @@
 
 A NaiveProxy Windows Client
 
-## Screenshot(s)
+## Screenshots
+
+### 0.5 Preview
+
+![NaiveSharp0.5Prev](Screenshots/ns05prev.png)
+![NaiveSharp0.5Prev](Screenshots/ns05prev-1.png)
+![NaiveSharp0.5Prev](Screenshots/ns05prev-2.png)
+
+### 0.1 Preview
 
 ![NaiveSharp0.1Prev](Screenshots/ns01prev.jpg)
 
