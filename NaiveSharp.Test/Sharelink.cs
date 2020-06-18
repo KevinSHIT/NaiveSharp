@@ -45,7 +45,7 @@ namespace NaiveSharp.Test
             Assert.AreEqual(r.Value.Host, "some.public.rs");
             Assert.AreEqual(r.Value.Username, "");
             Assert.AreEqual(r.Value.Password, "");
-            Assert.AreEqual(r.Value.Padding, false);
+            Assert.AreEqual(r.Value.Padding, true);
         }
 
         [TestMethod]
