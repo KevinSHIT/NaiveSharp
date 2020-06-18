@@ -6,7 +6,6 @@ using System;
 using System.IO;
 using System.Windows.Forms;
 using NaiveSharp.ConstText;
-using System.Data;
 
 namespace NaiveSharp.View
 {
@@ -26,65 +25,6 @@ namespace NaiveSharp.View
                 {
                     File.Delete(PATH.CONFIG_NODE_NS);
                 }
-            }
-        }
-
-        public void LoadFromNs(string ns)
-        {
-            if (string.IsNullOrWhiteSpace(ns))
-            {
-                return;
-            }
-
-            var x = ns.Trim().Split(' ');
-            if (x.Length != 2)
-            {
-                return;
-            }
-
-            x[0] = x[0].FromBase64();
-
-            var uri = new Uri(x[0]);
-
-            switch (uri.Scheme)
-            {
-                case "https":
-                    rdoHttps.Checked = true;
-                    rdoQuic.Checked = false;
-                    break;
-                default:
-                    rdoHttps.Checked = false;
-                    rdoQuic.Checked = true;
-                    break;
-            }
-
-            chkPadding.Checked = bool.Parse(x[1]);
-            txtHost.Text = uri.Host;
-            string userinfo = uri.UserInfo.Trim();
-            if (string.IsNullOrWhiteSpace(userinfo))
-            {
-                txtPassword.Text =
-                    txtUsername.Text = "";
-            }
-            else
-            {
-                var vv = userinfo.Split(':');
-                switch (vv.Length)
-                {
-                    case 1:
-                        txtUsername.Text = vv[0];
-                        break;
-                    case 2:
-                        txtUsername.Text = vv[0].FromUrlEncode();
-                        txtPassword.Text = vv[1].FromUrlEncode();
-                        break;
-                    default:
-                        throw new DataException();
-                }
-            }
-            if (uri.Port > 0)
-            {
-                txtHost.Text += ":" + uri.Port;
             }
         }
 
@@ -137,62 +77,12 @@ namespace NaiveSharp.View
 
         private void btnRun_Click(object sender, EventArgs e)
         {
-            /*
-             * 0 -> Ok
-             * 1 -> 1080
-             * 2 -> 1081
-             * 3 -> 1080 & 1081
-             */
-            int status = 0;
-
-            if (Net.IsPortUsed(1080))
-            {
-                status = 1;
-            }
-
-            if (Net.IsPortUsed(1081))
-            {
-                if (status == 1)
-                {
-                    status = 3;
-                }
-                else
-                {
-                    status = 2;
-                }
-            }
-
-            DialogResult result = DialogResult.OK;
-            switch (status)
-            {
-                case 1:
-                    result = MessageBox.Show("Port 1080 is in used! NaiveProxy may not work normally!\n" +
-                                             "Do you still want to continue?", "Port is in used",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning);
-                    break;
-                case 2:
-                    result = MessageBox.Show("Port 1081 is in used! HTTP proxy and padding may not work normally!\n" +
-                                             "Do you still want to continue?", "Port is in used",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning);
-                    break;
-                case 3:
-                    result = MessageBox.Show("Port 1080 is in used! NaiveProxy may not work normally!\n" +
-                                             "Port 1081 is in used! HTTP proxy and padding may not work normally!\n" +
-                                             "Do you still want to continue?", "Port is in used",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning);
-                    break;
-            }
-
-            if (result == DialogResult.No)
+            if (CheckPortStatus() == DialogResult.No)
             {
                 return;
             }
 
             Operation.Run();
-
             MessageBox.Show("NaiveProxy runs successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -257,11 +147,13 @@ namespace NaiveSharp.View
         private void smiStop_Click(object sender, EventArgs e)
         {
             Operation.Stop();
+            icnNotify.ShowBalloonTip(500, "Naive #", "NaiveProxy stopped successfully.", ToolTipIcon.Info);
         }
 
         private void smiRun_Click(object sender, EventArgs e)
         {
             Operation.Run();
+            icnNotify.ShowBalloonTip(500, "Naive #", "NaiveProxy is running.", ToolTipIcon.Info);
         }
 
         private void smiAbout_Click(object sender, EventArgs e)
@@ -348,13 +240,6 @@ namespace NaiveSharp.View
             tsmGeoIP.Checked = rdoGeoIP.Checked = true;
             tsmGFWList.Checked = tsmGFWList.Checked = false;
             SyncModeToSMI();
-        }
-
-        private void SyncModeToSMI()
-        {
-            tsmGlobal.Checked = rdoGlobal.Checked;
-            tsmGeoIP.Checked = rdoGeoIP.Checked;
-            tsmGFWList.Checked = rdoGfwlist.Checked;
         }
     }
 }
