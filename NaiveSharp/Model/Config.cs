@@ -16,7 +16,9 @@ namespace NaiveSharp.Model
 
         public static string Scheme { set; get; } = "https";
 
-        public static bool Padding { set; get; } = true;
+        public static bool? Padding { set; get; } = true;
+
+        public static string ExtraHeaders { set; get; } = null;
 
         public static bool Debug { get; set; } = false;
 

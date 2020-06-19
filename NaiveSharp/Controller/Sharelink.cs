@@ -3,6 +3,7 @@ using NaiveSharp.Model;
 
 using System;
 using System.Data;
+using System.Web;
 
 namespace NaiveSharp.Controller
 {
@@ -62,33 +63,43 @@ namespace NaiveSharp.Controller
                         throw new DataException();
                 }
             }
-            var tmp = uri.Query;
-            if (tmp.StartsWith("?padding="))
+
+            var query = HttpUtility.ParseQueryString(uri.Query);
+
+            config.Padding = null;
+            if (bool.TryParse(query["padding"], out bool n))
             {
-                if (tmp.EndsWith("true"))
-                {
-                    config.Padding = true;
-                }
-                else
-                {
-                    config.Padding = false;
-                }
+                config.Padding = n;
+            }
+            if (!string.IsNullOrWhiteSpace(query["extra-headers"]))
+            {
+                config.ExtraHeaders = query["extra-headers"];
             }
             return config;
         }
 
         public static string Generate()
-            => new UriBuilder()
+        {
+            var queryC = HttpUtility.ParseQueryString(string.Empty);
+            if (Config.Padding.HasValue)
+            {
+                queryC.Add("padding", Config.Padding.ToString());
+            }
+            if (!string.IsNullOrWhiteSpace(Config.ExtraHeaders))
+            {
+                queryC.Add("extra-headers", Config.ExtraHeaders);
+            }
+            return new UriBuilder()
             {
                 Scheme = "naive+" + Config.Scheme,
                 Host = Config.Host,
                 UserName = Config.Username,
                 Password = Config.Password,
-                Query = "padding=" + Config.Padding.ToString().ToLower(),
+                Query = queryC.ToString(),
                 Fragment = Config.Name
 
             }.ToString();
-
+        }
     }
 
     public struct NaiveConfig
@@ -103,7 +114,8 @@ namespace NaiveSharp.Controller
 
         public string Scheme;
 
-        public bool Padding;
+        public bool? Padding;
 
+        public string ExtraHeaders;
     }
 }

@@ -25,12 +25,6 @@ namespace NaiveSharp.Controller
             switch (Config.RunMode.ToLower())
             {
                 case "global":
-                    if (!Config.Padding)
-                    {
-                        Command.RunNaive("http");
-                        Proxy.Set(1080);
-                        return;
-                    }
                     Command.RunNaive("socks");
                     Command.RunPrivoxy();
                     break;

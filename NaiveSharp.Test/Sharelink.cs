@@ -19,6 +19,7 @@ namespace NaiveSharp.Test
             Console.WriteLine("Username =>" + r.Value.Username);
             Console.WriteLine("Password =>" + r.Value.Password);
             Console.WriteLine("Padding =>" + r.Value.Padding);
+            Console.WriteLine("ExtraHeaders =>" + r.Value.ExtraHeaders);
 
             Assert.AreEqual(r.Value.Name, "Naive!");
             Assert.AreEqual(r.Value.Scheme, "https");
@@ -26,6 +27,7 @@ namespace NaiveSharp.Test
             Assert.AreEqual(r.Value.Username, "what");
             Assert.AreEqual(r.Value.Password, "happened");
             Assert.AreEqual(r.Value.Padding, false);
+            Assert.AreEqual(r.Value.ExtraHeaders, null);
         }
 
         [TestMethod]
@@ -39,6 +41,7 @@ namespace NaiveSharp.Test
             Console.WriteLine("Username =>" + r.Value.Username);
             Console.WriteLine("Password =>" + r.Value.Password);
             Console.WriteLine("Padding =>" + r.Value.Padding);
+            Console.WriteLine("ExtraHeaders =>" + r.Value.ExtraHeaders);
 
             Assert.AreEqual(r.Value.Name, "Public-01");
             Assert.AreEqual(r.Value.Scheme, "https");
@@ -46,6 +49,7 @@ namespace NaiveSharp.Test
             Assert.AreEqual(r.Value.Username, "");
             Assert.AreEqual(r.Value.Password, "");
             Assert.AreEqual(r.Value.Padding, true);
+            Assert.AreEqual(r.Value.ExtraHeaders, null);
         }
 
         [TestMethod]
@@ -59,13 +63,15 @@ namespace NaiveSharp.Test
             Console.WriteLine("Username =>" + r.Value.Username);
             Console.WriteLine("Password =>" + r.Value.Password);
             Console.WriteLine("Padding =>" + r.Value.Padding);
+            Console.WriteLine("ExtraHeaders =>" + r.Value.ExtraHeaders);
 
             Assert.AreEqual(r.Value.Name, "");
             Assert.AreEqual(r.Value.Scheme, "quic");
             Assert.AreEqual(r.Value.Host, "quic.test.me");
             Assert.AreEqual(r.Value.Username, "manhole");
             Assert.AreEqual(r.Value.Password, "114514");
-            Assert.AreEqual(r.Value.Padding, false);
+            Assert.AreEqual(r.Value.Padding, null);
+            Assert.AreEqual(r.Value.ExtraHeaders, null);
         }
     }
 }

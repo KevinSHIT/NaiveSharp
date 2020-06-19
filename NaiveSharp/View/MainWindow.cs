@@ -193,7 +193,7 @@ namespace NaiveSharp.View
             txtHost.Text = y.Value.Host;
             txtUsername.Text = y.Value.Username;
             txtPassword.Text = y.Value.Password;
-            chkPadding.Checked = y.Value.Padding;
+            chkPadding.Checked = y.Value.Padding ?? false;
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
