@@ -24,6 +24,8 @@ namespace NaiveSharp.Controller
                 p.StartInfo.Arguments += " --padding";
             }
 
+            // TODO: ADD EXTRA-HEADERS SUPPORT
+
             if (Config.Debug)
             {
                 p.StartInfo.Arguments += " --log";

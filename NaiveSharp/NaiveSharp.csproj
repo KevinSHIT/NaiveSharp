@@ -83,6 +83,7 @@
     <Compile Include="Controller\Encoder.cs" />
     <Compile Include="Controller\Extension\Dictionary.cs" />
     <Compile Include="Controller\Extension\String.cs" />
+    <Compile Include="Controller\Extension\String[].cs" />
     <Compile Include="Controller\IniHelper.cs" />
     <Compile Include="Controller\NaiveCmdBuilder.cs" />
     <Compile Include="Controller\Net.cs" />

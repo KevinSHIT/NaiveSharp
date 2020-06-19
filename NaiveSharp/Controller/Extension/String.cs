@@ -12,5 +12,12 @@ namespace NaiveSharp.Controller.Extension
 
         public static string FromUrlEncode(this string str)
             => System.Web.HttpUtility.UrlDecode(str);
+
+        public static bool StartsEndsWith(this string str, string prefix, string suffix)
+            => str.StartsWith(prefix) && str.EndsWith(suffix);
+
+        public static bool StartsEndsWith(this string str, string value)
+            => str.StartsEndsWith(value, value);
+
     }
 }
