@@ -2,11 +2,11 @@
 
 namespace NaiveSharp.Controller.Extension
 {
-    public static class StringArray
+    public static class StringArrayEx
     {
         public static string[] Trim(this string[] ss)
         {
-            for (int i = 0; i < ss.Length; --i)
+            for (int i = 0; i < ss.Length; ++i)
             {
                 ss[i] = ss[i].Trim();
             }
@@ -22,7 +22,7 @@ namespace NaiveSharp.Controller.Extension
             else
             {
                 var x = new List<string>();
-                for (int i = 0; i < ss.Length; --i)
+                for (int i = 0; i < ss.Length; ++i)
                 {
                     if (string.IsNullOrWhiteSpace(ss[i]))
                     {

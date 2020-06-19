@@ -36,21 +36,21 @@
             this.rdoGlobal = new System.Windows.Forms.RadioButton();
             this.rdoGfwlist = new System.Windows.Forms.RadioButton();
             this.rdoGeoIP = new System.Windows.Forms.RadioButton();
-            this.tblInfo = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpInfo = new System.Windows.Forms.TableLayoutPanel();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
             this.lblHost = new System.Windows.Forms.Label();
-            this.tblProxyMode = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpProxyMode = new System.Windows.Forms.TableLayoutPanel();
             this.lblProxyMode = new System.Windows.Forms.Label();
             this.btnRun = new System.Windows.Forms.Button();
             this.lblExit = new System.Windows.Forms.Button();
             this.lblStop = new System.Windows.Forms.Button();
-            this.tblScheme = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpScheme = new System.Windows.Forms.TableLayoutPanel();
             this.lblScheme = new System.Windows.Forms.Label();
             this.rdoHttps = new System.Windows.Forms.RadioButton();
             this.rdoQuic = new System.Windows.Forms.RadioButton();
             this.chkPadding = new System.Windows.Forms.CheckBox();
-            this.tblOperate = new System.Windows.Forms.TableLayoutPanel();
+            this.tlpOperate = new System.Windows.Forms.TableLayoutPanel();
             this.lblSave = new System.Windows.Forms.Button();
             this.icnNotify = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -58,19 +58,24 @@
             this.tsmGlobal = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmGFWList = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmGeoIP = new System.Windows.Forms.ToolStripMenuItem();
-            this.smiAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiRun = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiStop = new System.Windows.Forms.ToolStripMenuItem();
+            this.tss1 = new System.Windows.Forms.ToolStripSeparator();
             this.smiCopyShareLink = new System.Windows.Forms.ToolStripMenuItem();
             this.smiLoadShareLink = new System.Windows.Forms.ToolStripMenuItem();
             this.tss2 = new System.Windows.Forms.ToolStripSeparator();
-            this.smiRun = new System.Windows.Forms.ToolStripMenuItem();
-            this.smiStop = new System.Windows.Forms.ToolStripMenuItem();
+            this.smiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.smiExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tss1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tblInfo.SuspendLayout();
-            this.tblProxyMode.SuspendLayout();
-            this.tblScheme.SuspendLayout();
-            this.tblOperate.SuspendLayout();
+            this.tvwNodeList = new System.Windows.Forms.TreeView();
+            this.tlpNodeListControl = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDelNode = new System.Windows.Forms.Button();
+            this.btnAddNode = new System.Windows.Forms.Button();
+            this.tlpInfo.SuspendLayout();
+            this.tlpProxyMode.SuspendLayout();
+            this.tlpScheme.SuspendLayout();
+            this.tlpOperate.SuspendLayout();
             this.cmsNotify.SuspendLayout();
+            this.tlpNodeListControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -146,27 +151,27 @@
             this.rdoGeoIP.UseVisualStyleBackColor = true;
             this.rdoGeoIP.CheckedChanged += new System.EventHandler(this.rdoGeoIP_CheckedChanged);
             // 
-            // tblInfo
+            // tlpInfo
             // 
-            this.tblInfo.ColumnCount = 2;
-            this.tblInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tblInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
-            this.tblInfo.Controls.Add(this.txtHost, 1, 0);
-            this.tblInfo.Controls.Add(this.txtPassword, 1, 2);
-            this.tblInfo.Controls.Add(this.txtUsername, 1, 1);
-            this.tblInfo.Controls.Add(this.lblUsername, 0, 1);
-            this.tblInfo.Controls.Add(this.lblPassword, 0, 2);
-            this.tblInfo.Controls.Add(this.lblHost, 0, 0);
-            this.tblInfo.Location = new System.Drawing.Point(12, 44);
-            this.tblInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tblInfo.Name = "tblInfo";
-            this.tblInfo.RowCount = 3;
-            this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tblInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this.tblInfo.Size = new System.Drawing.Size(372, 94);
-            this.tblInfo.TabIndex = 7;
+            this.tlpInfo.ColumnCount = 2;
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlpInfo.Controls.Add(this.txtHost, 1, 0);
+            this.tlpInfo.Controls.Add(this.txtPassword, 1, 2);
+            this.tlpInfo.Controls.Add(this.txtUsername, 1, 1);
+            this.tlpInfo.Controls.Add(this.lblUsername, 0, 1);
+            this.tlpInfo.Controls.Add(this.lblPassword, 0, 2);
+            this.tlpInfo.Controls.Add(this.lblHost, 0, 0);
+            this.tlpInfo.Location = new System.Drawing.Point(153, 44);
+            this.tlpInfo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tlpInfo.Name = "tlpInfo";
+            this.tlpInfo.RowCount = 3;
+            this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tlpInfo.Size = new System.Drawing.Size(372, 94);
+            this.tlpInfo.TabIndex = 7;
             // 
             // lblUsername
             // 
@@ -198,25 +203,25 @@
             this.lblHost.TabIndex = 11;
             this.lblHost.Text = "Host";
             // 
-            // tblProxyMode
+            // tlpProxyMode
             // 
-            this.tblProxyMode.ColumnCount = 4;
-            this.tblProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.004F));
-            this.tblProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
-            this.tblProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
-            this.tblProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
-            this.tblProxyMode.Controls.Add(this.lblProxyMode, 0, 0);
-            this.tblProxyMode.Controls.Add(this.rdoGeoIP, 3, 0);
-            this.tblProxyMode.Controls.Add(this.rdoGlobal, 1, 0);
-            this.tblProxyMode.Controls.Add(this.rdoGfwlist, 2, 0);
-            this.tblProxyMode.Location = new System.Drawing.Point(12, 141);
-            this.tblProxyMode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tblProxyMode.Name = "tblProxyMode";
-            this.tblProxyMode.RowCount = 1;
-            this.tblProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
-            this.tblProxyMode.Size = new System.Drawing.Size(372, 26);
-            this.tblProxyMode.TabIndex = 8;
+            this.tlpProxyMode.ColumnCount = 4;
+            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.004F));
+            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
+            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
+            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
+            this.tlpProxyMode.Controls.Add(this.lblProxyMode, 0, 0);
+            this.tlpProxyMode.Controls.Add(this.rdoGeoIP, 3, 0);
+            this.tlpProxyMode.Controls.Add(this.rdoGlobal, 1, 0);
+            this.tlpProxyMode.Controls.Add(this.rdoGfwlist, 2, 0);
+            this.tlpProxyMode.Location = new System.Drawing.Point(153, 141);
+            this.tlpProxyMode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tlpProxyMode.Name = "tlpProxyMode";
+            this.tlpProxyMode.RowCount = 1;
+            this.tlpProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tlpProxyMode.Size = new System.Drawing.Size(372, 26);
+            this.tlpProxyMode.TabIndex = 8;
             // 
             // lblProxyMode
             // 
@@ -264,24 +269,24 @@
             this.lblStop.UseVisualStyleBackColor = true;
             this.lblStop.Click += new System.EventHandler(this.lblStop_Click);
             // 
-            // tblScheme
+            // tlpScheme
             // 
-            this.tblScheme.ColumnCount = 4;
-            this.tblScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.004F));
-            this.tblScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
-            this.tblScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
-            this.tblScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
-            this.tblScheme.Controls.Add(this.lblScheme, 0, 0);
-            this.tblScheme.Controls.Add(this.rdoHttps, 1, 0);
-            this.tblScheme.Controls.Add(this.rdoQuic, 2, 0);
-            this.tblScheme.Controls.Add(this.chkPadding, 3, 0);
-            this.tblScheme.Location = new System.Drawing.Point(12, 13);
-            this.tblScheme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tblScheme.Name = "tblScheme";
-            this.tblScheme.RowCount = 1;
-            this.tblScheme.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblScheme.Size = new System.Drawing.Size(372, 27);
-            this.tblScheme.TabIndex = 12;
+            this.tlpScheme.ColumnCount = 4;
+            this.tlpScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.004F));
+            this.tlpScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
+            this.tlpScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
+            this.tlpScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
+            this.tlpScheme.Controls.Add(this.lblScheme, 0, 0);
+            this.tlpScheme.Controls.Add(this.rdoHttps, 1, 0);
+            this.tlpScheme.Controls.Add(this.rdoQuic, 2, 0);
+            this.tlpScheme.Controls.Add(this.chkPadding, 3, 0);
+            this.tlpScheme.Location = new System.Drawing.Point(153, 13);
+            this.tlpScheme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tlpScheme.Name = "tlpScheme";
+            this.tlpScheme.RowCount = 1;
+            this.tlpScheme.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpScheme.Size = new System.Drawing.Size(372, 27);
+            this.tlpScheme.TabIndex = 12;
             // 
             // lblScheme
             // 
@@ -333,24 +338,24 @@
             this.chkPadding.UseVisualStyleBackColor = true;
             this.chkPadding.CheckedChanged += new System.EventHandler(this.chkPadding_CheckedChanged);
             // 
-            // tblOperate
+            // tlpOperate
             // 
-            this.tblOperate.ColumnCount = 4;
-            this.tblOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tblOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tblOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tblOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tblOperate.Controls.Add(this.lblSave, 0, 0);
-            this.tblOperate.Controls.Add(this.btnRun, 1, 0);
-            this.tblOperate.Controls.Add(this.lblExit, 3, 0);
-            this.tblOperate.Controls.Add(this.lblStop, 2, 0);
-            this.tblOperate.Location = new System.Drawing.Point(12, 171);
-            this.tblOperate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tblOperate.Name = "tblOperate";
-            this.tblOperate.RowCount = 1;
-            this.tblOperate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tblOperate.Size = new System.Drawing.Size(372, 42);
-            this.tblOperate.TabIndex = 13;
+            this.tlpOperate.ColumnCount = 4;
+            this.tlpOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tlpOperate.Controls.Add(this.lblSave, 0, 0);
+            this.tlpOperate.Controls.Add(this.btnRun, 1, 0);
+            this.tlpOperate.Controls.Add(this.lblExit, 3, 0);
+            this.tlpOperate.Controls.Add(this.lblStop, 2, 0);
+            this.tlpOperate.Location = new System.Drawing.Point(153, 171);
+            this.tlpOperate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tlpOperate.Name = "tlpOperate";
+            this.tlpOperate.RowCount = 1;
+            this.tlpOperate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlpOperate.Size = new System.Drawing.Size(372, 42);
+            this.tlpOperate.TabIndex = 13;
             // 
             // lblSave
             // 
@@ -405,30 +410,42 @@
             // tsmGlobal
             // 
             this.tsmGlobal.Name = "tsmGlobal";
-            this.tsmGlobal.Size = new System.Drawing.Size(180, 22);
+            this.tsmGlobal.Size = new System.Drawing.Size(117, 22);
             this.tsmGlobal.Text = "Global";
             this.tsmGlobal.Click += new System.EventHandler(this.tsmGlobal_Click);
             // 
             // tsmGFWList
             // 
             this.tsmGFWList.Name = "tsmGFWList";
-            this.tsmGFWList.Size = new System.Drawing.Size(180, 22);
+            this.tsmGFWList.Size = new System.Drawing.Size(117, 22);
             this.tsmGFWList.Text = "GFWList";
             this.tsmGFWList.Click += new System.EventHandler(this.tsmGFWList_Click);
             // 
             // tsmGeoIP
             // 
             this.tsmGeoIP.Name = "tsmGeoIP";
-            this.tsmGeoIP.Size = new System.Drawing.Size(180, 22);
+            this.tsmGeoIP.Size = new System.Drawing.Size(117, 22);
             this.tsmGeoIP.Text = "GeoIP";
             this.tsmGeoIP.Click += new System.EventHandler(this.tsmGeoIP_Click);
             // 
-            // smiAbout
+            // smiRun
             // 
-            this.smiAbout.Name = "smiAbout";
-            this.smiAbout.Size = new System.Drawing.Size(194, 22);
-            this.smiAbout.Text = "About...";
-            this.smiAbout.Click += new System.EventHandler(this.smiAbout_Click);
+            this.smiRun.Name = "smiRun";
+            this.smiRun.Size = new System.Drawing.Size(194, 22);
+            this.smiRun.Text = "Run";
+            this.smiRun.Click += new System.EventHandler(this.smiRun_Click);
+            // 
+            // smiStop
+            // 
+            this.smiStop.Name = "smiStop";
+            this.smiStop.Size = new System.Drawing.Size(194, 22);
+            this.smiStop.Text = "Stop";
+            this.smiStop.Click += new System.EventHandler(this.smiStop_Click);
+            // 
+            // tss1
+            // 
+            this.tss1.Name = "tss1";
+            this.tss1.Size = new System.Drawing.Size(191, 6);
             // 
             // smiCopyShareLink
             // 
@@ -449,19 +466,12 @@
             this.tss2.Name = "tss2";
             this.tss2.Size = new System.Drawing.Size(191, 6);
             // 
-            // smiRun
+            // smiAbout
             // 
-            this.smiRun.Name = "smiRun";
-            this.smiRun.Size = new System.Drawing.Size(194, 22);
-            this.smiRun.Text = "Run";
-            this.smiRun.Click += new System.EventHandler(this.smiRun_Click);
-            // 
-            // smiStop
-            // 
-            this.smiStop.Name = "smiStop";
-            this.smiStop.Size = new System.Drawing.Size(194, 22);
-            this.smiStop.Text = "Stop";
-            this.smiStop.Click += new System.EventHandler(this.smiStop_Click);
+            this.smiAbout.Name = "smiAbout";
+            this.smiAbout.Size = new System.Drawing.Size(194, 22);
+            this.smiAbout.Text = "About...";
+            this.smiAbout.Click += new System.EventHandler(this.smiAbout_Click);
             // 
             // smiExit
             // 
@@ -470,21 +480,60 @@
             this.smiExit.Text = "Exit";
             this.smiExit.Click += new System.EventHandler(this.smiExit_Click);
             // 
-            // tss1
+            // tvwNodeList
             // 
-            this.tss1.Name = "tss1";
-            this.tss1.Size = new System.Drawing.Size(191, 6);
+            this.tvwNodeList.Location = new System.Drawing.Point(12, 12);
+            this.tvwNodeList.Name = "tvwNodeList";
+            this.tvwNodeList.Size = new System.Drawing.Size(134, 154);
+            this.tvwNodeList.TabIndex = 14;
+            this.tvwNodeList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwNodeList_AfterSelect);
+            // 
+            // tlpNodeListControl
+            // 
+            this.tlpNodeListControl.ColumnCount = 2;
+            this.tlpNodeListControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpNodeListControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpNodeListControl.Controls.Add(this.btnDelNode, 1, 0);
+            this.tlpNodeListControl.Controls.Add(this.btnAddNode, 0, 0);
+            this.tlpNodeListControl.Location = new System.Drawing.Point(12, 171);
+            this.tlpNodeListControl.Name = "tlpNodeListControl";
+            this.tlpNodeListControl.RowCount = 1;
+            this.tlpNodeListControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tlpNodeListControl.Size = new System.Drawing.Size(134, 42);
+            this.tlpNodeListControl.TabIndex = 15;
+            // 
+            // btnDelNode
+            // 
+            this.btnDelNode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDelNode.Location = new System.Drawing.Point(70, 6);
+            this.btnDelNode.Name = "btnDelNode";
+            this.btnDelNode.Size = new System.Drawing.Size(61, 29);
+            this.btnDelNode.TabIndex = 1;
+            this.btnDelNode.Text = "Delete";
+            this.btnDelNode.UseVisualStyleBackColor = true;
+            // 
+            // btnAddNode
+            // 
+            this.btnAddNode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnAddNode.Location = new System.Drawing.Point(3, 6);
+            this.btnAddNode.Name = "btnAddNode";
+            this.btnAddNode.Size = new System.Drawing.Size(61, 29);
+            this.btnAddNode.TabIndex = 0;
+            this.btnAddNode.Text = "Add";
+            this.btnAddNode.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(393, 221);
-            this.Controls.Add(this.tblOperate);
-            this.Controls.Add(this.tblScheme);
-            this.Controls.Add(this.tblProxyMode);
-            this.Controls.Add(this.tblInfo);
+            this.ClientSize = new System.Drawing.Size(534, 221);
+            this.Controls.Add(this.tlpNodeListControl);
+            this.Controls.Add(this.tvwNodeList);
+            this.Controls.Add(this.tlpOperate);
+            this.Controls.Add(this.tlpScheme);
+            this.Controls.Add(this.tlpProxyMode);
+            this.Controls.Add(this.tlpInfo);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -494,14 +543,15 @@
             this.Text = "Naive # 0.5 Preview";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindows_Load);
-            this.tblInfo.ResumeLayout(false);
-            this.tblInfo.PerformLayout();
-            this.tblProxyMode.ResumeLayout(false);
-            this.tblProxyMode.PerformLayout();
-            this.tblScheme.ResumeLayout(false);
-            this.tblScheme.PerformLayout();
-            this.tblOperate.ResumeLayout(false);
+            this.tlpInfo.ResumeLayout(false);
+            this.tlpInfo.PerformLayout();
+            this.tlpProxyMode.ResumeLayout(false);
+            this.tlpProxyMode.PerformLayout();
+            this.tlpScheme.ResumeLayout(false);
+            this.tlpScheme.PerformLayout();
+            this.tlpOperate.ResumeLayout(false);
             this.cmsNotify.ResumeLayout(false);
+            this.tlpNodeListControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -521,10 +571,10 @@
         private System.Windows.Forms.RadioButton rdoGlobal;
         public System.Windows.Forms.RadioButton rdoHttps;
         public System.Windows.Forms.RadioButton rdoQuic;
-        private System.Windows.Forms.TableLayoutPanel tblInfo;
-        private System.Windows.Forms.TableLayoutPanel tblOperate;
-        private System.Windows.Forms.TableLayoutPanel tblProxyMode;
-        private System.Windows.Forms.TableLayoutPanel tblScheme;
+        private System.Windows.Forms.TableLayoutPanel tlpInfo;
+        private System.Windows.Forms.TableLayoutPanel tlpOperate;
+        private System.Windows.Forms.TableLayoutPanel tlpProxyMode;
+        private System.Windows.Forms.TableLayoutPanel tlpScheme;
         public System.Windows.Forms.TextBox txtHost;
         public System.Windows.Forms.TextBox txtPassword;
         public System.Windows.Forms.TextBox txtUsername;
@@ -545,6 +595,10 @@
         private System.Windows.Forms.ToolStripMenuItem tsmGFWList;
         private System.Windows.Forms.ToolStripMenuItem tsmGeoIP;
         private System.Windows.Forms.ToolStripSeparator tss1;
+        private System.Windows.Forms.TableLayoutPanel tlpNodeListControl;
+        private System.Windows.Forms.Button btnDelNode;
+        private System.Windows.Forms.Button btnAddNode;
+        public System.Windows.Forms.TreeView tvwNodeList;
     }
 }
 

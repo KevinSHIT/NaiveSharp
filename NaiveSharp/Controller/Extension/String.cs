@@ -2,7 +2,7 @@
 
 namespace NaiveSharp.Controller.Extension
 {
-    public static class String
+    public static class StringEx
     {
         public static string ToBase64(this string str)
             => ConvertToBase64(str, false);

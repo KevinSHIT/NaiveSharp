@@ -30,6 +30,7 @@
     <ApplicationVersion>0.5.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,6 +85,7 @@
     <Compile Include="Controller\Extension\Dictionary.cs" />
     <Compile Include="Controller\Extension\String.cs" />
     <Compile Include="Controller\Extension\String[].cs" />
+    <Compile Include="Controller\Extension\TreeNodeCollection.cs" />
     <Compile Include="Controller\IniHelper.cs" />
     <Compile Include="Controller\NaiveCmdBuilder.cs" />
     <Compile Include="Controller\Net.cs" />
@@ -120,6 +122,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\About.resx">
       <DependentUpon>About.cs</DependentUpon>

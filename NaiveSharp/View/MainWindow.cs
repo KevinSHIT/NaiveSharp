@@ -15,6 +15,11 @@ namespace NaiveSharp.View
         {
             InitializeComponent();
             SyncModeToSMI();
+
+            // THIS IS FOR TEST
+            // TODO: LOGIC
+            NodeList.LoadFromStringArray(ref this.tvwNodeList, new string[] { "naive+https://what:happened@test.someone.cf?padding=false#Naive!", "[222]", "naive+https://some.public.rs?padding=true#Public-01" });
+
             if (File.Exists(PATH.CONFIG_NODE_NS))
             {
                 try
@@ -30,7 +35,7 @@ namespace NaiveSharp.View
 
         private void MainWindows_Load(object sender, EventArgs e)
         {
-            if (System.IO.File.Exists("DEBUG"))
+            if (File.Exists("DEBUG"))
             {
                 Config.Debug = true;
                 this.Text = "[DEBUG]" + this.Text;
@@ -240,6 +245,11 @@ namespace NaiveSharp.View
             tsmGeoIP.Checked = rdoGeoIP.Checked = true;
             tsmGFWList.Checked = tsmGFWList.Checked = false;
             SyncModeToSMI();
+        }
+
+        private void tvwNodeList_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            MessageBox.Show((string)tvwNodeList.SelectedNode.Tag);
         }
     }
 }
