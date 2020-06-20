@@ -53,7 +53,7 @@ namespace NaiveSharp.View
             {
                 Config.RunMode = "global";
             }
-            SyncRunModeToView();
+            SyncRunModeToView(SyncMode.RadioToTsm);
         }
 
         private void rdoGfwlist_CheckedChanged(object sender, EventArgs e)
@@ -62,16 +62,16 @@ namespace NaiveSharp.View
             {
                 Config.RunMode = "gfwlist";
             }
-            SyncRunModeToView();
+            SyncRunModeToView(SyncMode.RadioToTsm);
         }
 
         private void rdoGeoIP_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdoGfwlist.Checked)
+            if (rdoGeoIP.Checked)
             {
                 Config.RunMode = "geoip";
             }
-            SyncRunModeToView();
+            SyncRunModeToView(SyncMode.RadioToTsm);
         }
         private void rdoNone_CheckedChanged(object sender, EventArgs e)
         {
@@ -79,7 +79,7 @@ namespace NaiveSharp.View
             {
                 Config.RunMode = "none";
             }
-            SyncRunModeToView();
+            SyncRunModeToView(SyncMode.RadioToTsm);
         }
         #endregion
 
@@ -264,8 +264,8 @@ namespace NaiveSharp.View
 
         private void tvwNodeList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            MessageBox.Show((string)tvwNodeList.SelectedNode.Tag);
-            if ((sender as TreeNode).Tag == null)
+            // MessageBox.Show((string)tvwNodeList.SelectedNode.Tag);
+            if ((string)tvwNodeList.SelectedNode.Tag == null)
             {
                 // this is group
             }
@@ -282,6 +282,27 @@ namespace NaiveSharp.View
             }
         }
 
+        private void btnAddNode_Click(object sender, EventArgs e)
+        {
+            TreeNodeCollection tnc;
+            if (tvwNodeList.SelectedNode.Level == 0)
+            {
+                tnc = tvwNodeList.SelectedNode.Nodes;
+            }
+            else
+            {
+                tnc = tvwNodeList.SelectedNode.Parent.Nodes;
+            }
+            tnc.Add(new TreeNode() { Text = "default", Tag = "naive+https://default:default@default#default" });
+        }
+
+        private void btnDelNode_Click(object sender, EventArgs e)
+        {
+            if (tvwNodeList.SelectedNode != null)
+            {
+                tvwNodeList.SelectedNode.Remove();
+            }
+        }
 
     }
 }

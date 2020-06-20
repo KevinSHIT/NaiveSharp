@@ -10,7 +10,13 @@ namespace NaiveSharp.View
 {
     public partial class MainWindow
     {
-        private void SyncRunModeToView()
+        enum SyncMode
+        {
+            RadioToTsm,
+            TsmToRadio
+        }
+
+        private void SyncRunModeToView(SyncMode mode = SyncMode.TsmToRadio)
         {
             bool global = false, geoip = false, gfwlist = false, none = false;
             switch (Config.RunMode.ToLower())
@@ -28,11 +34,24 @@ namespace NaiveSharp.View
                     none = true;
                     break;
             }
+            switch (mode)
+            {
+                case SyncMode.TsmToRadio:
+                    tsmGlobal.Checked = rdoGlobal.Checked = global;
+                    tsmGeoIP.Checked = rdoGeoIP.Checked = geoip;
+                    tsmGFWList.Checked = rdoGfwlist.Checked = gfwlist;
+                    tsmNone.Checked = rdoNone.Checked = none;
+                    break;
+                case SyncMode.RadioToTsm:
+                    tsmGlobal.Checked = global;
+                    tsmGeoIP.Checked = geoip;
+                    tsmGFWList.Checked = gfwlist;
+                    tsmNone.Checked = none;
+                    break;
+            }
+            
 
-            tsmGlobal.Checked = rdoGlobal.Checked = global;
-            tsmGeoIP.Checked = rdoGeoIP.Checked = geoip;
-            tsmGFWList.Checked = rdoGfwlist.Checked = gfwlist;
-            tsmNone.Checked = rdoNone.Checked = none;
+            
         }
 
         private DialogResult CheckPortStatus()

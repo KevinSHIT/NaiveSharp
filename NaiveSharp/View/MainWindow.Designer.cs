@@ -42,6 +42,7 @@
             this.lblHost = new System.Windows.Forms.Label();
             this.tlpProxyMode = new System.Windows.Forms.TableLayoutPanel();
             this.lblProxyMode = new System.Windows.Forms.Label();
+            this.rdoNone = new System.Windows.Forms.RadioButton();
             this.btnRun = new System.Windows.Forms.Button();
             this.lblExit = new System.Windows.Forms.Button();
             this.lblStop = new System.Windows.Forms.Button();
@@ -58,6 +59,7 @@
             this.tsmGlobal = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmGFWList = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmGeoIP = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmNone = new System.Windows.Forms.ToolStripMenuItem();
             this.smiRun = new System.Windows.Forms.ToolStripMenuItem();
             this.smiStop = new System.Windows.Forms.ToolStripMenuItem();
             this.tss1 = new System.Windows.Forms.ToolStripSeparator();
@@ -70,8 +72,6 @@
             this.tlpNodeListControl = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelNode = new System.Windows.Forms.Button();
             this.btnAddNode = new System.Windows.Forms.Button();
-            this.tsmNone = new System.Windows.Forms.ToolStripMenuItem();
-            this.rdoNone = new System.Windows.Forms.RadioButton();
             this.tlpInfo.SuspendLayout();
             this.tlpProxyMode.SuspendLayout();
             this.tlpScheme.SuspendLayout();
@@ -236,6 +236,18 @@
             this.lblProxyMode.TabIndex = 9;
             this.lblProxyMode.Text = "Mode";
             // 
+            // rdoNone
+            // 
+            this.rdoNone.AutoSize = true;
+            this.rdoNone.Location = new System.Drawing.Point(299, 3);
+            this.rdoNone.Name = "rdoNone";
+            this.rdoNone.Size = new System.Drawing.Size(54, 19);
+            this.rdoNone.TabIndex = 10;
+            this.rdoNone.TabStop = true;
+            this.rdoNone.Text = "None";
+            this.rdoNone.UseVisualStyleBackColor = true;
+            this.rdoNone.CheckedChanged += new System.EventHandler(this.rdoNone_CheckedChanged);
+            // 
             // btnRun
             // 
             this.btnRun.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -394,7 +406,7 @@
             this.smiExit});
             this.cmsNotify.Name = "cmsNotify";
             this.cmsNotify.ShowImageMargin = false;
-            this.cmsNotify.Size = new System.Drawing.Size(195, 192);
+            this.cmsNotify.Size = new System.Drawing.Size(195, 170);
             this.cmsNotify.Text = "cmsNotify";
             this.cmsNotify.Opening += new System.ComponentModel.CancelEventHandler(this.cmsNotify_Opening);
             // 
@@ -414,23 +426,30 @@
             // tsmGlobal
             // 
             this.tsmGlobal.Name = "tsmGlobal";
-            this.tsmGlobal.Size = new System.Drawing.Size(180, 22);
+            this.tsmGlobal.Size = new System.Drawing.Size(117, 22);
             this.tsmGlobal.Text = "Global";
             this.tsmGlobal.Click += new System.EventHandler(this.tsmGlobal_Click);
             // 
             // tsmGFWList
             // 
             this.tsmGFWList.Name = "tsmGFWList";
-            this.tsmGFWList.Size = new System.Drawing.Size(180, 22);
+            this.tsmGFWList.Size = new System.Drawing.Size(117, 22);
             this.tsmGFWList.Text = "GFWList";
             this.tsmGFWList.Click += new System.EventHandler(this.tsmGFWList_Click);
             // 
             // tsmGeoIP
             // 
             this.tsmGeoIP.Name = "tsmGeoIP";
-            this.tsmGeoIP.Size = new System.Drawing.Size(180, 22);
+            this.tsmGeoIP.Size = new System.Drawing.Size(117, 22);
             this.tsmGeoIP.Text = "GeoIP";
             this.tsmGeoIP.Click += new System.EventHandler(this.tsmGeoIP_Click);
+            // 
+            // tsmNone
+            // 
+            this.tsmNone.Name = "tsmNone";
+            this.tsmNone.Size = new System.Drawing.Size(117, 22);
+            this.tsmNone.Text = "None";
+            this.tsmNone.Click += new System.EventHandler(this.tsmNone_Click);
             // 
             // smiRun
             // 
@@ -486,6 +505,7 @@
             // 
             // tvwNodeList
             // 
+            this.tvwNodeList.HideSelection = false;
             this.tvwNodeList.Location = new System.Drawing.Point(12, 12);
             this.tvwNodeList.Name = "tvwNodeList";
             this.tvwNodeList.Size = new System.Drawing.Size(134, 154);
@@ -515,6 +535,7 @@
             this.btnDelNode.TabIndex = 1;
             this.btnDelNode.Text = "Delete";
             this.btnDelNode.UseVisualStyleBackColor = true;
+            this.btnDelNode.Click += new System.EventHandler(this.btnDelNode_Click);
             // 
             // btnAddNode
             // 
@@ -525,25 +546,7 @@
             this.btnAddNode.TabIndex = 0;
             this.btnAddNode.Text = "Add";
             this.btnAddNode.UseVisualStyleBackColor = true;
-            // 
-            // tsmNone
-            // 
-            this.tsmNone.Name = "tsmNone";
-            this.tsmNone.Size = new System.Drawing.Size(180, 22);
-            this.tsmNone.Text = "None";
-            this.tsmNone.Click += new System.EventHandler(this.tsmNone_Click);
-            // 
-            // rdoNone
-            // 
-            this.rdoNone.AutoSize = true;
-            this.rdoNone.Location = new System.Drawing.Point(299, 3);
-            this.rdoNone.Name = "rdoNone";
-            this.rdoNone.Size = new System.Drawing.Size(54, 19);
-            this.rdoNone.TabIndex = 10;
-            this.rdoNone.TabStop = true;
-            this.rdoNone.Text = "None";
-            this.rdoNone.UseVisualStyleBackColor = true;
-            this.rdoNone.CheckedChanged += new System.EventHandler(this.rdoNone_CheckedChanged);
+            this.btnAddNode.Click += new System.EventHandler(this.btnAddNode_Click);
             // 
             // MainWindow
             // 
@@ -621,9 +624,9 @@
         private System.Windows.Forms.TableLayoutPanel tlpNodeListControl;
         private System.Windows.Forms.Button btnDelNode;
         private System.Windows.Forms.Button btnAddNode;
-        public System.Windows.Forms.TreeView tvwNodeList;
         private System.Windows.Forms.RadioButton rdoNone;
         private System.Windows.Forms.ToolStripMenuItem tsmNone;
+        private System.Windows.Forms.TreeView tvwNodeList;
     }
 }
 
