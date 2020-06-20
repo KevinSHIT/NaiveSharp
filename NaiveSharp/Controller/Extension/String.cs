@@ -19,5 +19,8 @@ namespace NaiveSharp.Controller.Extension
         public static bool StartsEndsWith(this string str, string value)
             => str.StartsEndsWith(value, value);
 
+        public static NaiveConfig? FromSharelink(this string str)
+            => Sharelink.LoadFromShareLink(str);
+
     }
 }

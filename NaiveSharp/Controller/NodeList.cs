@@ -32,11 +32,22 @@ namespace NaiveSharp.Controller
                     {
                         tv.Nodes.Add(new TreeNode() { Name = group, Text = group });
                     }
-                    tv.Nodes[group].Nodes.Add(new TreeNode()
+                    try
                     {
-                        Tag = s[i],
-                        Text = new Uri(s[i]).Fragment.Substring(1)
-                    });
+                        tv.Nodes[group].Nodes.Add(new TreeNode()
+                        {
+                            Tag = s[i],
+                            Text = new Uri(s[i]).Fragment.Substring(1)
+                        });
+                    }
+                    catch(UriFormatException ufe)
+                    {
+
+                    }
+                    catch(NullReferenceException)
+                    {
+                        // TODO: NRE
+                    }
                 }
             }
         }

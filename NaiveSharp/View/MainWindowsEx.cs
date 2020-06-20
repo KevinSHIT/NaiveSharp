@@ -1,5 +1,6 @@
 ﻿using NaiveSharp.Controller;
 using NaiveSharp.Controller.Extension;
+using NaiveSharp.Model;
 
 using System;
 using System.Data;
@@ -9,11 +10,29 @@ namespace NaiveSharp.View
 {
     public partial class MainWindow
     {
-        private void SyncModeToSMI()
+        private void SyncRunModeToView()
         {
-            tsmGlobal.Checked = rdoGlobal.Checked;
-            tsmGeoIP.Checked = rdoGeoIP.Checked;
-            tsmGFWList.Checked = rdoGfwlist.Checked;
+            bool global = false, geoip = false, gfwlist = false, none = false;
+            switch (Config.RunMode.ToLower())
+            {
+                case "gfwlist":
+                    gfwlist = true;
+                    break;
+                case "global":
+                    global = true;
+                    break;
+                case "geoip":
+                    geoip = true;
+                    break;
+                case "none":
+                    none = true;
+                    break;
+            }
+
+            tsmGlobal.Checked = rdoGlobal.Checked = global;
+            tsmGeoIP.Checked = rdoGeoIP.Checked = geoip;
+            tsmGFWList.Checked = rdoGfwlist.Checked = gfwlist;
+            tsmNone.Checked = rdoNone.Checked = none;
         }
 
         private DialogResult CheckPortStatus()

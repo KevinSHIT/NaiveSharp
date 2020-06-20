@@ -14,11 +14,13 @@ namespace NaiveSharp.View
         public MainWindow()
         {
             InitializeComponent();
-            SyncModeToSMI();
+            SyncRunModeToView();
 
             // THIS IS FOR TEST
             // TODO: LOGIC
             NodeList.LoadFromStringArray(ref this.tvwNodeList, new string[] { "naive+https://what:happened@test.someone.cf?padding=false#Naive!", "[222]", "naive+https://some.public.rs?padding=true#Public-01" });
+
+            //NodeList.LoadFromStringArray(ref this.tvwNodeList, File.ReadAllLines(PATH.CONFIG_NODELIST));
 
             if (File.Exists(PATH.CONFIG_NODE_NS))
             {
@@ -51,6 +53,7 @@ namespace NaiveSharp.View
             {
                 Config.RunMode = "global";
             }
+            SyncRunModeToView();
         }
 
         private void rdoGfwlist_CheckedChanged(object sender, EventArgs e)
@@ -59,6 +62,7 @@ namespace NaiveSharp.View
             {
                 Config.RunMode = "gfwlist";
             }
+            SyncRunModeToView();
         }
 
         private void rdoGeoIP_CheckedChanged(object sender, EventArgs e)
@@ -67,8 +71,16 @@ namespace NaiveSharp.View
             {
                 Config.RunMode = "geoip";
             }
+            SyncRunModeToView();
         }
-
+        private void rdoNone_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoNone.Checked)
+            {
+                Config.RunMode = "none";
+            }
+            SyncRunModeToView();
+        }
         #endregion
 
         #region Operation Controller
@@ -228,28 +240,48 @@ namespace NaiveSharp.View
 
         private void tsmGlobal_Click(object sender, EventArgs e)
         {
-            tsmGlobal.Checked = rdoGlobal.Checked = true;
-            rdoGfwlist.Checked = rdoGeoIP.Checked = false;
-            SyncModeToSMI();
+            Config.RunMode = "global";
+            SyncRunModeToView();
         }
 
         private void tsmGFWList_Click(object sender, EventArgs e)
         {
-            tsmGFWList.Checked = rdoGfwlist.Checked = true;
-            rdoGlobal.Checked = rdoGeoIP.Checked = false;
-            SyncModeToSMI();
+            Config.RunMode = "gfwlist";
+            SyncRunModeToView();
         }
 
         private void tsmGeoIP_Click(object sender, EventArgs e)
         {
-            tsmGeoIP.Checked = rdoGeoIP.Checked = true;
-            tsmGFWList.Checked = tsmGFWList.Checked = false;
-            SyncModeToSMI();
+            Config.RunMode = "geoip";
+            SyncRunModeToView();
+        }
+
+        private void tsmNone_Click(object sender, EventArgs e)
+        {
+            Config.RunMode = "none";
+            SyncRunModeToView();
         }
 
         private void tvwNodeList_AfterSelect(object sender, TreeViewEventArgs e)
         {
             MessageBox.Show((string)tvwNodeList.SelectedNode.Tag);
+            if ((sender as TreeNode).Tag == null)
+            {
+                // this is group
+            }
+            else
+            {
+                var x = ((string)tvwNodeList.SelectedNode.Tag).FromSharelink();
+                if (x.HasValue)
+                {
+                    txtHost.Text = x.Value.Host;
+                    txtUsername.Text = x.Value.Username;
+                    txtPassword.Text = x.Value.Password;
+                    chkPadding.Checked = x.Value.Padding ?? false;
+                }
+            }
         }
+
+
     }
 }

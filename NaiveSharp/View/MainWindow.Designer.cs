@@ -70,6 +70,8 @@
             this.tlpNodeListControl = new System.Windows.Forms.TableLayoutPanel();
             this.btnDelNode = new System.Windows.Forms.Button();
             this.btnAddNode = new System.Windows.Forms.Button();
+            this.tsmNone = new System.Windows.Forms.ToolStripMenuItem();
+            this.rdoNone = new System.Windows.Forms.RadioButton();
             this.tlpInfo.SuspendLayout();
             this.tlpProxyMode.SuspendLayout();
             this.tlpScheme.SuspendLayout();
@@ -127,7 +129,7 @@
             // 
             this.rdoGfwlist.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoGfwlist.AutoSize = true;
-            this.rdoGfwlist.Location = new System.Drawing.Point(188, 4);
+            this.rdoGfwlist.Location = new System.Drawing.Point(151, 4);
             this.rdoGfwlist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoGfwlist.Name = "rdoGfwlist";
             this.rdoGfwlist.Size = new System.Drawing.Size(68, 18);
@@ -141,7 +143,7 @@
             // 
             this.rdoGeoIP.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.rdoGeoIP.AutoSize = true;
-            this.rdoGeoIP.Location = new System.Drawing.Point(313, 4);
+            this.rdoGeoIP.Location = new System.Drawing.Point(237, 4);
             this.rdoGeoIP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoGeoIP.Name = "rdoGeoIP";
             this.rdoGeoIP.Size = new System.Drawing.Size(56, 18);
@@ -205,21 +207,22 @@
             // 
             // tlpProxyMode
             // 
-            this.tlpProxyMode.ColumnCount = 4;
-            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.004F));
-            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
-            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
-            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.66533F));
+            this.tlpProxyMode.ColumnCount = 5;
+            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpProxyMode.Controls.Add(this.lblProxyMode, 0, 0);
-            this.tlpProxyMode.Controls.Add(this.rdoGeoIP, 3, 0);
             this.tlpProxyMode.Controls.Add(this.rdoGlobal, 1, 0);
             this.tlpProxyMode.Controls.Add(this.rdoGfwlist, 2, 0);
+            this.tlpProxyMode.Controls.Add(this.rdoGeoIP, 3, 0);
+            this.tlpProxyMode.Controls.Add(this.rdoNone, 4, 0);
             this.tlpProxyMode.Location = new System.Drawing.Point(153, 141);
             this.tlpProxyMode.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tlpProxyMode.Name = "tlpProxyMode";
             this.tlpProxyMode.RowCount = 1;
             this.tlpProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tlpProxyMode.Size = new System.Drawing.Size(372, 26);
             this.tlpProxyMode.TabIndex = 8;
             // 
@@ -391,7 +394,7 @@
             this.smiExit});
             this.cmsNotify.Name = "cmsNotify";
             this.cmsNotify.ShowImageMargin = false;
-            this.cmsNotify.Size = new System.Drawing.Size(195, 170);
+            this.cmsNotify.Size = new System.Drawing.Size(195, 192);
             this.cmsNotify.Text = "cmsNotify";
             this.cmsNotify.Opening += new System.ComponentModel.CancelEventHandler(this.cmsNotify_Opening);
             // 
@@ -402,29 +405,30 @@
             this.tsmMode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmGlobal,
             this.tsmGFWList,
-            this.tsmGeoIP});
+            this.tsmGeoIP,
+            this.tsmNone});
             this.tsmMode.Name = "tsmMode";
             this.tsmMode.Size = new System.Drawing.Size(194, 22);
-            this.tsmMode.Text = "Mode";
+            this.tsmMode.Text = "Proxy Mode";
             // 
             // tsmGlobal
             // 
             this.tsmGlobal.Name = "tsmGlobal";
-            this.tsmGlobal.Size = new System.Drawing.Size(117, 22);
+            this.tsmGlobal.Size = new System.Drawing.Size(180, 22);
             this.tsmGlobal.Text = "Global";
             this.tsmGlobal.Click += new System.EventHandler(this.tsmGlobal_Click);
             // 
             // tsmGFWList
             // 
             this.tsmGFWList.Name = "tsmGFWList";
-            this.tsmGFWList.Size = new System.Drawing.Size(117, 22);
+            this.tsmGFWList.Size = new System.Drawing.Size(180, 22);
             this.tsmGFWList.Text = "GFWList";
             this.tsmGFWList.Click += new System.EventHandler(this.tsmGFWList_Click);
             // 
             // tsmGeoIP
             // 
             this.tsmGeoIP.Name = "tsmGeoIP";
-            this.tsmGeoIP.Size = new System.Drawing.Size(117, 22);
+            this.tsmGeoIP.Size = new System.Drawing.Size(180, 22);
             this.tsmGeoIP.Text = "GeoIP";
             this.tsmGeoIP.Click += new System.EventHandler(this.tsmGeoIP_Click);
             // 
@@ -522,6 +526,25 @@
             this.btnAddNode.Text = "Add";
             this.btnAddNode.UseVisualStyleBackColor = true;
             // 
+            // tsmNone
+            // 
+            this.tsmNone.Name = "tsmNone";
+            this.tsmNone.Size = new System.Drawing.Size(180, 22);
+            this.tsmNone.Text = "None";
+            this.tsmNone.Click += new System.EventHandler(this.tsmNone_Click);
+            // 
+            // rdoNone
+            // 
+            this.rdoNone.AutoSize = true;
+            this.rdoNone.Location = new System.Drawing.Point(299, 3);
+            this.rdoNone.Name = "rdoNone";
+            this.rdoNone.Size = new System.Drawing.Size(54, 19);
+            this.rdoNone.TabIndex = 10;
+            this.rdoNone.TabStop = true;
+            this.rdoNone.Text = "None";
+            this.rdoNone.UseVisualStyleBackColor = true;
+            this.rdoNone.CheckedChanged += new System.EventHandler(this.rdoNone_CheckedChanged);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -599,6 +622,8 @@
         private System.Windows.Forms.Button btnDelNode;
         private System.Windows.Forms.Button btnAddNode;
         public System.Windows.Forms.TreeView tvwNodeList;
+        private System.Windows.Forms.RadioButton rdoNone;
+        private System.Windows.Forms.ToolStripMenuItem tsmNone;
     }
 }
 

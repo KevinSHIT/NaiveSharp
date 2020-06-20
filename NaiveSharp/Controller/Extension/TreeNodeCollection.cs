@@ -21,5 +21,11 @@ namespace NaiveSharp.Controller.Extension
             }
             return false;
         }
+
+        public static void Add(this TreeNodeCollection tnc, string name, string text)
+            => tnc.Add(new TreeNode() { Name = name, Text = text });
+
+        public static void Add(this TreeNodeCollection tnc, string name, string text, string tag)
+            => tnc.Add(new TreeNode() { Name = name, Text = text, Tag = tag });
     }
 }

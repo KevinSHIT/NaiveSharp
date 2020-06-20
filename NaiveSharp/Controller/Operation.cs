@@ -36,6 +36,9 @@ namespace NaiveSharp.Controller
                     Command.RunNaive("socks");
                     Command.RunPrivoxyWithGFWList();
                     break;
+                case "none":
+                    Command.RunNaive("socks");
+                    return;
             }
             Proxy.Set(1081);
         }
