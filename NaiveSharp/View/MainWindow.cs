@@ -119,6 +119,11 @@ namespace NaiveSharp.View
 
         #region Control -> Config
 
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            Config.Name = txtName.Text;
+        }
+
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
             Config.Username = txtUsername.Text;
@@ -265,15 +270,17 @@ namespace NaiveSharp.View
         private void tvwNodeList_AfterSelect(object sender, TreeViewEventArgs e)
         {
             // MessageBox.Show((string)tvwNodeList.SelectedNode.Tag);
-            if ((string)tvwNodeList.SelectedNode.Tag == null)
+            if (tvwNodeList.SelectedNode.Level == 0)
             {
                 // this is group
+                tvwNodeList.SelectedNode.Expand();
             }
             else
             {
                 var x = ((string)tvwNodeList.SelectedNode.Tag).FromSharelink();
                 if (x.HasValue)
                 {
+                    txtName.Text = x.Value.Name;
                     txtHost.Text = x.Value.Host;
                     txtUsername.Text = x.Value.Username;
                     txtPassword.Text = x.Value.Password;
@@ -284,25 +291,64 @@ namespace NaiveSharp.View
 
         private void btnAddNode_Click(object sender, EventArgs e)
         {
-            TreeNodeCollection tnc;
-            if (tvwNodeList.SelectedNode.Level == 0)
+            if (tvwNodeList.SelectedNode != null)
             {
-                tnc = tvwNodeList.SelectedNode.Nodes;
+                TreeNodeCollection tnc;
+                if (tvwNodeList.SelectedNode.Level == 0)
+                {
+                    tnc = tvwNodeList.SelectedNode.Nodes;
+                }
+                else
+                {
+                    tnc = tvwNodeList.SelectedNode.Parent.Nodes;
+                }
+                tnc.Add(new TreeNode() { Text = "default", Tag = "naive+https://default:default@default#default" });
             }
-            else
-            {
-                tnc = tvwNodeList.SelectedNode.Parent.Nodes;
-            }
-            tnc.Add(new TreeNode() { Text = "default", Tag = "naive+https://default:default@default#default" });
         }
 
         private void btnDelNode_Click(object sender, EventArgs e)
         {
-            if (tvwNodeList.SelectedNode != null)
-            {
-                tvwNodeList.SelectedNode.Remove();
-            }
+
         }
 
+        private void lblAddGroup_Click(object sender, EventArgs e)
+        {
+            string group = "Default";
+            if (tvwNodeList.Nodes.ContainsKey(group))
+            {
+                for (int loop = 0; ; ++loop)
+                {
+                    if (!tvwNodeList.Nodes.ContainsKey("Default" + loop.ToString()))
+                    {
+                        group = "Default" + loop.ToString();
+                        break;
+                    }
+                }
+            }
+            tvwNodeList.Nodes.Add(group, group);
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            if (tvwNodeList.SelectedNode != null)
+            {
+                if (tvwNodeList.SelectedNode.Level == 0)
+                {
+                    // this is group
+                    if (MessageBox.Show("The nodes which belongs to the group you selected will all be deleted. Continue?",
+                        "Warning",
+                        MessageBoxButtons.YesNo,
+                        MessageBoxIcon.Warning) == DialogResult.Yes)
+                    {
+                        tvwNodeList.SelectedNode.Remove();
+                    }
+
+                }
+                else
+                {
+                    tvwNodeList.SelectedNode.Remove();
+                }
+            }
+        }
     }
 }
