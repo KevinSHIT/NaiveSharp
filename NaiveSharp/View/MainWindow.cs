@@ -20,8 +20,42 @@ namespace NaiveSharp.View
             // TODO: LOGIC
             NodeList.LoadFromStringArray(ref this.tvwNodeList, new string[] { "naive+https://what:happened@test.someone.cf?padding=false#Naive!", "[222]", "naive+https://some.public.rs?padding=true#Public-01" });
 
+            int?[] selectedNode = new int?[] { 0, null };
+
+            if (File.Exists(PATH.CONFIG_SELECT_NODE))
+            {
+                string x = File.ReadAllText(PATH.CONFIG_SELECT_NODE);
+                string[] y = x.Split(',').Trim();
+                try
+                {
+                    switch (y.Length)
+                    {
+                        case 1:
+                            selectedNode[0] = y[0].ToInt(0);
+                            break;
+                        case 2:
+                            selectedNode[0] = y[0].ToInt(0);
+                            selectedNode[1] = y[0].ToInt(0);
+                            break;
+                    }
+                }
+                finally
+                {
+                    // MessageBox.Show($"READ -> {selectedNode[0]}, {selectedNode[1]}");
+                    SetSelecteNode(selectedNode[0].Value, selectedNode[1]);
+                }
+
+            }
+            else
+            {
+                File.Create(PATH.CONFIG_SELECT_NODE).Close(); ;
+                File.WriteAllText(PATH.CONFIG_SELECT_NODE, "0");
+            }
+
+
             //NodeList.LoadFromStringArray(ref this.tvwNodeList, File.ReadAllLines(PATH.CONFIG_NODELIST));
 
+            /*
             if (File.Exists(PATH.CONFIG_NODE_NS))
             {
                 try
@@ -33,6 +67,7 @@ namespace NaiveSharp.View
                     File.Delete(PATH.CONFIG_NODE_NS);
                 }
             }
+            */
         }
 
         private void MainWindows_Load(object sender, EventArgs e)
@@ -272,11 +307,18 @@ namespace NaiveSharp.View
             // MessageBox.Show((string)tvwNodeList.SelectedNode.Tag);
             if (tvwNodeList.SelectedNode.Level == 0)
             {
+
+                MessageBox.Show($"{tvwNodeList.SelectedNode.Index}");
+                // TODO: SAVE
+                File.WriteAllText(PATH.CONFIG_SELECT_NODE, $"{tvwNodeList.SelectedNode.Index}");
+
                 // this is group
                 tvwNodeList.SelectedNode.Expand();
             }
             else
             {
+                MessageBox.Show($"{tvwNodeList.SelectedNode.Parent.Index},{tvwNodeList.SelectedNode.Index}");
+                File.WriteAllText(PATH.CONFIG_SELECT_NODE, $"{tvwNodeList.SelectedNode.Parent.Index},{tvwNodeList.SelectedNode.Index}");
                 var x = ((string)tvwNodeList.SelectedNode.Tag).FromSharelink();
                 if (x.HasValue)
                 {

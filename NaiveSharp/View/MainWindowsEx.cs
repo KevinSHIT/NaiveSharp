@@ -4,12 +4,14 @@ using NaiveSharp.Model;
 
 using System;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 
 namespace NaiveSharp.View
 {
     public partial class MainWindow
     {
+        #region sync
         enum SyncMode
         {
             RadioToTsm,
@@ -53,7 +55,7 @@ namespace NaiveSharp.View
 
             
         }
-
+        #endregion
         private DialogResult CheckPortStatus()
         {
             /*
@@ -108,7 +110,7 @@ namespace NaiveSharp.View
             return result;
         }
 
-        public void LoadFromNs(string ns)
+        private void LoadFromNs(string ns)
         {
             if (string.IsNullOrWhiteSpace(ns))
             {
@@ -163,6 +165,37 @@ namespace NaiveSharp.View
             if (uri.Port > 0)
             {
                 txtHost.Text += ":" + uri.Port;
+            }
+        }
+
+        private void SetSelecteNode(int groupIndex, int? nodeIndex)
+        {
+            try
+            {
+                if (nodeIndex.HasValue)
+                {
+                    tvwNodeList.SelectedNode = tvwNodeList.Nodes[groupIndex].Nodes[nodeIndex.Value];
+                }
+                else
+                {
+                    tvwNodeList.SelectedNode = tvwNodeList.Nodes[groupIndex];
+                }
+            }
+            catch (NullReferenceException)
+            {
+                Debug.WriteLine($"Set select node failed -> [{groupIndex}][{nodeIndex}]");
+            }
+        }
+
+        private void SetSelecteNode(int groupIndex)
+        {
+            try
+            {
+                tvwNodeList.SelectedNode = tvwNodeList.Nodes[groupIndex];
+            }
+            catch (NullReferenceException)
+            {
+                Debug.WriteLine($"Set select node failed -> [{groupIndex}]");
             }
         }
     }

@@ -1,4 +1,7 @@
-﻿using static NaiveSharp.Controller.Encoder;
+﻿using System;
+using System.Diagnostics;
+
+using static NaiveSharp.Controller.Encoder;
 
 namespace NaiveSharp.Controller.Extension
 {
@@ -22,5 +25,28 @@ namespace NaiveSharp.Controller.Extension
         public static NaiveConfig? FromSharelink(this string str)
             => Sharelink.LoadFromShareLink(str);
 
+        public static int ToInt(this string str, int ExcepReturn)
+        {
+            try
+            {
+                return int.Parse(str);
+            }
+            catch
+            {
+                return ExcepReturn;
+            }
+        }
+
+        public static int ToInt(this string str)
+        {
+            try
+            {
+                return int.Parse(str);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }
