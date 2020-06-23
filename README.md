@@ -4,6 +4,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/6da9k8p6dvwhse7s/branch/master?svg=true)](https://ci.appveyor.com/project/KevinZonda/naivesharp/branch/master)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+![dotnet](https://img.shields.io/badge/.NET%20Framework-4.7.2-green)
 [![Telegram](https://raw.githubusercontent.com/Patrolavia/telegram-badge/master/chat.svg)](https://t.me/ohtcs)
 ![Size](https://img.shields.io/github/repo-size/KevinZonda/NaiveSharp)
 ![LastReleasr](https://img.shields.io/github/v/release/KevinZonda/NaiveSharp?include_prereleases)
@@ -42,7 +43,7 @@ naive+https://some.public.rs?padding=true#Public-01
 naive+quic://manhole:114514@quic.test.me
 ```
 
-You can get more information from [This issue](https://github.com/klzgrad/naiveproxy/issues/86#issue-638085031).
+You can get more information from [here](https://gist.github.com/DuckSoft/ca03913b0a26fc77a1da4d01cc6ab2f1).
 
 Thanks [@DuckSoft](https://github.com/DuckSoft) provides this specification. If [@klzgrad](https://github.com/klzgrad) provides specification, I will support it too.
 
