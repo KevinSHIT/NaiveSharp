@@ -18,8 +18,10 @@ namespace NaiveSharp.View
 
             // THIS IS FOR TEST
             // TODO: LOGIC
-            NodeList.LoadFromStringArray(ref this.tvwNodeList, new string[] { "naive+https://what:happened@test.someone.cf?padding=false#Naive!", "[222]", "naive+https://some.public.rs?padding=true#Public-01" });
-
+            // NodeList.LoadFromStringArray(ref this.tvwNodeList, new string[] { "naive+https://what:happened@test.someone.cf?padding=false#Naive!", "[222]", "naive+https://some.public.rs?padding=true#Public-01" });
+            
+            LoadFromNodeListFile();
+            
             int?[] selectedNode = new int?[] { 0, null };
 
             if (File.Exists(PATH.CONFIG_SELECT_NODE))

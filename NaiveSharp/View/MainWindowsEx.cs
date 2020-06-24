@@ -1,10 +1,12 @@
-﻿using NaiveSharp.Controller;
+﻿using NaiveSharp.ConstText;
+using NaiveSharp.Controller;
 using NaiveSharp.Controller.Extension;
 using NaiveSharp.Model;
 
 using System;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
 using System.Windows.Forms;
 
 namespace NaiveSharp.View
@@ -51,9 +53,9 @@ namespace NaiveSharp.View
                     tsmNone.Checked = none;
                     break;
             }
-            
 
-            
+
+
         }
         #endregion
         private DialogResult CheckPortStatus()
@@ -198,5 +200,20 @@ namespace NaiveSharp.View
                 Debug.WriteLine($"Set select node failed -> [{groupIndex}]");
             }
         }
+
+        private void LoadFromNodeListFile()
+        {
+            if (!File.Exists(PATH.CONFIG_NODELIST))
+            {
+                File.Create(PATH.CONFIG_NODELIST).Close();
+                File.WriteAllText(PATH.CONFIG_NODELIST, "[Default]");
+                LoadFromNodeListFile();
+            }
+            else
+            {
+                NodeList.LoadFromStringArray(ref tvwNodeList, File.ReadAllLines(PATH.CONFIG_NODELIST));
+            }
+        }
+
     }
 }
