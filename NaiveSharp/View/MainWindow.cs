@@ -125,7 +125,8 @@ namespace NaiveSharp.View
         private void lblSave_Click(object sender, EventArgs e)
         {
             Operation.Save();
-
+            // MessageBox.Show(NodeList.ToStringArray(tvwNodeList).ToNewString());
+            File.WriteAllLines(PATH.CONFIG_NODELIST, NodeList.ToStringArray(tvwNodeList));
             MessageBox.Show("Node information saved.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

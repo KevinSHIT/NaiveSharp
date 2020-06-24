@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 namespace NaiveSharp.Controller.Extension
 {
@@ -32,7 +33,22 @@ namespace NaiveSharp.Controller.Extension
                 }
                 return x.ToArray();
             }
-            
+
+        }
+
+        public static string ToNewString(this string[] ss)
+        {
+            var sb = new StringBuilder();
+            for (int i = 0; i < ss.Length; ++i)
+            {
+                sb.Append(ss[i]);
+
+                if (i != ss.Length - 1)
+                {
+                    sb.Append("\r\n");
+                }
+            }
+            return sb.ToString();
         }
 
     }
