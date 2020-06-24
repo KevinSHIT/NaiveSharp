@@ -22,6 +22,11 @@ namespace NaiveSharp.Controller.Extension
             return false;
         }
 
+        public static int CountKeys(this TreeNodeCollection tnc, string text)
+            => tnc.Cast<TreeNode>()
+                .Where(tn => tn.Text == text)
+                .Count();
+
         public static void Add(this TreeNodeCollection tnc, string name, string text)
             => tnc.Add(new TreeNode() { Name = name, Text = text });
 

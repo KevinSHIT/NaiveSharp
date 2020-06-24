@@ -187,6 +187,10 @@ namespace NaiveSharp.View
             {
                 Debug.WriteLine($"Set select node failed -> [{groupIndex}][{nodeIndex}]");
             }
+            catch
+            {
+
+            }
         }
 
         private void SetSelecteNode(int groupIndex)
@@ -215,5 +219,12 @@ namespace NaiveSharp.View
             }
         }
 
+        private void SyncToTag()
+        {
+            if (tvwNodeList.SelectedNode != null)
+            {
+                tvwNodeList.SelectedNode.Tag = Sharelink.Generate();
+            }
+        }
     }
 }

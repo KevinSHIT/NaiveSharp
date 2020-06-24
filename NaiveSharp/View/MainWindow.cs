@@ -19,9 +19,9 @@ namespace NaiveSharp.View
             // THIS IS FOR TEST
             // TODO: LOGIC
             // NodeList.LoadFromStringArray(ref this.tvwNodeList, new string[] { "naive+https://what:happened@test.someone.cf?padding=false#Naive!", "[222]", "naive+https://some.public.rs?padding=true#Public-01" });
-            
+
             LoadFromNodeListFile();
-            
+
             int?[] selectedNode = new int?[] { 0, null };
 
             if (File.Exists(PATH.CONFIG_SELECT_NODE))
@@ -158,27 +158,50 @@ namespace NaiveSharp.View
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
+            if (tvwNodeList.SelectedNode != null && tvwNodeList.SelectedNode.Level == 1)
+            {
+                /*
+                if (tvwNodeList.SelectedNode.Level == 0)
+                {
+                    if (tvwNodeList.Nodes.ContainsKey(txtName.Text))
+                    {
+                        tvwNodeList.Enabled = false;
+                        return;
+                    }
+                    else
+                    {
+                        tvwNodeList.Enabled = true;
+                    }
+                }
+                */
+                tvwNodeList.SelectedNode.Text = txtName.Text;
+            }
             Config.Name = txtName.Text;
+            SyncToTag();
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
             Config.Username = txtUsername.Text;
+            SyncToTag();
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
             Config.Password = txtPassword.Text;
+            SyncToTag();
         }
 
         private void txtHost_TextChanged(object sender, EventArgs e)
         {
             Config.Host = txtHost.Text;
+            SyncToTag();
         }
 
         private void chkPadding_CheckedChanged(object sender, EventArgs e)
         {
             Config.Padding = chkPadding.Checked;
+            SyncToTag();
         }
 
         private void rdoHttps_CheckedChanged(object sender, EventArgs e)
@@ -310,16 +333,22 @@ namespace NaiveSharp.View
             if (tvwNodeList.SelectedNode.Level == 0)
             {
 
-                MessageBox.Show($"{tvwNodeList.SelectedNode.Index}");
+                // MessageBox.Show($"{tvwNodeList.SelectedNode.Index}");
                 // TODO: SAVE
                 File.WriteAllText(PATH.CONFIG_SELECT_NODE, $"{tvwNodeList.SelectedNode.Index}");
+
+                txtName.Text = tvwNodeList.SelectedNode.Text;
+                txtHost.Enabled = txtPassword.Enabled = txtUsername.Enabled = false;
 
                 // this is group
                 tvwNodeList.SelectedNode.Expand();
             }
             else
             {
-                MessageBox.Show($"{tvwNodeList.SelectedNode.Parent.Index},{tvwNodeList.SelectedNode.Index}");
+                txtHost.Enabled = txtPassword.Enabled = txtUsername.Enabled = true;
+
+                // MessageBox.Show($"{tvwNodeList.SelectedNode.Parent.Index},{tvwNodeList.SelectedNode.Index}");
+
                 File.WriteAllText(PATH.CONFIG_SELECT_NODE, $"{tvwNodeList.SelectedNode.Parent.Index},{tvwNodeList.SelectedNode.Index}");
                 var x = ((string)tvwNodeList.SelectedNode.Tag).FromSharelink();
                 if (x.HasValue)
@@ -393,6 +422,7 @@ namespace NaiveSharp.View
                     tvwNodeList.SelectedNode.Remove();
                 }
             }
+            tvwNodeList.Enabled = true;
         }
     }
 }
