@@ -69,7 +69,7 @@
             this.lblContext.Name = "lblContext";
             this.lblContext.Size = new System.Drawing.Size(111, 60);
             this.lblContext.TabIndex = 2;
-            this.lblContext.Text = "NaiveSharp\r\nVersion 0.6.3-prev\r\n© 2020 KevinZonda\r\nGNU GPL  v3.0";
+            this.lblContext.Text = "NaiveSharp\r\nVersion 0.6.4-prev\r\n© 2020 KevinZonda\r\nGNU GPL  v3.0";
             // 
             // lstCredit
             // 
