@@ -705,7 +705,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
-            this.Text = "Naive # 0.6.1 Preview";
+            this.Text = "Naive # 0.6.2 Preview";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindows_Load);
             this.tlpProxyMode.ResumeLayout(false);

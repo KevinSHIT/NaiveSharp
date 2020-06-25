@@ -294,29 +294,54 @@ namespace NaiveSharp.View
 
         private void smiLoadShareLink_Click(object sender, EventArgs e)
         {
-            string x = Clipboard.GetText();
-            var y = Sharelink.LoadFromShareLink(x);
-            if (!y.HasValue)
+            TreeNodeCollection tnc = null;
+            if (tvwNodeList.SelectedNode != null)
             {
-                return;
+                if (tvwNodeList.SelectedNode.Level == 0)
+                {
+                    tnc = tvwNodeList.SelectedNode.Nodes;
+                }
+                else
+                {
+                    tnc = tvwNodeList.SelectedNode.Parent.Nodes;
+                }
             }
-
-            switch (y.Value.Scheme)
+            if (tnc != null)
             {
-                case "https":
-                    rdoHttps.Checked = true;
-                    rdoQuic.Checked = false;
-                    break;
-                default:
-                    rdoHttps.Checked = false;
-                    rdoQuic.Checked = true;
-                    break;
-            }
+                string x = Clipboard.GetText();
+                var y = Sharelink.LoadFromShareLink(x);
+                if (!y.HasValue)
+                {
+                    return;
+                }
 
-            txtHost.Text = y.Value.Host;
-            txtUsername.Text = y.Value.Username;
-            txtPassword.Text = y.Value.Password;
-            chkPadding.Checked = y.Value.Padding ?? false;
+                tnc.Add(new TreeNode()
+                {
+                    Tag = x,
+                    Text = y.Value.Name
+                    
+                });
+
+                /*
+                switch (y.Value.Scheme)
+                {
+                    case "https":
+                        rdoHttps.Checked = true;
+                        rdoQuic.Checked = false;
+                        break;
+                    default:
+                        rdoHttps.Checked = false;
+                        rdoQuic.Checked = true;
+                        break;
+                }
+
+                txtHost.Text = y.Value.Host;
+                txtUsername.Text = y.Value.Username;
+                txtPassword.Text = y.Value.Password;
+                chkPadding.Checked = y.Value.Padding ?? false;
+                */
+            }
+            
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -380,7 +405,7 @@ namespace NaiveSharp.View
 
                 txtName.Text = tvwNodeList.SelectedNode.Text;
                 txtHost.Enabled = txtPassword.Enabled = txtUsername.Enabled = false;
-
+                txtHost.Text = txtPassword.Text = txtUsername.Text = "";
                 // this is group
                 // tvwNodeList.SelectedNode.Expand();
             }
