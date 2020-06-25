@@ -13,6 +13,8 @@ namespace NaiveSharp.View
     {
         public MainWindow()
         {
+            CheckPath();
+
             // MessageBox.Show(File.ReadAllText(PATH.CONFIG_INI));
             string runMode = LoadModeConfig();
 

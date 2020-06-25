@@ -196,5 +196,18 @@ namespace NaiveSharp.View
             }
             File.WriteAllText(PATH.CONFIG_INI, $"mode = {Config.RunMode}");
         }
+
+        private void CheckPath()
+        {
+            CheckDirectory(PATH.CONFIG);
+        }
+
+        private void CheckDirectory(string path)
+        {
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+        }
     }
 }
