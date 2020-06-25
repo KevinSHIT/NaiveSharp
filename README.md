@@ -8,6 +8,7 @@
 [![Telegram](https://raw.githubusercontent.com/Patrolavia/telegram-badge/master/chat.svg)](https://t.me/ohtcs)
 ![Size](https://img.shields.io/github/repo-size/KevinZonda/NaiveSharp)
 ![LastReleasr](https://img.shields.io/github/v/release/KevinZonda/NaiveSharp?include_prereleases)
+[![LGBT-CN](https://img.shields.io/badge/Support-LGBTQIA-FF0000?style=flat)](https://git.io/JfJiO)
 
 **THIS PROJECT IS UNDER DEVELOPING**
 
