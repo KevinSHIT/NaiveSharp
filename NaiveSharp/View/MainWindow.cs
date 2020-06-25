@@ -15,7 +15,7 @@ namespace NaiveSharp.View
         {
             MessageBox.Show(File.ReadAllText(PATH.CONFIG_INI));
             string runMode = LoadModeConfig();
-            
+
             InitializeComponent();
             Config.RunMode = runMode;
             SyncRunModeToView();
@@ -231,6 +231,20 @@ namespace NaiveSharp.View
             {
                 Config.Scheme = "quic";
             }
+            SyncToTag();
+        }
+
+        private void rdoQuic_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoHttps.Checked)
+            {
+                Config.Scheme = "https";
+            }
+            else
+            {
+                Config.Scheme = "quic";
+            }
+            SyncToTag();
         }
 
         #endregion
@@ -351,7 +365,7 @@ namespace NaiveSharp.View
 
         private void tvwNodeList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            // MessageBox.Show((string)tvwNodeList.SelectedNode.Tag);
+            MessageBox.Show((string)tvwNodeList.SelectedNode.Tag);
             if (tvwNodeList.SelectedNode.Level == 0)
             {
 
@@ -380,17 +394,9 @@ namespace NaiveSharp.View
                     txtUsername.Text = x.Value.Username;
                     txtPassword.Text = x.Value.Password;
                     chkPadding.Checked = x.Value.Padding ?? false;
-                    switch (x.Value.Scheme)
-                    {
-                        case "https":
-                            rdoHttps.Checked = true;
-                            rdoQuic.Checked = false;
-                            break;
-                        case "quic":
-                            rdoHttps.Checked = false;
-                            rdoQuic.Checked = true;
-                            break;
-                    }
+                    rdoHttps.Checked = x.Value.Scheme.Contains("https");
+                    rdoQuic.Checked = x.Value.Scheme.Contains("quic");
+
                 }
             }
         }
@@ -457,6 +463,8 @@ namespace NaiveSharp.View
             }
             tvwNodeList.Enabled = true;
         }
+
+
     }
 }
 

@@ -95,7 +95,7 @@
             this.txtUsername.Location = new System.Drawing.Point(99, 118);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(379, 23);
+            this.txtUsername.Size = new System.Drawing.Size(378, 23);
             this.txtUsername.TabIndex = 5;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
@@ -105,7 +105,7 @@
             this.txtHost.Location = new System.Drawing.Point(99, 81);
             this.txtHost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtHost.Name = "txtHost";
-            this.txtHost.Size = new System.Drawing.Size(379, 23);
+            this.txtHost.Size = new System.Drawing.Size(378, 23);
             this.txtHost.TabIndex = 4;
             this.txtHost.TextChanged += new System.EventHandler(this.txtHost_TextChanged);
             // 
@@ -115,7 +115,7 @@
             this.txtPassword.Location = new System.Drawing.Point(99, 155);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(379, 23);
+            this.txtPassword.Size = new System.Drawing.Size(378, 23);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
@@ -207,7 +207,7 @@
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtName.Location = new System.Drawing.Point(99, 44);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(379, 23);
+            this.txtName.Size = new System.Drawing.Size(378, 23);
             this.txtName.TabIndex = 13;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
@@ -232,14 +232,14 @@
             this.tlpProxyMode.Name = "tlpProxyMode";
             this.tlpProxyMode.RowCount = 1;
             this.tlpProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpProxyMode.Size = new System.Drawing.Size(379, 31);
+            this.tlpProxyMode.Size = new System.Drawing.Size(378, 31);
             this.tlpProxyMode.TabIndex = 8;
             // 
             // rdoNone
             // 
             this.rdoNone.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.rdoNone.AutoSize = true;
-            this.rdoNone.Location = new System.Drawing.Point(322, 6);
+            this.rdoNone.Location = new System.Drawing.Point(321, 6);
             this.rdoNone.Name = "rdoNone";
             this.rdoNone.Size = new System.Drawing.Size(54, 19);
             this.rdoNone.TabIndex = 10;
@@ -282,7 +282,7 @@
             this.lblExit.Location = new System.Drawing.Point(323, 0);
             this.lblExit.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(155, 30);
+            this.lblExit.Size = new System.Drawing.Size(154, 30);
             this.lblExit.TabIndex = 14;
             this.lblExit.Text = "Exit";
             this.lblExit.UseVisualStyleBackColor = true;
@@ -321,7 +321,7 @@
             this.tlpScheme.Name = "tlpScheme";
             this.tlpScheme.RowCount = 1;
             this.tlpScheme.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpScheme.Size = new System.Drawing.Size(379, 29);
+            this.tlpScheme.Size = new System.Drawing.Size(378, 29);
             this.tlpScheme.TabIndex = 12;
             // 
             // rdoHttps
@@ -351,11 +351,12 @@
             this.rdoQuic.TabStop = true;
             this.rdoQuic.Text = "QUIC";
             this.rdoQuic.UseVisualStyleBackColor = true;
+            this.rdoQuic.CheckedChanged += new System.EventHandler(this.rdoQuic_CheckedChanged);
             // 
             // chkPadding
             // 
             this.chkPadding.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.chkPadding.Location = new System.Drawing.Point(305, 5);
+            this.chkPadding.Location = new System.Drawing.Point(304, 5);
             this.chkPadding.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.chkPadding.Name = "chkPadding";
             this.chkPadding.Size = new System.Drawing.Size(71, 19);
@@ -392,7 +393,7 @@
             this.tlpOperate.Name = "tlpOperate";
             this.tlpOperate.RowCount = 1;
             this.tlpOperate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpOperate.Size = new System.Drawing.Size(481, 33);
+            this.tlpOperate.Size = new System.Drawing.Size(480, 33);
             this.tlpOperate.TabIndex = 13;
             // 
             // lblSave
@@ -632,7 +633,7 @@
             this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpInfo.Size = new System.Drawing.Size(481, 224);
+            this.tlpInfo.Size = new System.Drawing.Size(480, 224);
             this.tlpInfo.TabIndex = 18;
             // 
             // tplControl
@@ -650,7 +651,7 @@
             this.tplControl.RowCount = 2;
             this.tplControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.71429F));
             this.tplControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tplControl.Size = new System.Drawing.Size(487, 269);
+            this.tplControl.Size = new System.Drawing.Size(486, 269);
             this.tplControl.TabIndex = 21;
             // 
             // tplNodeList
@@ -677,7 +678,7 @@
             this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
             this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
+            this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 6F));
             this.tlpWindow.Controls.Add(this.tplControl, 2, 1);
             this.tlpWindow.Controls.Add(this.tplNodeList, 1, 1);
             this.tlpWindow.Dock = System.Windows.Forms.DockStyle.Fill;
