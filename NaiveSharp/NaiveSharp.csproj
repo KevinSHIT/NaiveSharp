@@ -86,7 +86,7 @@
     <Compile Include="Controller\Extension\String.cs" />
     <Compile Include="Controller\Extension\String[].cs" />
     <Compile Include="Controller\Extension\TreeNodeCollection.cs" />
-    <Compile Include="Controller\IniHelper.cs" />
+    <Compile Include="Controller\KvpHelper.cs" />
     <Compile Include="Controller\NaiveCmdBuilder.cs" />
     <Compile Include="Controller\Net.cs" />
     <Compile Include="Controller\NodeList.cs" />

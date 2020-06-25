@@ -13,7 +13,11 @@ namespace NaiveSharp.View
     {
         public MainWindow()
         {
+            MessageBox.Show(File.ReadAllText(PATH.CONFIG_INI));
+            string runMode = LoadModeConfig();
+            
             InitializeComponent();
+            Config.RunMode = runMode;
             SyncRunModeToView();
 
             // THIS IS FOR TEST
@@ -21,7 +25,6 @@ namespace NaiveSharp.View
             // NodeList.LoadFromStringArray(ref this.tvwNodeList, new string[] { "naive+https://what:happened@test.someone.cf?padding=false#Naive!", "[222]", "naive+https://some.public.rs?padding=true#Public-01" });
 
             LoadFromNodeListFile();
-
             int?[] selectedNode = new int?[] { 0, null };
 
             if (File.Exists(PATH.CONFIG_SELECT_NODE))
@@ -75,6 +78,7 @@ namespace NaiveSharp.View
 
         private void MainWindows_Load(object sender, EventArgs e)
         {
+
             if (File.Exists("DEBUG"))
             {
                 Config.Debug = true;
@@ -92,6 +96,7 @@ namespace NaiveSharp.View
                 Config.RunMode = "global";
             }
             SyncRunModeToView(SyncMode.RadioToTsm);
+            SaveConfig();
         }
 
         private void rdoGfwlist_CheckedChanged(object sender, EventArgs e)
@@ -101,6 +106,7 @@ namespace NaiveSharp.View
                 Config.RunMode = "gfwlist";
             }
             SyncRunModeToView(SyncMode.RadioToTsm);
+            SaveConfig();
         }
 
         private void rdoGeoIP_CheckedChanged(object sender, EventArgs e)
@@ -110,6 +116,7 @@ namespace NaiveSharp.View
                 Config.RunMode = "geoip";
             }
             SyncRunModeToView(SyncMode.RadioToTsm);
+            SaveConfig();
         }
         private void rdoNone_CheckedChanged(object sender, EventArgs e)
         {
@@ -118,6 +125,7 @@ namespace NaiveSharp.View
                 Config.RunMode = "none";
             }
             SyncRunModeToView(SyncMode.RadioToTsm);
+            SaveConfig();
         }
         #endregion
 
@@ -372,6 +380,17 @@ namespace NaiveSharp.View
                     txtUsername.Text = x.Value.Username;
                     txtPassword.Text = x.Value.Password;
                     chkPadding.Checked = x.Value.Padding ?? false;
+                    switch (x.Value.Scheme)
+                    {
+                        case "https":
+                            rdoHttps.Checked = true;
+                            rdoQuic.Checked = false;
+                            break;
+                        case "quic":
+                            rdoHttps.Checked = false;
+                            rdoQuic.Checked = true;
+                            break;
+                    }
                 }
             }
         }

@@ -168,5 +168,33 @@ namespace NaiveSharp.View
                 tvwNodeList.SelectedNode.Tag = Sharelink.Generate();
             }
         }
+
+        private string LoadModeConfig()
+        {
+            var d = KvpHelper.FromFile(PATH.CONFIG_INI);
+            if (d.ContainsKey("mode"))
+            {
+                // MessageBox.Show(d["mode"].ToLower().Trim());
+                switch (d["mode"].ToLower().Trim())
+                {
+                    case "none":
+                    case "gfwlist":
+                    case "global":
+                    case "geoip":
+                        return d["mode"].ToLower();
+                }
+
+            }
+            return "global";
+        }
+
+        private void SaveConfig()
+        {
+            if (!File.Exists(PATH.CONFIG_INI))
+            {
+                File.Create(PATH.CONFIG_INI).Close();
+            }
+            File.WriteAllText(PATH.CONFIG_INI, $"mode = {Config.RunMode}");
+        }
     }
 }
