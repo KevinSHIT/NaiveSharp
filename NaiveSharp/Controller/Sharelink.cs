@@ -89,16 +89,23 @@ namespace NaiveSharp.Controller
             {
                 queryC.Add("extra-headers", Config.ExtraHeaders);
             }
-            return new UriBuilder()
+            try
             {
-                Scheme = "naive+" + Config.Scheme,
-                Host = Config.Host,
-                UserName = Config.Username,
-                Password = Config.Password,
-                Query = queryC.ToString(),
-                Fragment = Config.Name
+                return new UriBuilder()
+                {
+                    Scheme = "naive+" + Config.Scheme,
+                    Host = Config.Host,
+                    UserName = Config.Username,
+                    Password = Config.Password,
+                    Query = queryC.ToString(),
+                    Fragment = Config.Name
 
-            }.ToString();
+                }.ToString();
+            }
+            catch
+            {
+                return "";
+            }
         }
     }
 
