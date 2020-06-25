@@ -40,11 +40,11 @@ namespace NaiveSharp.Controller
                             Text = new Uri(s[i]).Fragment.Substring(1)
                         });
                     }
-                    catch(UriFormatException ufe)
+                    catch (UriFormatException ufe)
                     {
 
                     }
-                    catch(NullReferenceException)
+                    catch (NullReferenceException)
                     {
                         // TODO: NRE
                     }

@@ -54,6 +54,7 @@ namespace NaiveSharp.View
                 File.WriteAllText(PATH.CONFIG_SELECT_NODE, "0");
             }
 
+            // tvwNodeList.ExpandAll();
 
             //NodeList.LoadFromStringArray(ref this.tvwNodeList, File.ReadAllLines(PATH.CONFIG_NODELIST));
 
@@ -124,9 +125,9 @@ namespace NaiveSharp.View
 
         private void lblSave_Click(object sender, EventArgs e)
         {
-            Operation.Save();
+            Operation.Save(ref tvwNodeList);
             // MessageBox.Show(NodeList.ToStringArray(tvwNodeList).ToNewString());
-            File.WriteAllLines(PATH.CONFIG_NODELIST, NodeList.ToStringArray(tvwNodeList));
+            // File.WriteAllLines(PATH.CONFIG_NODELIST, NodeList.ToStringArray(tvwNodeList));
             MessageBox.Show("Node information saved.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -137,7 +138,13 @@ namespace NaiveSharp.View
                 return;
             }
 
-            Operation.Run();
+            if (tvwNodeList.SelectedNode.Level == 0)
+            {
+                MessageBox.Show("Plz select a valid node!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Operation.Run(ref tvwNodeList);
             MessageBox.Show("NaiveProxy runs successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -159,9 +166,9 @@ namespace NaiveSharp.View
 
         private void txtName_TextChanged(object sender, EventArgs e)
         {
+            /* FIXME
             if (tvwNodeList.SelectedNode != null && tvwNodeList.SelectedNode.Level == 1)
             {
-                /*
                 if (tvwNodeList.SelectedNode.Level == 0)
                 {
                     if (tvwNodeList.Nodes.ContainsKey(txtName.Text))
@@ -174,9 +181,10 @@ namespace NaiveSharp.View
                         tvwNodeList.Enabled = true;
                     }
                 }
-                */
-                tvwNodeList.SelectedNode.Text = txtName.Text;
             }
+            */
+
+            tvwNodeList.SelectedNode.Name = tvwNodeList.SelectedNode.Text = txtName.Text;
             Config.Name = txtName.Text;
             SyncToTag();
         }
@@ -235,7 +243,12 @@ namespace NaiveSharp.View
 
         private void smiRun_Click(object sender, EventArgs e)
         {
-            Operation.Run();
+            if (tvwNodeList.SelectedNode.Level == 0)
+            {
+                MessageBox.Show("Plz select a valid node!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            Operation.Run(ref tvwNodeList);
             icnNotify.ShowBalloonTip(500, "Naive #", "NaiveProxy is running.", ToolTipIcon.Info);
         }
 
@@ -342,7 +355,7 @@ namespace NaiveSharp.View
                 txtHost.Enabled = txtPassword.Enabled = txtUsername.Enabled = false;
 
                 // this is group
-                tvwNodeList.SelectedNode.Expand();
+                // tvwNodeList.SelectedNode.Expand();
             }
             else
             {
@@ -427,3 +440,4 @@ namespace NaiveSharp.View
         }
     }
 }
+

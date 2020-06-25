@@ -3,24 +3,27 @@ using NaiveSharp.Model;
 
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms;
 
 namespace NaiveSharp.Controller
 {
     public static class Operation
     {
-        public static void Save()
+        public static void Save(ref TreeView tv)
         {
             if (!Directory.Exists(PATH.CONFIG))
             {
                 Directory.CreateDirectory(PATH.CONFIG);
             }
-            File.WriteAllText(PATH.CONFIG_NODE_NS, Config.ConvertToNs());
+            // File.WriteAllText(PATH.CONFIG_NODE_NS, Config.ConvertToNs());
+
+            File.WriteAllLines(PATH.CONFIG_NODELIST, NodeList.ToStringArray(tv));
         }
 
-        public static void Run()
+        public static void Run(ref TreeView tv)
         {
             Stop();
-            Save();
+            Save(ref tv);
             // Command.InitializeTmp();
             switch (Config.RunMode.ToLower())
             {
