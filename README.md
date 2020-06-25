@@ -15,6 +15,10 @@ A NaiveProxy Windows Client
 
 ## Screenshots
 
+### 0.6 Preview
+
+![NaiveSharp0.6Prev](Screenshots/ns06prev.png)
+
 ### 0.5 Preview
 
 ![NaiveSharp0.5Prev](Screenshots/ns05prev.png)
@@ -29,7 +33,7 @@ A NaiveProxy Windows Client
 
 - [x] base framework
 - [x] bypass
-- [ ] node tree
+- [x] node tree
 
 ## About Sharelink
 
