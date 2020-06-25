@@ -83,7 +83,7 @@ namespace NaiveSharp.Controller
             var queryC = HttpUtility.ParseQueryString(string.Empty);
             if (Config.Padding.HasValue)
             {
-                queryC.Add("padding", Config.Padding.ToString());
+                queryC.Add("padding", Config.Padding.ToString().ToLower());
             }
             if (!string.IsNullOrWhiteSpace(Config.ExtraHeaders))
             {

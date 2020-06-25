@@ -13,7 +13,7 @@ namespace NaiveSharp.View
     {
         public MainWindow()
         {
-            MessageBox.Show(File.ReadAllText(PATH.CONFIG_INI));
+            // MessageBox.Show(File.ReadAllText(PATH.CONFIG_INI));
             string runMode = LoadModeConfig();
 
             InitializeComponent();
@@ -217,8 +217,11 @@ namespace NaiveSharp.View
 
         private void chkPadding_CheckedChanged(object sender, EventArgs e)
         {
-            Config.Padding = chkPadding.Checked;
-            SyncToTag();
+            if (!(chkPadding.Checked == false && Config.Padding == null))
+            {
+                Config.Padding = chkPadding.Checked;
+                SyncToTag();
+            }
         }
 
         private void rdoHttps_CheckedChanged(object sender, EventArgs e)
@@ -365,7 +368,7 @@ namespace NaiveSharp.View
 
         private void tvwNodeList_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            MessageBox.Show((string)tvwNodeList.SelectedNode.Tag);
+            // MessageBox.Show((string)tvwNodeList.SelectedNode.Tag);
             if (tvwNodeList.SelectedNode.Level == 0)
             {
 
@@ -394,6 +397,7 @@ namespace NaiveSharp.View
                     txtUsername.Text = x.Value.Username;
                     txtPassword.Text = x.Value.Password;
                     chkPadding.Checked = x.Value.Padding ?? false;
+                    Config.Padding = x.Value.Padding;
                     rdoHttps.Checked = x.Value.Scheme.Contains("https");
                     rdoQuic.Checked = x.Value.Scheme.Contains("quic");
 
