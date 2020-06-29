@@ -33,11 +33,9 @@ namespace NaiveSharp.Controller
 
         public static Dictionary<string, string> FromFile(string path)
         {
-            if (!File.Exists(path))
-            {
-                File.Create(path).Close();
-                File.WriteAllText(path, $"mode = global");
-            }
+            if (File.Exists(path)) return FromStringArray(File.ReadAllLines(path));
+            File.Create(path).Close();
+            File.WriteAllText(path, $"mode = global");
             return FromStringArray(File.ReadAllLines(path));
         }
     }

@@ -1,10 +1,7 @@
 ﻿using NaiveSharp.ConstText;
 using NaiveSharp.Controller;
-using NaiveSharp.Controller.Extension;
 using NaiveSharp.Model;
-
 using System;
-using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
@@ -14,6 +11,7 @@ namespace NaiveSharp.View
     public partial class MainWindow
     {
         #region sync
+
         enum SyncMode
         {
             RadioToTsm,
@@ -38,6 +36,7 @@ namespace NaiveSharp.View
                     none = true;
                     break;
             }
+
             switch (mode)
             {
                 case SyncMode.TsmToRadio:
@@ -53,11 +52,10 @@ namespace NaiveSharp.View
                     tsmNone.Checked = none;
                     break;
             }
-
-
-
         }
+
         #endregion
+
         private DialogResult CheckPortStatus()
         {
             /*
@@ -85,29 +83,22 @@ namespace NaiveSharp.View
                 }
             }
 
-            DialogResult result = DialogResult.OK;
-            switch (status)
+            var result = status switch
             {
-                case 1:
-                    result = MessageBox.Show("Port 1080 is in used! NaiveProxy may not work normally!\n" +
-                                             "Do you still want to continue?", "Port is in used",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning);
-                    break;
-                case 2:
-                    result = MessageBox.Show("Port 1081 is in used! HTTP proxy and padding may not work normally!\n" +
-                                             "Do you still want to continue?", "Port is in used",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning);
-                    break;
-                case 3:
-                    result = MessageBox.Show("Port 1080 is in used! NaiveProxy may not work normally!\n" +
-                                             "Port 1081 is in used! HTTP proxy and padding may not work normally!\n" +
-                                             "Do you still want to continue?", "Port is in used",
-                        MessageBoxButtons.YesNo,
-                        MessageBoxIcon.Warning);
-                    break;
-            }
+                1 => MessageBox.Show(
+                    "Port 1080 is in used! NaiveProxy may not work normally!\n" + "Do you still want to continue?",
+                    "Port is in used", MessageBoxButtons.YesNo, MessageBoxIcon.Warning),
+                2 => MessageBox.Show(
+                    "Port 1081 is in used! HTTP proxy and padding may not work normally!\n" +
+                    "Do you still want to continue?", "Port is in used", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning),
+                3 => MessageBox.Show(
+                    "Port 1080 is in used! NaiveProxy may not work normally!\n" +
+                    "Port 1081 is in used! HTTP proxy and padding may not work normally!\n" +
+                    "Do you still want to continue?", "Port is in used", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning),
+                _ => DialogResult.OK
+            };
 
             return result;
         }
@@ -131,7 +122,6 @@ namespace NaiveSharp.View
             }
             catch
             {
-
             }
         }
 
@@ -169,7 +159,7 @@ namespace NaiveSharp.View
             }
         }
 
-        private string LoadModeConfig()
+        private static string LoadModeConfig()
         {
             var d = KvpHelper.FromFile(PATH.CONFIG_INI);
             if (d.ContainsKey("mode"))
@@ -183,17 +173,18 @@ namespace NaiveSharp.View
                     case "geoip":
                         return d["mode"].ToLower();
                 }
-
             }
+
             return "global";
         }
 
-        private void SaveConfig()
+        private static void SaveConfig()
         {
             if (!File.Exists(PATH.CONFIG_INI))
             {
                 File.Create(PATH.CONFIG_INI).Close();
             }
+
             File.WriteAllText(PATH.CONFIG_INI, $"mode = {Config.RunMode}");
         }
 

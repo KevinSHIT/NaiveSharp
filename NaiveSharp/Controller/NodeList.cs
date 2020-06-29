@@ -1,8 +1,8 @@
 ﻿using NaiveSharp.Controller.Extension;
 
 using System;
-using System.Linq;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace NaiveSharp.Controller
@@ -58,10 +58,7 @@ namespace NaiveSharp.Controller
             foreach (TreeNode group in tv.Nodes)
             {
                 l.Add($"[{group.Text}]");
-                foreach (TreeNode node in group.Nodes)
-                {
-                    l.Add((string)node.Tag);
-                }
+                l.AddRange(from TreeNode node in @group.Nodes select (string) node.Tag);
             }
             return l.ToArray();
         }
