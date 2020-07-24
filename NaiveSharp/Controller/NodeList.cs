@@ -28,26 +28,28 @@ namespace NaiveSharp.Controller
                 }
                 else
                 {
-                    if (i == 0)
+                    // Judge whether is a naiveproxy link
+                    if (s[i].StartsWith("naive"))
                     {
-                        tv.Nodes.Add(new TreeNode() { Name = group, Text = group });
-                    }
-                    try
-                    {
-                        tv.Nodes[group].Nodes.Add(new TreeNode()
+                        if (i == 0)
                         {
-                            Tag = s[i],
-                            Text = new Uri(s[i]).Fragment.Substring(1)
-                        });
+                            tv.Nodes.Add(new TreeNode() { Name = group, Text = group });
+                        }
+                        try
+                        {
+                            tv.Nodes[group].Nodes.Add(new TreeNode()
+                            {
+                                Tag = s[i],
+                                Text = new Uri(s[i]).Fragment.Substring(1)
+                            });
+                        }
+                        catch (UriFormatException ufe) { }
+                        catch (NullReferenceException)
+                        {
+                            // TODO: NRE
+                        }
                     }
-                    catch (UriFormatException ufe)
-                    {
-
-                    }
-                    catch (NullReferenceException)
-                    {
-                        // TODO: NRE
-                    }
+                    // TODO: Maybe Trojan? I'm not sure.
                 }
             }
         }
