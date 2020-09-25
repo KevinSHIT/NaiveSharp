@@ -16,8 +16,6 @@ namespace NaiveSharp.Model
 
         public static string Scheme { set; get; } = "https";
 
-        public static bool? Padding { set; get; } = null;
-
         public static string ExtraHeaders { set; get; } = null;
 
         public static bool Debug { get; set; } = false;
@@ -26,7 +24,7 @@ namespace NaiveSharp.Model
 
         public static string ConvertToNs()
         {
-            return Controller.NaiveCmdBuilder.Proxy(Scheme, Username, Password, Host).ToBase64() + " " + Padding;
+            return Controller.NaiveCmdBuilder.Proxy(Scheme, Username, Password, Host).ToBase64();
         }
 
     }

@@ -97,6 +97,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConstText\Msg.cs" />
     <Compile Include="ConstText\Path\Clash.cs" />
     <Compile Include="ConstText\Path\Config.cs" />
     <Compile Include="ConstText\Path\Naive.cs" />

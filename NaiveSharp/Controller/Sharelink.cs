@@ -66,11 +66,6 @@ namespace NaiveSharp.Controller
 
             var query = HttpUtility.ParseQueryString(uri.Query);
 
-            config.Padding = null;
-            if (bool.TryParse(query["padding"], out bool n))
-            {
-                config.Padding = n;
-            }
             if (!string.IsNullOrWhiteSpace(query["extra-headers"]))
             {
                 config.ExtraHeaders = query["extra-headers"];
@@ -81,10 +76,7 @@ namespace NaiveSharp.Controller
         public static string Generate()
         {
             var queryC = HttpUtility.ParseQueryString(string.Empty);
-            if (Config.Padding.HasValue)
-            {
-                queryC.Add("padding", Config.Padding.ToString().ToLower());
-            }
+
             if (!string.IsNullOrWhiteSpace(Config.ExtraHeaders))
             {
                 queryC.Add("extra-headers", Config.ExtraHeaders);
@@ -120,8 +112,6 @@ namespace NaiveSharp.Controller
         public string Host;
 
         public string Scheme;
-
-        public bool? Padding;
 
         public string ExtraHeaders;
     }

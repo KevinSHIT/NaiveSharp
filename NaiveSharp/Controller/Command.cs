@@ -19,10 +19,6 @@ namespace NaiveSharp.Controller
                                     NaiveCmdBuilder.Proxy(Config.Scheme, Config.Username, Config.Password,
                                         Config.Host) +
                                     " --listen=" + proto.ToLower() + "://127.0.0.1:1080";
-            if (Config.Padding ?? false)
-            {
-                p.StartInfo.Arguments += " --padding";
-            }
 
             // TODO: ADD EXTRA-HEADERS SUPPORT
 

@@ -50,7 +50,6 @@
             this.tlpScheme = new System.Windows.Forms.TableLayoutPanel();
             this.rdoHttps = new System.Windows.Forms.RadioButton();
             this.rdoQuic = new System.Windows.Forms.RadioButton();
-            this.chkPadding = new System.Windows.Forms.CheckBox();
             this.lblScheme = new System.Windows.Forms.Label();
             this.tlpOperate = new System.Windows.Forms.TableLayoutPanel();
             this.lblSave = new System.Windows.Forms.Button();
@@ -92,30 +91,30 @@
             // txtUsername
             // 
             this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUsername.Location = new System.Drawing.Point(98, 118);
+            this.txtUsername.Location = new System.Drawing.Point(98, 116);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(378, 23);
+            this.txtUsername.Size = new System.Drawing.Size(377, 27);
             this.txtUsername.TabIndex = 5;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // txtHost
             // 
             this.txtHost.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtHost.Location = new System.Drawing.Point(98, 81);
+            this.txtHost.Location = new System.Drawing.Point(98, 79);
             this.txtHost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtHost.Name = "txtHost";
-            this.txtHost.Size = new System.Drawing.Size(378, 23);
+            this.txtHost.Size = new System.Drawing.Size(377, 27);
             this.txtHost.TabIndex = 4;
             this.txtHost.TextChanged += new System.EventHandler(this.txtHost_TextChanged);
             // 
             // txtPassword
             // 
             this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPassword.Location = new System.Drawing.Point(98, 155);
+            this.txtPassword.Location = new System.Drawing.Point(98, 153);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(378, 23);
+            this.txtPassword.Size = new System.Drawing.Size(377, 27);
             this.txtPassword.TabIndex = 6;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
             // 
@@ -124,10 +123,10 @@
             this.rdoGlobal.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdoGlobal.AutoSize = true;
             this.rdoGlobal.Checked = true;
-            this.rdoGlobal.Location = new System.Drawing.Point(3, 6);
+            this.rdoGlobal.Location = new System.Drawing.Point(3, 4);
             this.rdoGlobal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoGlobal.Name = "rdoGlobal";
-            this.rdoGlobal.Size = new System.Drawing.Size(59, 19);
+            this.rdoGlobal.Size = new System.Drawing.Size(74, 23);
             this.rdoGlobal.TabIndex = 7;
             this.rdoGlobal.TabStop = true;
             this.rdoGlobal.Text = "Global";
@@ -138,10 +137,10 @@
             // 
             this.rdoGfwlist.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoGfwlist.AutoSize = true;
-            this.rdoGfwlist.Location = new System.Drawing.Point(107, 6);
+            this.rdoGfwlist.Location = new System.Drawing.Point(99, 4);
             this.rdoGfwlist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoGfwlist.Name = "rdoGfwlist";
-            this.rdoGfwlist.Size = new System.Drawing.Size(68, 19);
+            this.rdoGfwlist.Size = new System.Drawing.Size(83, 23);
             this.rdoGfwlist.TabIndex = 8;
             this.rdoGfwlist.TabStop = true;
             this.rdoGfwlist.Text = "GFWList";
@@ -152,10 +151,10 @@
             // 
             this.rdoGeoIP.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoGeoIP.AutoSize = true;
-            this.rdoGeoIP.Location = new System.Drawing.Point(207, 6);
+            this.rdoGeoIP.Location = new System.Drawing.Point(200, 4);
             this.rdoGeoIP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoGeoIP.Name = "rdoGeoIP";
-            this.rdoGeoIP.Size = new System.Drawing.Size(56, 19);
+            this.rdoGeoIP.Size = new System.Drawing.Size(69, 23);
             this.rdoGeoIP.TabIndex = 9;
             this.rdoGeoIP.TabStop = true;
             this.rdoGeoIP.Text = "GeoIP";
@@ -166,9 +165,9 @@
             // 
             this.lblPassword.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(3, 159);
+            this.lblPassword.Location = new System.Drawing.Point(3, 156);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(57, 15);
+            this.lblPassword.Size = new System.Drawing.Size(70, 20);
             this.lblPassword.TabIndex = 10;
             this.lblPassword.Text = "Password";
             // 
@@ -176,9 +175,9 @@
             // 
             this.lblUsername.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(3, 122);
+            this.lblUsername.Location = new System.Drawing.Point(3, 119);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(60, 15);
+            this.lblUsername.Size = new System.Drawing.Size(75, 20);
             this.lblUsername.TabIndex = 9;
             this.lblUsername.Text = "Username";
             // 
@@ -186,9 +185,9 @@
             // 
             this.lblHost.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblHost.AutoSize = true;
-            this.lblHost.Location = new System.Drawing.Point(3, 85);
+            this.lblHost.Location = new System.Drawing.Point(3, 82);
             this.lblHost.Name = "lblHost";
-            this.lblHost.Size = new System.Drawing.Size(32, 15);
+            this.lblHost.Size = new System.Drawing.Size(40, 20);
             this.lblHost.TabIndex = 11;
             this.lblHost.Text = "Host";
             // 
@@ -196,24 +195,26 @@
             // 
             this.lblName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(3, 48);
+            this.lblName.Location = new System.Drawing.Point(3, 45);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(39, 15);
+            this.lblName.Size = new System.Drawing.Size(49, 20);
             this.lblName.TabIndex = 12;
             this.lblName.Text = "Name";
             // 
             // txtName
             // 
             this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtName.Location = new System.Drawing.Point(98, 44);
+            this.txtName.Location = new System.Drawing.Point(98, 42);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(378, 23);
+            this.txtName.Size = new System.Drawing.Size(377, 27);
             this.txtName.TabIndex = 13;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // tlpProxyMode
             // 
-            this.tlpProxyMode.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpProxyMode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpProxyMode.BackColor = System.Drawing.SystemColors.Window;
             this.tlpProxyMode.ColumnCount = 4;
             this.tlpProxyMode.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
@@ -230,16 +231,16 @@
             this.tlpProxyMode.Name = "tlpProxyMode";
             this.tlpProxyMode.RowCount = 1;
             this.tlpProxyMode.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpProxyMode.Size = new System.Drawing.Size(378, 31);
+            this.tlpProxyMode.Size = new System.Drawing.Size(377, 31);
             this.tlpProxyMode.TabIndex = 8;
             // 
             // rdoNone
             // 
             this.rdoNone.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.rdoNone.AutoSize = true;
-            this.rdoNone.Location = new System.Drawing.Point(321, 6);
+            this.rdoNone.Location = new System.Drawing.Point(308, 3);
             this.rdoNone.Name = "rdoNone";
-            this.rdoNone.Size = new System.Drawing.Size(54, 19);
+            this.rdoNone.Size = new System.Drawing.Size(66, 24);
             this.rdoNone.TabIndex = 10;
             this.rdoNone.TabStop = true;
             this.rdoNone.Text = "None";
@@ -250,15 +251,17 @@
             // 
             this.lblProxyMode.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblProxyMode.AutoSize = true;
-            this.lblProxyMode.Location = new System.Drawing.Point(3, 197);
+            this.lblProxyMode.Location = new System.Drawing.Point(3, 194);
             this.lblProxyMode.Name = "lblProxyMode";
-            this.lblProxyMode.Size = new System.Drawing.Size(38, 15);
+            this.lblProxyMode.Size = new System.Drawing.Size(48, 20);
             this.lblProxyMode.TabIndex = 9;
             this.lblProxyMode.Text = "Mode";
             // 
             // btnRun
             // 
-            this.btnRun.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRun.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnRun.AutoSize = true;
             this.btnRun.Location = new System.Drawing.Point(3, 0);
             this.btnRun.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -271,12 +274,14 @@
             // 
             // lblExit
             // 
-            this.lblExit.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblExit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblExit.AutoSize = true;
             this.lblExit.Location = new System.Drawing.Point(321, 0);
             this.lblExit.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(155, 30);
+            this.lblExit.Size = new System.Drawing.Size(154, 30);
             this.lblExit.TabIndex = 14;
             this.lblExit.Text = "Exit";
             this.lblExit.UseVisualStyleBackColor = true;
@@ -284,7 +289,9 @@
             // 
             // lblStop
             // 
-            this.lblStop.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblStop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblStop.AutoSize = true;
             this.lblStop.Location = new System.Drawing.Point(162, 0);
             this.lblStop.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
@@ -297,7 +304,9 @@
             // 
             // tlpScheme
             // 
-            this.tlpScheme.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpScheme.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpScheme.ColumnCount = 3;
             this.tlpScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -305,13 +314,12 @@
             this.tlpScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpScheme.Controls.Add(this.rdoHttps, 0, 0);
             this.tlpScheme.Controls.Add(this.rdoQuic, 1, 0);
-            this.tlpScheme.Controls.Add(this.chkPadding, 2, 0);
             this.tlpScheme.Location = new System.Drawing.Point(98, 4);
             this.tlpScheme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tlpScheme.Name = "tlpScheme";
             this.tlpScheme.RowCount = 1;
             this.tlpScheme.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpScheme.Size = new System.Drawing.Size(378, 29);
+            this.tlpScheme.Size = new System.Drawing.Size(377, 29);
             this.tlpScheme.TabIndex = 12;
             // 
             // rdoHttps
@@ -319,10 +327,10 @@
             this.rdoHttps.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.rdoHttps.AutoSize = true;
             this.rdoHttps.Checked = true;
-            this.rdoHttps.Location = new System.Drawing.Point(3, 5);
+            this.rdoHttps.Location = new System.Drawing.Point(3, 4);
             this.rdoHttps.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoHttps.Name = "rdoHttps";
-            this.rdoHttps.Size = new System.Drawing.Size(59, 19);
+            this.rdoHttps.Size = new System.Drawing.Size(73, 21);
             this.rdoHttps.TabIndex = 1;
             this.rdoHttps.TabStop = true;
             this.rdoHttps.Text = "HTTPS";
@@ -333,41 +341,31 @@
             // 
             this.rdoQuic.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdoQuic.AutoSize = true;
-            this.rdoQuic.Location = new System.Drawing.Point(162, 5);
+            this.rdoQuic.Location = new System.Drawing.Point(155, 4);
             this.rdoQuic.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.rdoQuic.Name = "rdoQuic";
-            this.rdoQuic.Size = new System.Drawing.Size(53, 19);
+            this.rdoQuic.Size = new System.Drawing.Size(64, 21);
             this.rdoQuic.TabIndex = 2;
             this.rdoQuic.TabStop = true;
             this.rdoQuic.Text = "QUIC";
             this.rdoQuic.UseVisualStyleBackColor = true;
             this.rdoQuic.CheckedChanged += new System.EventHandler(this.rdoQuic_CheckedChanged);
             // 
-            // chkPadding
-            // 
-            this.chkPadding.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.chkPadding.Location = new System.Drawing.Point(304, 5);
-            this.chkPadding.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.chkPadding.Name = "chkPadding";
-            this.chkPadding.Size = new System.Drawing.Size(71, 19);
-            this.chkPadding.TabIndex = 3;
-            this.chkPadding.Text = "Padding";
-            this.chkPadding.UseVisualStyleBackColor = true;
-            this.chkPadding.CheckedChanged += new System.EventHandler(this.chkPadding_CheckedChanged);
-            // 
             // lblScheme
             // 
             this.lblScheme.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblScheme.AutoSize = true;
-            this.lblScheme.Location = new System.Drawing.Point(3, 11);
+            this.lblScheme.Location = new System.Drawing.Point(3, 8);
             this.lblScheme.Name = "lblScheme";
-            this.lblScheme.Size = new System.Drawing.Size(49, 15);
+            this.lblScheme.Size = new System.Drawing.Size(61, 20);
             this.lblScheme.TabIndex = 0;
             this.lblScheme.Text = "Scheme";
             // 
             // tlpOperate
             // 
-            this.tlpOperate.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpOperate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpOperate.AutoSize = true;
             this.tlpOperate.ColumnCount = 3;
             this.tlpOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -381,12 +379,14 @@
             this.tlpOperate.Name = "tlpOperate";
             this.tlpOperate.RowCount = 1;
             this.tlpOperate.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlpOperate.Size = new System.Drawing.Size(479, 33);
+            this.tlpOperate.Size = new System.Drawing.Size(478, 33);
             this.tlpOperate.TabIndex = 13;
             // 
             // lblSave
             // 
-            this.lblSave.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSave.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSave.AutoSize = true;
             this.lblSave.Location = new System.Drawing.Point(102, 38);
             this.lblSave.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
@@ -400,17 +400,27 @@
             // icnNotify
             // 
             this.icnNotify.ContextMenuStrip = this.cmsNotify;
-            this.icnNotify.Icon = ((System.Drawing.Icon) (resources.GetObject("icnNotify.Icon")));
+            this.icnNotify.Icon = ((System.Drawing.Icon)(resources.GetObject("icnNotify.Icon")));
             this.icnNotify.Text = "NaiveSharp";
             this.icnNotify.Visible = true;
             this.icnNotify.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.icnNotify_MouseDoubleClick);
             // 
             // cmsNotify
             // 
-            this.cmsNotify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {this.tsmMode, this.smiRun, this.smiStop, this.tss1, this.smiCopyShareLink, this.smiLoadShareLink, this.tss2, this.smiAbout, this.smiExit});
+            this.cmsNotify.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.cmsNotify.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmMode,
+            this.smiRun,
+            this.smiStop,
+            this.tss1,
+            this.smiCopyShareLink,
+            this.smiLoadShareLink,
+            this.tss2,
+            this.smiAbout,
+            this.smiExit});
             this.cmsNotify.Name = "cmsNotify";
             this.cmsNotify.ShowImageMargin = false;
-            this.cmsNotify.Size = new System.Drawing.Size(195, 170);
+            this.cmsNotify.Size = new System.Drawing.Size(237, 198);
             this.cmsNotify.Text = "cmsNotify";
             this.cmsNotify.Opening += new System.ComponentModel.CancelEventHandler(this.cmsNotify_Opening);
             // 
@@ -418,94 +428,100 @@
             // 
             this.tsmMode.Checked = true;
             this.tsmMode.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.tsmMode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {this.tsmGlobal, this.tsmGFWList, this.tsmGeoIP, this.tsmNone});
+            this.tsmMode.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmGlobal,
+            this.tsmGFWList,
+            this.tsmGeoIP,
+            this.tsmNone});
             this.tsmMode.Name = "tsmMode";
-            this.tsmMode.Size = new System.Drawing.Size(194, 22);
+            this.tsmMode.Size = new System.Drawing.Size(236, 26);
             this.tsmMode.Text = "Proxy Mode";
             // 
             // tsmGlobal
             // 
             this.tsmGlobal.Name = "tsmGlobal";
-            this.tsmGlobal.Size = new System.Drawing.Size(117, 22);
+            this.tsmGlobal.Size = new System.Drawing.Size(145, 26);
             this.tsmGlobal.Text = "Global";
             this.tsmGlobal.Click += new System.EventHandler(this.tsmGlobal_Click);
             // 
             // tsmGFWList
             // 
             this.tsmGFWList.Name = "tsmGFWList";
-            this.tsmGFWList.Size = new System.Drawing.Size(117, 22);
+            this.tsmGFWList.Size = new System.Drawing.Size(145, 26);
             this.tsmGFWList.Text = "GFWList";
             this.tsmGFWList.Click += new System.EventHandler(this.tsmGFWList_Click);
             // 
             // tsmGeoIP
             // 
             this.tsmGeoIP.Name = "tsmGeoIP";
-            this.tsmGeoIP.Size = new System.Drawing.Size(117, 22);
+            this.tsmGeoIP.Size = new System.Drawing.Size(145, 26);
             this.tsmGeoIP.Text = "GeoIP";
             this.tsmGeoIP.Click += new System.EventHandler(this.tsmGeoIP_Click);
             // 
             // tsmNone
             // 
             this.tsmNone.Name = "tsmNone";
-            this.tsmNone.Size = new System.Drawing.Size(117, 22);
+            this.tsmNone.Size = new System.Drawing.Size(145, 26);
             this.tsmNone.Text = "None";
             this.tsmNone.Click += new System.EventHandler(this.tsmNone_Click);
             // 
             // smiRun
             // 
             this.smiRun.Name = "smiRun";
-            this.smiRun.Size = new System.Drawing.Size(194, 22);
+            this.smiRun.Size = new System.Drawing.Size(236, 26);
             this.smiRun.Text = "Run";
             this.smiRun.Click += new System.EventHandler(this.smiRun_Click);
             // 
             // smiStop
             // 
             this.smiStop.Name = "smiStop";
-            this.smiStop.Size = new System.Drawing.Size(194, 22);
+            this.smiStop.Size = new System.Drawing.Size(236, 26);
             this.smiStop.Text = "Stop";
             this.smiStop.Click += new System.EventHandler(this.smiStop_Click);
             // 
             // tss1
             // 
             this.tss1.Name = "tss1";
-            this.tss1.Size = new System.Drawing.Size(191, 6);
+            this.tss1.Size = new System.Drawing.Size(233, 6);
             // 
             // smiCopyShareLink
             // 
             this.smiCopyShareLink.Name = "smiCopyShareLink";
-            this.smiCopyShareLink.Size = new System.Drawing.Size(194, 22);
+            this.smiCopyShareLink.Size = new System.Drawing.Size(236, 26);
             this.smiCopyShareLink.Text = "Copy your config";
             this.smiCopyShareLink.Click += new System.EventHandler(this.smiCopyShareLink_Click);
             // 
             // smiLoadShareLink
             // 
             this.smiLoadShareLink.Name = "smiLoadShareLink";
-            this.smiLoadShareLink.Size = new System.Drawing.Size(194, 22);
+            this.smiLoadShareLink.Size = new System.Drawing.Size(236, 26);
             this.smiLoadShareLink.Text = "Load config from clipboard";
             this.smiLoadShareLink.Click += new System.EventHandler(this.smiLoadShareLink_Click);
             // 
             // tss2
             // 
             this.tss2.Name = "tss2";
-            this.tss2.Size = new System.Drawing.Size(191, 6);
+            this.tss2.Size = new System.Drawing.Size(233, 6);
             // 
             // smiAbout
             // 
             this.smiAbout.Name = "smiAbout";
-            this.smiAbout.Size = new System.Drawing.Size(194, 22);
+            this.smiAbout.Size = new System.Drawing.Size(236, 26);
             this.smiAbout.Text = "About...";
             this.smiAbout.Click += new System.EventHandler(this.smiAbout_Click);
             // 
             // smiExit
             // 
             this.smiExit.Name = "smiExit";
-            this.smiExit.Size = new System.Drawing.Size(194, 22);
+            this.smiExit.Size = new System.Drawing.Size(236, 26);
             this.smiExit.Text = "Exit";
             this.smiExit.Click += new System.EventHandler(this.smiExit_Click);
             // 
             // tvwNodeList
             // 
-            this.tvwNodeList.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tvwNodeList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tvwNodeList.HideSelection = false;
             this.tvwNodeList.Location = new System.Drawing.Point(3, 3);
             this.tvwNodeList.Name = "tvwNodeList";
@@ -515,7 +531,9 @@
             // 
             // btnDel
             // 
-            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDel.Location = new System.Drawing.Point(102, 3);
             this.btnDel.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
             this.btnDel.Name = "btnDel";
@@ -527,7 +545,9 @@
             // 
             // btnAddNode
             // 
-            this.btnAddNode.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddNode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddNode.Location = new System.Drawing.Point(0, 3);
             this.btnAddNode.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.btnAddNode.Name = "btnAddNode";
@@ -539,7 +559,9 @@
             // 
             // lblAddGroup
             // 
-            this.lblAddGroup.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAddGroup.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAddGroup.Location = new System.Drawing.Point(0, 38);
             this.lblAddGroup.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.lblAddGroup.Name = "lblAddGroup";
@@ -551,7 +573,9 @@
             // 
             // tplListControl
             // 
-            this.tplListControl.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tplListControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tplListControl.ColumnCount = 2;
             this.tplListControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tplListControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -569,7 +593,9 @@
             // 
             // tlpInfo
             // 
-            this.tlpInfo.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tlpInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tlpInfo.ColumnCount = 2;
             this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlpInfo.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
@@ -594,12 +620,14 @@
             this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tlpInfo.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tlpInfo.Size = new System.Drawing.Size(479, 224);
+            this.tlpInfo.Size = new System.Drawing.Size(478, 224);
             this.tlpInfo.TabIndex = 18;
             // 
             // tplControl
             // 
-            this.tplControl.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tplControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tplControl.AutoSize = true;
             this.tplControl.ColumnCount = 1;
             this.tplControl.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -610,12 +638,14 @@
             this.tplControl.RowCount = 2;
             this.tplControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.71429F));
             this.tplControl.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
-            this.tplControl.Size = new System.Drawing.Size(485, 269);
+            this.tplControl.Size = new System.Drawing.Size(484, 269);
             this.tplControl.TabIndex = 21;
             // 
             // tplNodeList
             // 
-            this.tplNodeList.Anchor = ((System.Windows.Forms.AnchorStyles) ((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tplNodeList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tplNodeList.AutoSize = true;
             this.tplNodeList.ColumnCount = 1;
             this.tplNodeList.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -635,7 +665,7 @@
             this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
             this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
+            this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tlpWindow.Controls.Add(this.tplControl, 2, 1);
             this.tlpWindow.Controls.Add(this.tplNodeList, 1, 1);
             this.tlpWindow.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -650,15 +680,15 @@
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(715, 285);
             this.Controls.Add(this.tlpWindow);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
@@ -682,12 +712,12 @@
             this.tlpWindow.ResumeLayout(false);
             this.tlpWindow.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         private System.Windows.Forms.Button btnAddNode;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnRun;
-        public System.Windows.Forms.CheckBox chkPadding;
         private System.Windows.Forms.ContextMenuStrip cmsNotify;
         private System.Windows.Forms.NotifyIcon icnNotify;
         private System.Windows.Forms.Button lblAddGroup;

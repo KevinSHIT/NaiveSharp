@@ -221,15 +221,6 @@ namespace NaiveSharp.View
             SyncToTag();
         }
 
-        private void chkPadding_CheckedChanged(object sender, EventArgs e)
-        {
-            if (!(chkPadding.Checked == false && Config.Padding == null))
-            {
-                Config.Padding = chkPadding.Checked;
-                SyncToTag();
-            }
-        }
-
         private void rdoHttps_CheckedChanged(object sender, EventArgs e)
         {
             if (rdoHttps.Checked)
@@ -360,7 +351,7 @@ namespace NaiveSharp.View
                 Hide();
                 if (Config.IsFirstTimeHide)
                 {
-                    icnNotify.ShowBalloonTip(1000, "Naive # Tip", "Hey! Naive # is still running under background!",
+                    icnNotify.ShowBalloonTip(1000, Msg.TIP_TITLE, Msg.RUNNING_UNDER_BGD,
                         ToolTipIcon.Info);
                     Config.IsFirstTimeHide = false;
                 }
@@ -433,8 +424,6 @@ namespace NaiveSharp.View
                     txtHost.Text = x.Value.Host;
                     txtUsername.Text = x.Value.Username;
                     txtPassword.Text = x.Value.Password;
-                    chkPadding.Checked = x.Value.Padding ?? false;
-                    Config.Padding = x.Value.Padding;
                     rdoHttps.Checked = x.Value.Scheme.Contains("https");
                     rdoQuic.Checked = x.Value.Scheme.Contains("quic");
                 }
