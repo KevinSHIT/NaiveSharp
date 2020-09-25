@@ -18,7 +18,6 @@ namespace NaiveSharp.Test
             Console.WriteLine("Host =>" + r.Value.Host);
             Console.WriteLine("Username =>" + r.Value.Username);
             Console.WriteLine("Password =>" + r.Value.Password);
-            Console.WriteLine("Padding =>" + r.Value.Padding);
             Console.WriteLine("ExtraHeaders =>" + r.Value.ExtraHeaders);
 
             Assert.AreEqual(r.Value.Name, "Naive!");
@@ -26,7 +25,6 @@ namespace NaiveSharp.Test
             Assert.AreEqual(r.Value.Host, "test.someone.cf");
             Assert.AreEqual(r.Value.Username, "what");
             Assert.AreEqual(r.Value.Password, "happened");
-            Assert.AreEqual(r.Value.Padding, false);
             Assert.AreEqual(r.Value.ExtraHeaders, null);
         }
 
@@ -40,7 +38,6 @@ namespace NaiveSharp.Test
             Console.WriteLine("Host =>" + r.Value.Host);
             Console.WriteLine("Username =>" + r.Value.Username);
             Console.WriteLine("Password =>" + r.Value.Password);
-            Console.WriteLine("Padding =>" + r.Value.Padding);
             Console.WriteLine("ExtraHeaders =>" + r.Value.ExtraHeaders);
 
             Assert.AreEqual(r.Value.Name, "Public-01");
@@ -48,7 +45,6 @@ namespace NaiveSharp.Test
             Assert.AreEqual(r.Value.Host, "some.public.rs");
             Assert.AreEqual(r.Value.Username, "");
             Assert.AreEqual(r.Value.Password, "");
-            Assert.AreEqual(r.Value.Padding, true);
             Assert.AreEqual(r.Value.ExtraHeaders, null);
         }
 
@@ -62,7 +58,6 @@ namespace NaiveSharp.Test
             Console.WriteLine("Host =>" + r.Value.Host);
             Console.WriteLine("Username =>" + r.Value.Username);
             Console.WriteLine("Password =>" + r.Value.Password);
-            Console.WriteLine("Padding =>" + r.Value.Padding);
             Console.WriteLine("ExtraHeaders =>" + r.Value.ExtraHeaders);
 
             Assert.AreEqual(r.Value.Name, "");
@@ -70,7 +65,6 @@ namespace NaiveSharp.Test
             Assert.AreEqual(r.Value.Host, "quic.test.me");
             Assert.AreEqual(r.Value.Username, "manhole");
             Assert.AreEqual(r.Value.Password, "114514");
-            Assert.AreEqual(r.Value.Padding, null);
             Assert.AreEqual(r.Value.ExtraHeaders, null);
         }
     }
