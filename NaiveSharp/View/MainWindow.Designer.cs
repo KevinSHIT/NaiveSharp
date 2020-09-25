@@ -45,8 +45,8 @@
             this.rdoNone = new System.Windows.Forms.RadioButton();
             this.lblProxyMode = new System.Windows.Forms.Label();
             this.btnRun = new System.Windows.Forms.Button();
-            this.lblExit = new System.Windows.Forms.Button();
-            this.lblStop = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnStop = new System.Windows.Forms.Button();
             this.tlpScheme = new System.Windows.Forms.TableLayoutPanel();
             this.rdoHttps = new System.Windows.Forms.RadioButton();
             this.rdoQuic = new System.Windows.Forms.RadioButton();
@@ -272,35 +272,35 @@
             this.btnRun.UseVisualStyleBackColor = true;
             this.btnRun.Click += new System.EventHandler(this.btnRun_Click);
             // 
-            // lblExit
+            // btnExit
             // 
-            this.lblExit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnExit.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblExit.AutoSize = true;
-            this.lblExit.Location = new System.Drawing.Point(321, 0);
-            this.lblExit.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.lblExit.Name = "lblExit";
-            this.lblExit.Size = new System.Drawing.Size(154, 30);
-            this.lblExit.TabIndex = 14;
-            this.lblExit.Text = "Exit";
-            this.lblExit.UseVisualStyleBackColor = true;
-            this.lblExit.Click += new System.EventHandler(this.lblExit_Click);
+            this.btnExit.AutoSize = true;
+            this.btnExit.Location = new System.Drawing.Point(321, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(154, 30);
+            this.btnExit.TabIndex = 14;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // lblStop
+            // btnStop
             // 
-            this.lblStop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnStop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblStop.AutoSize = true;
-            this.lblStop.Location = new System.Drawing.Point(162, 0);
-            this.lblStop.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.lblStop.Name = "lblStop";
-            this.lblStop.Size = new System.Drawing.Size(153, 30);
-            this.lblStop.TabIndex = 13;
-            this.lblStop.Text = "Stop";
-            this.lblStop.UseVisualStyleBackColor = true;
-            this.lblStop.Click += new System.EventHandler(this.lblStop_Click);
+            this.btnStop.AutoSize = true;
+            this.btnStop.Location = new System.Drawing.Point(162, 0);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.btnStop.Name = "btnStop";
+            this.btnStop.Size = new System.Drawing.Size(153, 30);
+            this.btnStop.TabIndex = 13;
+            this.btnStop.Text = "Stop";
+            this.btnStop.UseVisualStyleBackColor = true;
+            this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
             // 
             // tlpScheme
             // 
@@ -373,8 +373,8 @@
             this.tlpOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpOperate.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpOperate.Controls.Add(this.btnRun, 0, 0);
-            this.tlpOperate.Controls.Add(this.lblExit, 2, 0);
-            this.tlpOperate.Controls.Add(this.lblStop, 1, 0);
+            this.tlpOperate.Controls.Add(this.btnExit, 2, 0);
+            this.tlpOperate.Controls.Add(this.btnStop, 1, 0);
             this.tlpOperate.Location = new System.Drawing.Point(3, 233);
             this.tlpOperate.Name = "tlpOperate";
             this.tlpOperate.RowCount = 1;
@@ -721,14 +721,14 @@
         private System.Windows.Forms.ContextMenuStrip cmsNotify;
         private System.Windows.Forms.NotifyIcon icnNotify;
         private System.Windows.Forms.Button lblAddGroup;
-        private System.Windows.Forms.Button lblExit;
+        private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblHost;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Label lblProxyMode;
         private System.Windows.Forms.Button lblSave;
         private System.Windows.Forms.Label lblScheme;
-        private System.Windows.Forms.Button lblStop;
+        private System.Windows.Forms.Button btnStop;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.RadioButton rdoGeoIP;
         private System.Windows.Forms.RadioButton rdoGfwlist;
