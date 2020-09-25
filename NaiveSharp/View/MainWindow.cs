@@ -492,5 +492,11 @@ namespace NaiveSharp.View
 
             tvwNodeList.Enabled = true;
         }
+
+        private void btnQR_Click(object sender, EventArgs e)
+        {
+            var frmQr = new Qr(Sharelink.Generate());
+            frmQr.ShowDialog();
+        }
     }
 }

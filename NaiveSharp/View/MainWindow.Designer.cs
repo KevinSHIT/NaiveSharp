@@ -77,6 +77,7 @@
             this.tplControl = new System.Windows.Forms.TableLayoutPanel();
             this.tplNodeList = new System.Windows.Forms.TableLayoutPanel();
             this.tlpWindow = new System.Windows.Forms.TableLayoutPanel();
+            this.btnQR = new System.Windows.Forms.Button();
             this.tlpProxyMode.SuspendLayout();
             this.tlpScheme.SuspendLayout();
             this.tlpOperate.SuspendLayout();
@@ -313,6 +314,7 @@
             this.tlpScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tlpScheme.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tlpScheme.Controls.Add(this.rdoHttps, 0, 0);
+            this.tlpScheme.Controls.Add(this.btnQR, 2, 0);
             this.tlpScheme.Controls.Add(this.rdoQuic, 1, 0);
             this.tlpScheme.Location = new System.Drawing.Point(98, 4);
             this.tlpScheme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -665,7 +667,7 @@
             this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 5F));
             this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
+            this.tlpWindow.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
             this.tlpWindow.Controls.Add(this.tplControl, 2, 1);
             this.tlpWindow.Controls.Add(this.tplNodeList, 1, 1);
             this.tlpWindow.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -677,6 +679,18 @@
             this.tlpWindow.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
             this.tlpWindow.Size = new System.Drawing.Size(715, 285);
             this.tlpWindow.TabIndex = 23;
+            // 
+            // btnQR
+            // 
+            this.btnQR.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnQR.Location = new System.Drawing.Point(338, 0);
+            this.btnQR.Margin = new System.Windows.Forms.Padding(0);
+            this.btnQR.Name = "btnQR";
+            this.btnQR.Size = new System.Drawing.Size(39, 29);
+            this.btnQR.TabIndex = 4;
+            this.btnQR.Text = "QR";
+            this.btnQR.UseVisualStyleBackColor = true;
+            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
             // 
             // MainWindow
             // 
@@ -764,6 +778,8 @@
         public System.Windows.Forms.TextBox txtUsername;
 
         #endregion
+
+        private System.Windows.Forms.Button btnQR;
     }
 }
 
