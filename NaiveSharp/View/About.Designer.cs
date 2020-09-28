@@ -44,8 +44,9 @@
             this.picNavBackground.BackColor = System.Drawing.SystemColors.Window;
             this.picNavBackground.Dock = System.Windows.Forms.DockStyle.Top;
             this.picNavBackground.Location = new System.Drawing.Point(0, 0);
+            this.picNavBackground.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picNavBackground.Name = "picNavBackground";
-            this.picNavBackground.Size = new System.Drawing.Size(347, 54);
+            this.picNavBackground.Size = new System.Drawing.Size(463, 72);
             this.picNavBackground.TabIndex = 0;
             this.picNavBackground.TabStop = false;
             // 
@@ -55,19 +56,21 @@
             this.lblName.BackColor = System.Drawing.SystemColors.Window;
             this.lblName.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(79)))));
-            this.lblName.Location = new System.Drawing.Point(12, 9);
+            this.lblName.Location = new System.Drawing.Point(16, 12);
+            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(84, 30);
+            this.lblName.Size = new System.Drawing.Size(101, 37);
             this.lblName.TabIndex = 1;
-            this.lblName.Text = "Naive #";
+            this.lblName.Text = "Naive#";
             // 
             // lblContext
             // 
             this.lblContext.AutoSize = true;
             this.lblContext.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContext.Location = new System.Drawing.Point(14, 66);
+            this.lblContext.Location = new System.Drawing.Point(19, 88);
+            this.lblContext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblContext.Name = "lblContext";
-            this.lblContext.Size = new System.Drawing.Size(111, 60);
+            this.lblContext.Size = new System.Drawing.Size(141, 80);
             this.lblContext.TabIndex = 2;
             this.lblContext.Text = "NaiveSharp\r\nVersion 0.6.4-prev\r\n© 2020 KevinZonda\r\nGNU GPL  v3.0";
             // 
@@ -75,32 +78,35 @@
             // 
             this.lstCredit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lstCredit.FormattingEnabled = true;
-            this.lstCredit.ItemHeight = 15;
+            this.lstCredit.ItemHeight = 20;
             this.lstCredit.Items.AddRange(new object[] {
             "klzgrad/naiveproxy - BSD 3-Clause",
             "trojan-gfw/igniter - GPLv3",
             "Dreamacro/clash - GPLv3",
             "privoxy.org/privoxy - GPLv2"});
-            this.lstCredit.Location = new System.Drawing.Point(17, 153);
+            this.lstCredit.Location = new System.Drawing.Point(23, 204);
+            this.lstCredit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstCredit.Name = "lstCredit";
-            this.lstCredit.Size = new System.Drawing.Size(313, 94);
+            this.lstCredit.Size = new System.Drawing.Size(416, 124);
             this.lstCredit.TabIndex = 3;
             // 
             // lblCredit
             // 
             this.lblCredit.AutoSize = true;
             this.lblCredit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCredit.Location = new System.Drawing.Point(14, 135);
+            this.lblCredit.Location = new System.Drawing.Point(19, 180);
+            this.lblCredit.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCredit.Name = "lblCredit";
-            this.lblCredit.Size = new System.Drawing.Size(39, 15);
+            this.lblCredit.Size = new System.Drawing.Size(49, 20);
             this.lblCredit.TabIndex = 4;
             this.lblCredit.Text = "Credit";
             // 
             // btnOk
             // 
-            this.btnOk.Location = new System.Drawing.Point(255, 253);
+            this.btnOk.Location = new System.Drawing.Point(340, 337);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(75, 23);
+            this.btnOk.Size = new System.Drawing.Size(100, 31);
             this.btnOk.TabIndex = 5;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
@@ -115,9 +121,10 @@
             this.llbLicense.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.llbLicense.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.llbLicense.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.llbLicense.Location = new System.Drawing.Point(265, 18);
+            this.llbLicense.Location = new System.Drawing.Point(353, 24);
+            this.llbLicense.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.llbLicense.Name = "llbLicense";
-            this.llbLicense.Size = new System.Drawing.Size(51, 15);
+            this.llbLicense.Size = new System.Drawing.Size(64, 20);
             this.llbLicense.TabIndex = 6;
             this.llbLicense.TabStop = true;
             this.llbLicense.Text = "LICENSE";
@@ -126,9 +133,9 @@
             // 
             // About
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(347, 283);
+            this.ClientSize = new System.Drawing.Size(463, 377);
             this.Controls.Add(this.llbLicense);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.lblCredit);
@@ -138,10 +145,11 @@
             this.Controls.Add(this.picNavBackground);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "About";
-            this.Text = "About Naive #";
+            this.Text = "About Naive#";
             ((System.ComponentModel.ISupportInitialize)(this.picNavBackground)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
