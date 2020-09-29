@@ -16,6 +16,11 @@ A NaiveProxy Windows Client
 
 ## Screenshots
 
+### 0.6.5 Preview
+
+![NaiveSharp0.6.5Prev](Screenshots/ns065prev-0.png)
+![NaiveSharp0.6.5Prev](Screenshots/ns065prev-1.png)
+
 ### 0.6 Preview
 
 ![NaiveSharp0.6Prev](Screenshots/ns06prev.png)

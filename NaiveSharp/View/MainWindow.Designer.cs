@@ -49,6 +49,7 @@
             this.btnStop = new System.Windows.Forms.Button();
             this.tlpScheme = new System.Windows.Forms.TableLayoutPanel();
             this.rdoHttps = new System.Windows.Forms.RadioButton();
+            this.btnQR = new System.Windows.Forms.Button();
             this.rdoQuic = new System.Windows.Forms.RadioButton();
             this.lblScheme = new System.Windows.Forms.Label();
             this.tlpOperate = new System.Windows.Forms.TableLayoutPanel();
@@ -77,7 +78,6 @@
             this.tplControl = new System.Windows.Forms.TableLayoutPanel();
             this.tplNodeList = new System.Windows.Forms.TableLayoutPanel();
             this.tlpWindow = new System.Windows.Forms.TableLayoutPanel();
-            this.btnQR = new System.Windows.Forms.Button();
             this.tlpProxyMode.SuspendLayout();
             this.tlpScheme.SuspendLayout();
             this.tlpOperate.SuspendLayout();
@@ -338,6 +338,18 @@
             this.rdoHttps.Text = "HTTPS";
             this.rdoHttps.UseVisualStyleBackColor = true;
             this.rdoHttps.CheckedChanged += new System.EventHandler(this.rdoHttps_CheckedChanged);
+            // 
+            // btnQR
+            // 
+            this.btnQR.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnQR.Location = new System.Drawing.Point(338, 0);
+            this.btnQR.Margin = new System.Windows.Forms.Padding(0);
+            this.btnQR.Name = "btnQR";
+            this.btnQR.Size = new System.Drawing.Size(39, 29);
+            this.btnQR.TabIndex = 4;
+            this.btnQR.Text = "QR";
+            this.btnQR.UseVisualStyleBackColor = true;
+            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
             // 
             // rdoQuic
             // 
@@ -680,18 +692,6 @@
             this.tlpWindow.Size = new System.Drawing.Size(715, 285);
             this.tlpWindow.TabIndex = 23;
             // 
-            // btnQR
-            // 
-            this.btnQR.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnQR.Location = new System.Drawing.Point(338, 0);
-            this.btnQR.Margin = new System.Windows.Forms.Padding(0);
-            this.btnQR.Name = "btnQR";
-            this.btnQR.Size = new System.Drawing.Size(39, 29);
-            this.btnQR.TabIndex = 4;
-            this.btnQR.Text = "QR";
-            this.btnQR.UseVisualStyleBackColor = true;
-            this.btnQR.Click += new System.EventHandler(this.btnQR_Click);
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -706,7 +706,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "MainWindow";
-            this.Text = "Naive # 0.6.4 Preview";
+            this.Text = "Naive # 0.6.5 Preview";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindows_Load);
             this.tlpProxyMode.ResumeLayout(false);
