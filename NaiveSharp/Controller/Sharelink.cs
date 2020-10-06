@@ -83,16 +83,32 @@ namespace NaiveSharp.Controller
             }
             try
             {
-                return new UriBuilder()
-                {
-                    Scheme = "naive+" + Config.Scheme,
-                    Host = Config.Host,
-                    UserName = Config.Username,
-                    Password = Config.Password,
-                    Query = queryC.ToString(),
-                    Fragment = Config.Name
+                var v = Config.Host.Split(':');
 
-                }.ToString();
+                return v.Length switch
+                {
+                    1 => new UriBuilder()
+                    {
+                        Scheme = "naive+" + Config.Scheme,
+                        Host = Config.Host,
+                        UserName = Config.Username,
+                        Password = Config.Password,
+                        Query = queryC.ToString(),
+                        Fragment = Config.Name
+
+                    }.ToString(),
+                    2 => new UriBuilder()
+                    {
+                        Scheme = "naive+" + Config.Scheme,
+                        Host = v[0],
+                        Port = v[1].ToInt(),
+                        UserName = Config.Username,
+                        Password = Config.Password,
+                        Query = queryC.ToString(),
+                        Fragment = Config.Name
+                    }.ToString(),
+                    _ => null;
+                };
             }
             catch
             {
