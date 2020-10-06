@@ -107,7 +107,7 @@ namespace NaiveSharp.Controller
                         Query = queryC.ToString(),
                         Fragment = Config.Name
                     }.ToString(),
-                    _ => null;
+                    _ => null
                 };
             }
             catch
