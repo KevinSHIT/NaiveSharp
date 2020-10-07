@@ -91,7 +91,7 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsername.Location = new System.Drawing.Point(98, 116);
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtUsername.Name = "txtUsername";
@@ -101,7 +101,7 @@
             // 
             // txtHost
             // 
-            this.txtHost.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtHost.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtHost.Location = new System.Drawing.Point(98, 79);
             this.txtHost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtHost.Name = "txtHost";
@@ -111,7 +111,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.Location = new System.Drawing.Point(98, 153);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
@@ -204,7 +204,7 @@
             // 
             // txtName
             // 
-            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.Location = new System.Drawing.Point(98, 42);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(377, 27);
@@ -701,7 +701,6 @@
             this.ClientSize = new System.Drawing.Size(715, 285);
             this.Controls.Add(this.tlpWindow);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
