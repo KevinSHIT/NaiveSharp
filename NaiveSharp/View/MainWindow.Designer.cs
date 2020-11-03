@@ -708,6 +708,7 @@
             this.Text = "Naive# 0.6.5 Preview";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainWindow_FormClosing);
             this.Load += new System.EventHandler(this.MainWindows_Load);
+            this.ResizeEnd += new System.EventHandler(this.MainWindow_ResizeEnd);
             this.tlpProxyMode.ResumeLayout(false);
             this.tlpProxyMode.PerformLayout();
             this.tlpScheme.ResumeLayout(false);

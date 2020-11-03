@@ -11,7 +11,7 @@ namespace NaiveSharp.Controller
         {
             try
             {
-                return Convert.ToBase64String((byte[]) Encoding.UTF8.GetBytes(str));
+                return Convert.ToBase64String(Encoding.UTF8.GetBytes(str));
             }
             catch
             {
@@ -30,7 +30,7 @@ namespace NaiveSharp.Controller
         {
             try
             {
-                return Encoding.UTF8.GetString((byte[]) Convert.FromBase64String(str));
+                return Encoding.UTF8.GetString(Convert.FromBase64String(str));
             }
             catch
             {

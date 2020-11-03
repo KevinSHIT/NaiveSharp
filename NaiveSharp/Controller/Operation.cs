@@ -1,9 +1,9 @@
-﻿using NaiveSharp.ConstText;
-using NaiveSharp.Model;
+﻿using NaiveSharp.Model;
 
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
+using PATH = NaiveSharp.ConstText.PATH;
 
 namespace NaiveSharp.Controller
 {

@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\a7498\.nuget\packages\appveyor.testlogger\2.0.0\build\_common\Microsoft.VisualStudio.TestPlatform.Extension.Appveyor.TestAdapter.dll" t="Include" />
-    <e p="C:\Users\a7498\.nuget\packages\appveyor.testlogger\2.0.0\build\_common\Microsoft.VisualStudio.TestPlatform.Extension.Appveyor.TestLogger.dll" t="Include" />
-    <e p="C:\Users\a7498\.nuget\packages\microsoft.net.test.sdk\16.6.1\build\netcoreapp2.1" t="Include">
+    <e p="C:\Users\Kevin\.nuget\packages\appveyor.testlogger\2.0.0\build\_common\Microsoft.VisualStudio.TestPlatform.Extension.Appveyor.TestAdapter.dll" t="Include" />
+    <e p="C:\Users\Kevin\.nuget\packages\appveyor.testlogger\2.0.0\build\_common\Microsoft.VisualStudio.TestPlatform.Extension.Appveyor.TestLogger.dll" t="Include" />
+    <e p="C:\Users\Kevin\.nuget\packages\microsoft.net.test.sdk\16.7.1\build\netcoreapp2.1" t="Include">
       <e p="Microsoft.NET.Test.Sdk.Program.cs" t="Include" />
     </e>
-    <e p="C:\Users\a7498\.nuget\packages\microsoft.testplatform.testhost\16.6.1\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
-    <e p="C:\Users\a7498\.nuget\packages\microsoft.testplatform.testhost\16.6.1\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
-    <e p="C:\Users\a7498\.nuget\packages\mstest.testadapter\2.1.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
-    <e p="C:\Users\a7498\.nuget\packages\mstest.testadapter\2.1.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
-    <e p="C:\Users\a7498\.nuget\packages\mstest.testadapter\2.1.2\build\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
-    <e p="C:\Users\a7498\AppData\local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\a7498\AppData\local\JetBrains\Rider2020.1\resharper-host\local\Transient\ReSharperHost\v201\SolutionCaches\_NaiveSharp.478221024.00" t="ExcludeRecursive" />
-    <e p="G:\GitHub\NaiveSharp" t="IncludeFlat">
+    <e p="C:\Users\Kevin\.nuget\packages\microsoft.testplatform.testhost\16.7.1\build\netcoreapp2.1\x64\testhost.dll" t="Include" />
+    <e p="C:\Users\Kevin\.nuget\packages\microsoft.testplatform.testhost\16.7.1\build\netcoreapp2.1\x64\testhost.exe" t="Include" />
+    <e p="C:\Users\Kevin\.nuget\packages\mstest.testadapter\2.1.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll" t="Include" />
+    <e p="C:\Users\Kevin\.nuget\packages\mstest.testadapter\2.1.2\build\_common\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll" t="Include" />
+    <e p="C:\Users\Kevin\.nuget\packages\mstest.testadapter\2.1.2\build\netcoreapp1.0\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll" t="Include" />
+    <e p="C:\Users\Kevin\AppData\local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Kevin\AppData\local\JetBrains\Rider2020.2\resharper-host\local\Transient\Rider\v202\SolutionCaches\_NaiveSharp.-1335649918.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Kevin\Desktop\NaiveSharp" t="IncludeFlat">
       <e p=".editorconfig" t="Include" />
       <e p="NaiveSharp" t="IncludeRecursive">
         <e p="App.config" t="Include" />
+        <e p="app.manifest" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="ConstText" t="Include">
+          <e p="Msg.cs" t="Include" />
           <e p="Path" t="Include">
             <e p="Clash.cs" t="Include" />
             <e p="Config.cs" t="Include" />
@@ -55,10 +57,12 @@
         </e>
         <e p="Model" t="Include">
           <e p="Config.cs" t="Include" />
+          <e p="FormSize.cs" t="Include" />
         </e>
         <e p="NaiveSharp.csproj" t="IncludeRecursive" />
         <e p="ns.ico" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
+        <e p="packages.config" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="app.manifest" t="Include" />
@@ -76,6 +80,9 @@
           <e p="MainWindow.Designer.cs" t="Include" />
           <e p="MainWindow.resx" t="Include" />
           <e p="MainWindowsEx.cs" t="Include" />
+          <e p="Qr.cs" t="Include" />
+          <e p="Qr.Designer.cs" t="Include" />
+          <e p="Qr.resx" t="Include" />
         </e>
       </e>
       <e p="NaiveSharp.sln" t="IncludeFlat" />

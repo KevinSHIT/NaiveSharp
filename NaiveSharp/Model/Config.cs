@@ -1,4 +1,6 @@
-﻿using NaiveSharp.Controller.Extension;
+﻿using System.IO;
+using NaiveSharp.ConstText;
+using NaiveSharp.Controller.Extension;
 
 namespace NaiveSharp.Model
 {
@@ -25,6 +27,16 @@ namespace NaiveSharp.Model
         public static string ConvertToNs()
         {
             return Controller.NaiveCmdBuilder.Proxy(Scheme, Username, Password, Host).ToBase64();
+        }
+        
+        public static void Save()
+        {
+            if (!File.Exists(PATH.CONFIG_INI))
+            {
+                File.Create(PATH.CONFIG_INI).Close();
+            }
+
+            File.WriteAllText(PATH.CONFIG_INI, $"mode = {Config.RunMode}");
         }
 
     }

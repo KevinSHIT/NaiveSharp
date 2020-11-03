@@ -14,6 +14,18 @@ namespace NaiveSharp.View
         {
             CheckPath();
 
+            if (File.Exists(ConstText.PATH.CONFIG_FORM))
+            {
+                var c = File.ReadAllText(PATH.CONFIG_FORM).Replace(" ", "").Split(',');
+                if (c.Length == 2)
+                {
+                    if (int.TryParse(c[0].Trim(), out int iTX))
+                        FormSize.X = iTX;
+                    if (int.TryParse(c[1].Trim(), out int iTY))
+                        FormSize.Y = iTY;
+                }
+            }
+            
             // MessageBox.Show(File.ReadAllText(PATH.CONFIG_INI));
             string runMode = LoadModeConfig();
 
@@ -74,6 +86,10 @@ namespace NaiveSharp.View
                 }
             }
             */
+            if (Model.FormSize.X > 0)
+                this.Width = FormSize.X;
+            if (FormSize.Y > 0)
+                this.Height = FormSize.Y;
         }
 
         private void MainWindows_Load(object sender, EventArgs e)
@@ -86,6 +102,13 @@ namespace NaiveSharp.View
 
             icnNotify.Visible = true;
         }
+        
+        private void MainWindow_ResizeEnd(object sender, EventArgs e)
+        {
+            FormSize.X = Width;
+            FormSize.Y = Height;
+            FormSize.Save();
+        }
 
         #region ProxyMode
 
@@ -97,7 +120,7 @@ namespace NaiveSharp.View
             }
 
             SyncRunModeToView(SyncMode.RadioToTsm);
-            SaveConfig();
+            Config.Save();
         }
 
         private void rdoGfwlist_CheckedChanged(object sender, EventArgs e)
@@ -108,7 +131,7 @@ namespace NaiveSharp.View
             }
 
             SyncRunModeToView(SyncMode.RadioToTsm);
-            SaveConfig();
+            Config.Save();
         }
 
         private void rdoGeoIP_CheckedChanged(object sender, EventArgs e)
@@ -119,7 +142,7 @@ namespace NaiveSharp.View
             }
 
             SyncRunModeToView(SyncMode.RadioToTsm);
-            SaveConfig();
+            Config.Save();
         }
 
         private void rdoNone_CheckedChanged(object sender, EventArgs e)
@@ -130,7 +153,7 @@ namespace NaiveSharp.View
             }
 
             SyncRunModeToView(SyncMode.RadioToTsm);
-            SaveConfig();
+            Config.Save();
         }
 
         #endregion
@@ -444,10 +467,6 @@ namespace NaiveSharp.View
             }
 
             tnc.Add(new TreeNode() {Text = "default", Tag = "naive+https://default:default@default#default"});
-        }
-
-        private void btnDelNode_Click(object sender, EventArgs e)
-        {
         }
 
         private void lblAddGroup_Click(object sender, EventArgs e)

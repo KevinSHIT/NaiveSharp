@@ -178,16 +178,6 @@ namespace NaiveSharp.View
             return "global";
         }
 
-        private static void SaveConfig()
-        {
-            if (!File.Exists(PATH.CONFIG_INI))
-            {
-                File.Create(PATH.CONFIG_INI).Close();
-            }
-
-            File.WriteAllText(PATH.CONFIG_INI, $"mode = {Config.RunMode}");
-        }
-
         private void CheckPath()
         {
             CheckDirectory(PATH.CONFIG);
