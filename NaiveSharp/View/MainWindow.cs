@@ -285,7 +285,7 @@ namespace NaiveSharp.View
         private void smiStop_Click(object sender, EventArgs e)
         {
             Operation.Stop();
-            icnNotify.ShowBalloonTip(500, "Naive #", "NaiveProxy stopped successfully.", ToolTipIcon.Info);
+            icnNotify.ShowBalloonTip(500, "Naive#", "NaiveProxy stopped successfully.", ToolTipIcon.Info);
         }
 
         private void smiRun_Click(object sender, EventArgs e)
@@ -297,7 +297,7 @@ namespace NaiveSharp.View
             }
 
             Operation.Run(ref tvwNodeList);
-            icnNotify.ShowBalloonTip(500, "Naive #", "NaiveProxy is running.", ToolTipIcon.Info);
+            icnNotify.ShowBalloonTip(500, "Naive#", "NaiveProxy is running.", ToolTipIcon.Info);
         }
 
         private void smiAbout_Click(object sender, EventArgs e)
