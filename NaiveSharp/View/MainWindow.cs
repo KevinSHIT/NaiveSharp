@@ -220,26 +220,47 @@ namespace NaiveSharp.View
                 }
             }
             */
+            if (CheckIsSelectNodeNull())
+                return;
 
             tvwNodeList.SelectedNode.Name = tvwNodeList.SelectedNode.Text = txtName.Text;
             Config.Name = txtName.Text;
             SyncToTag();
         }
 
+        private bool CheckIsSelectNodeNull()
+        {
+            if (tvwNodeList.SelectedNode is null)
+            {
+                MessageBox.Show(Msg.CHOOSE_NULL_ITEM, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return true;
+            }
+            return false;
+        }
+
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
+            if (CheckIsSelectNodeNull())
+                return;
+
             Config.Username = txtUsername.Text;
             SyncToTag();
         }
 
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
+            if (CheckIsSelectNodeNull())
+                return;
+
             Config.Password = txtPassword.Text;
             SyncToTag();
         }
 
         private void txtHost_TextChanged(object sender, EventArgs e)
         {
+            if (CheckIsSelectNodeNull())
+                return;
+
             Config.Host = txtHost.Text;
             SyncToTag();
         }
