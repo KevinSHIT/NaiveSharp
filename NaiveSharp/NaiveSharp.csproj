@@ -138,6 +138,12 @@
     <Compile Include="View\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\AdvanceWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AdvanceWindow.Designer.cs">
+      <DependentUpon>AdvanceWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +171,9 @@
     </Compile>
     <EmbeddedResource Include="View\About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AdvanceWindow.resx">
+      <DependentUpon>AdvanceWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

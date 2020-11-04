@@ -67,6 +67,7 @@
             this.smiCopyShareLink = new System.Windows.Forms.ToolStripMenuItem();
             this.smiLoadShareLink = new System.Windows.Forms.ToolStripMenuItem();
             this.tss2 = new System.Windows.Forms.ToolStripSeparator();
+            this.smiAdvance = new System.Windows.Forms.ToolStripMenuItem();
             this.smiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.smiExit = new System.Windows.Forms.ToolStripMenuItem();
             this.tvwNodeList = new System.Windows.Forms.TreeView();
@@ -430,11 +431,12 @@
             this.smiCopyShareLink,
             this.smiLoadShareLink,
             this.tss2,
+            this.smiAdvance,
             this.smiAbout,
             this.smiExit});
             this.cmsNotify.Name = "cmsNotify";
             this.cmsNotify.ShowImageMargin = false;
-            this.cmsNotify.Size = new System.Drawing.Size(237, 198);
+            this.cmsNotify.Size = new System.Drawing.Size(237, 224);
             this.cmsNotify.Text = "cmsNotify";
             this.cmsNotify.Opening += new System.ComponentModel.CancelEventHandler(this.cmsNotify_Opening);
             // 
@@ -516,6 +518,13 @@
             // 
             this.tss2.Name = "tss2";
             this.tss2.Size = new System.Drawing.Size(233, 6);
+            // 
+            // smiAdvance
+            // 
+            this.smiAdvance.Name = "smiAdvance";
+            this.smiAdvance.Size = new System.Drawing.Size(236, 26);
+            this.smiAdvance.Text = "Advance...";
+            this.smiAdvance.Click += new System.EventHandler(this.smiAdvance_Click);
             // 
             // smiAbout
             // 
@@ -780,6 +789,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnQR;
+        private System.Windows.Forms.ToolStripMenuItem smiAdvance;
     }
 }
 

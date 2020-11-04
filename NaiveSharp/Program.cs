@@ -2,6 +2,7 @@
 
 using System;
 using System.Diagnostics;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -11,12 +12,12 @@ namespace NaiveSharp
     static class Program
     {
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Process instance = RunningInstance();
-            if (instance == null)
+            if (instance == null || args.Contains("--no-check-running"))
             {
                 Application.Run(new MainWindow());
             }

@@ -94,7 +94,7 @@ namespace NaiveSharp.View
 
         private void MainWindows_Load(object sender, EventArgs e)
         {
-            if (File.Exists("DEBUG"))
+            if (File.Exists(PATH.CONFIG_DEBUG))
             {
                 Config.Debug = true;
                 this.Text = "[DEBUG]" + this.Text;
@@ -302,8 +302,7 @@ namespace NaiveSharp.View
 
         private void smiAbout_Click(object sender, EventArgs e)
         {
-            var about = new View.About();
-            about.ShowDialog();
+            new View.About().ShowDialog();
         }
 
         #endregion
@@ -514,8 +513,13 @@ namespace NaiveSharp.View
 
         private void btnQR_Click(object sender, EventArgs e)
         {
-            var frmQr = new Qr(Sharelink.Generate());
-            frmQr.ShowDialog();
+            new Qr(Sharelink.Generate()).ShowDialog();
         }
+
+        private void smiAdvance_Click(object sender, EventArgs e)
+        {
+            new AdvanceWindow().ShowDialog();
+        }
+
     }
 }

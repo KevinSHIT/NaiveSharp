@@ -76,6 +76,9 @@
           <e p="About.cs" t="Include" />
           <e p="About.Designer.cs" t="Include" />
           <e p="About.resx" t="Include" />
+          <e p="AdvanceWindow.cs" t="Include" />
+          <e p="AdvanceWindow.Designer.cs" t="Include" />
+          <e p="AdvanceWindow.resx" t="Include" />
           <e p="MainWindow.cs" t="Include" />
           <e p="MainWindow.Designer.cs" t="Include" />
           <e p="MainWindow.resx" t="Include" />
