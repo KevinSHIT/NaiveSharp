@@ -19,13 +19,13 @@ namespace NaiveSharp.View
                 var c = File.ReadAllText(PATH.CONFIG_FORM).Replace(" ", "").Split(',');
                 if (c.Length == 2)
                 {
-                    if (int.TryParse(c[0].Trim(), out int iTX))
-                        FormSize.X = iTX;
-                    if (int.TryParse(c[1].Trim(), out int iTY))
-                        FormSize.Y = iTY;
+                    if (int.TryParse(c[0].Trim(), out int iTx))
+                        FormSize.X = iTx;
+                    if (int.TryParse(c[1].Trim(), out int iTy))
+                        FormSize.Y = iTy;
                 }
             }
-            
+
             // MessageBox.Show(File.ReadAllText(PATH.CONFIG_INI));
             string runMode = LoadModeConfig();
 
@@ -66,7 +66,7 @@ namespace NaiveSharp.View
             else
             {
                 File.Create(PATH.CONFIG_SELECT_NODE).Close();
-                File.WriteAllText(PATH.CONFIG_SELECT_NODE, "0");
+                File.WriteAllText(PATH.CONFIG_SELECT_NODE, @"0");
             }
 
             // tvwNodeList.ExpandAll();
@@ -86,7 +86,7 @@ namespace NaiveSharp.View
                 }
             }
             */
-            if (Model.FormSize.X > 0)
+            if (FormSize.X > 0)
                 this.Width = FormSize.X;
             if (FormSize.Y > 0)
                 this.Height = FormSize.Y;
@@ -97,12 +97,12 @@ namespace NaiveSharp.View
             if (File.Exists(PATH.CONFIG_DEBUG))
             {
                 Config.Debug = true;
-                this.Text = "[DEBUG]" + this.Text;
+                this.Text = @"[DEBUG]" + this.Text;
             }
 
             icnNotify.Visible = true;
         }
-        
+
         private void MainWindow_ResizeEnd(object sender, EventArgs e)
         {
             FormSize.X = Width;
@@ -165,7 +165,7 @@ namespace NaiveSharp.View
             Operation.Save(ref tvwNodeList);
             // MessageBox.Show(NodeList.ToStringArray(tvwNodeList).ToNewString());
             // File.WriteAllLines(PATH.CONFIG_NODELIST, NodeList.ToStringArray(tvwNodeList));
-            MessageBox.Show("Node information saved.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Msg.NODE_SAVE_SUCCESS, Msg.Title.INFO, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnRun_Click(object sender, EventArgs e)
@@ -177,18 +177,19 @@ namespace NaiveSharp.View
 
             if (tvwNodeList.SelectedNode.Level == 0)
             {
-                MessageBox.Show("Plz select a valid node!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Msg.NODE_SELECTED_NOT_VALID, Msg.Title.ERROR, MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
             Operation.Run(ref tvwNodeList);
-            MessageBox.Show("NaiveProxy runs successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Msg.RUN_SUCCESS, Msg.Title.INFO, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
             Operation.Stop();
-            MessageBox.Show("NaiveProxy stop successfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(Msg.STOP_SUCCESS, Msg.Title.INFO, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -230,12 +231,10 @@ namespace NaiveSharp.View
 
         private bool CheckIsSelectNodeNull()
         {
-            if (tvwNodeList.SelectedNode is null)
-            {
-                MessageBox.Show(Msg.CHOOSE_NULL_ITEM, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return true;
-            }
-            return false;
+            if (tvwNodeList.SelectedNode is { }) return false;
+
+            MessageBox.Show(Msg.CHOOSE_NULL_ITEM, Msg.Title.WARNING, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            return true;
         }
 
         private void txtUsername_TextChanged(object sender, EventArgs e)
@@ -267,28 +266,14 @@ namespace NaiveSharp.View
 
         private void rdoHttps_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdoHttps.Checked)
-            {
-                Config.Scheme = "https";
-            }
-            else
-            {
-                Config.Scheme = "quic";
-            }
+            Config.Scheme = rdoHttps.Checked ? "https" : "quic";
 
             SyncToTag();
         }
 
         private void rdoQuic_CheckedChanged(object sender, EventArgs e)
         {
-            if (rdoHttps.Checked)
-            {
-                Config.Scheme = "https";
-            }
-            else
-            {
-                Config.Scheme = "quic";
-            }
+            Config.Scheme = rdoHttps.Checked ? "https" : "quic";
 
             SyncToTag();
         }
@@ -306,24 +291,25 @@ namespace NaiveSharp.View
         private void smiStop_Click(object sender, EventArgs e)
         {
             Operation.Stop();
-            icnNotify.ShowBalloonTip(500, "Naive#", "NaiveProxy stopped successfully.", ToolTipIcon.Info);
+            icnNotify.ShowBalloonTip(500, "Naive#", Msg.STOP_SUCCESS, ToolTipIcon.Info);
         }
 
         private void smiRun_Click(object sender, EventArgs e)
         {
             if (tvwNodeList.SelectedNode.Level == 0)
             {
-                MessageBox.Show("Plz select a valid node!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Msg.NODE_SELECTED_NOT_VALID, Msg.Title.ERROR, MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 return;
             }
 
             Operation.Run(ref tvwNodeList);
-            icnNotify.ShowBalloonTip(500, "Naive#", "NaiveProxy is running.", ToolTipIcon.Info);
+            icnNotify.ShowBalloonTip(500, "Naive#", Msg.NAIVEPROXY_IS_RUNNING, ToolTipIcon.Info);
         }
 
         private void smiAbout_Click(object sender, EventArgs e)
         {
-            new View.About().ShowDialog();
+            new About().ShowDialog();
         }
 
         #endregion
@@ -338,14 +324,9 @@ namespace NaiveSharp.View
             TreeNodeCollection tnc = null;
             if (tvwNodeList.SelectedNode != null)
             {
-                if (tvwNodeList.SelectedNode.Level == 0)
-                {
-                    tnc = tvwNodeList.SelectedNode.Nodes;
-                }
-                else
-                {
-                    tnc = tvwNodeList.SelectedNode.Parent.Nodes;
-                }
+                tnc = tvwNodeList.SelectedNode.Level == 0
+                    ? tvwNodeList.SelectedNode.Nodes
+                    : tvwNodeList.SelectedNode.Parent.Nodes;
             }
 
             if (tnc == null) return;
@@ -394,7 +375,7 @@ namespace NaiveSharp.View
                 Hide();
                 if (Config.IsFirstTimeHide)
                 {
-                    icnNotify.ShowBalloonTip(1000, Msg.TIP_TITLE, Msg.RUNNING_UNDER_BGD,
+                    icnNotify.ShowBalloonTip(1000, Msg.Title.TIP, Msg.RUNNING_UNDER_BGD,
                         ToolTipIcon.Info);
                     Config.IsFirstTimeHide = false;
                 }
@@ -444,7 +425,7 @@ namespace NaiveSharp.View
             {
                 // MessageBox.Show($"{tvwNodeList.SelectedNode.Index}");
                 // TODO: SAVE
-                File.WriteAllText(PATH.CONFIG_SELECT_NODE, $"{tvwNodeList.SelectedNode.Index}");
+                File.WriteAllText(PATH.CONFIG_SELECT_NODE, $@"{tvwNodeList.SelectedNode.Index}");
 
                 txtName.Text = tvwNodeList.SelectedNode.Text;
                 txtHost.Enabled = txtPassword.Enabled = txtUsername.Enabled = false;
@@ -459,34 +440,27 @@ namespace NaiveSharp.View
                 // MessageBox.Show($"{tvwNodeList.SelectedNode.Parent.Index},{tvwNodeList.SelectedNode.Index}");
 
                 File.WriteAllText(PATH.CONFIG_SELECT_NODE,
-                    $"{tvwNodeList.SelectedNode.Parent.Index},{tvwNodeList.SelectedNode.Index}");
+                    $@"{tvwNodeList.SelectedNode.Parent.Index},{tvwNodeList.SelectedNode.Index}");
                 var x = ((string) tvwNodeList.SelectedNode.Tag).FromSharelink();
-                if (x.HasValue)
-                {
-                    txtName.Text = x.Value.Name;
-                    txtHost.Text = x.Value.Host;
-                    txtUsername.Text = x.Value.Username;
-                    txtPassword.Text = x.Value.Password;
-                    rdoHttps.Checked = x.Value.Scheme.Contains("https");
-                    rdoQuic.Checked = x.Value.Scheme.Contains("quic");
-                }
+                if (!x.HasValue) return;
+
+                txtName.Text = x.Value.Name;
+                txtHost.Text = x.Value.Host;
+                txtUsername.Text = x.Value.Username;
+                txtPassword.Text = x.Value.Password;
+                rdoHttps.Checked = x.Value.Scheme.Contains("https");
+                rdoQuic.Checked = x.Value.Scheme.Contains("quic");
             }
         }
 
         private void btnAddNode_Click(object sender, EventArgs e)
         {
             if (tvwNodeList.SelectedNode == null) return;
-            TreeNodeCollection tnc;
-            if (tvwNodeList.SelectedNode.Level == 0)
-            {
-                tnc = tvwNodeList.SelectedNode.Nodes;
-            }
-            else
-            {
-                tnc = tvwNodeList.SelectedNode.Parent.Nodes;
-            }
+            TreeNodeCollection tnc = tvwNodeList.SelectedNode.Level == 0
+                ? tvwNodeList.SelectedNode.Nodes
+                : tvwNodeList.SelectedNode.Parent.Nodes;
 
-            tnc.Add(new TreeNode() {Text = "default", Tag = "naive+https://default:default@default#default"});
+            tnc.Add(new TreeNode() {Text = @"default", Tag = "naive+https://default:default@default#default"});
         }
 
         private void lblAddGroup_Click(object sender, EventArgs e)
@@ -515,8 +489,8 @@ namespace NaiveSharp.View
                 {
                     // this is group
                     if (MessageBox.Show(
-                        "The nodes which belongs to the group you selected will all be deleted. Continue?",
-                        "Warning",
+                        Msg.ASK_GROUP_DELETE_CONFIRM,
+                        Msg.Title.WARNING,
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
@@ -541,6 +515,5 @@ namespace NaiveSharp.View
         {
             new AdvanceWindow().ShowDialog();
         }
-
     }
 }

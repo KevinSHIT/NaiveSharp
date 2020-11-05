@@ -64,31 +64,29 @@ namespace NaiveSharp.View
             if (btnDebug.Text.EndsWith("On"))
             {
                 SetDebugStatus(true);
-                btnDebug.Text = "Turn Off";
+                btnDebug.Text = @"Turn Off";
             }
             else
             {
                 SetDebugStatus(false);
-                btnDebug.Text = "Turn On";
+                btnDebug.Text = @"Turn On";
             }
             RequestRestart();
         }
 
         private static void RequestRestart()
         {
-            if (MessageBox.Show(Msg.ASK_CHANGES_NEED_APP_RESTART, "Info", MessageBoxButtons.YesNo, MessageBoxIcon.Asterisk)
-                == DialogResult.Yes)
-            {
-                Operation.Stop();
+            if (MessageBox.Show(Msg.ASK_CHANGES_NEED_APP_RESTART, Msg.Title.INFO, MessageBoxButtons.YesNo,
+                MessageBoxIcon.Asterisk) != DialogResult.Yes) return;
+            Operation.Stop();
 
-                Process.Start(new ProcessStartInfo
-                {
-                    FileName = Application.ExecutablePath,
-                    Arguments = "--no-check-running",
-                    WindowStyle = ProcessWindowStyle.Normal
-                });
-                Environment.Exit(0);
-            }
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = Application.ExecutablePath,
+                Arguments = "--no-check-running",
+                WindowStyle = ProcessWindowStyle.Normal
+            });
+            Environment.Exit(0);
         }
     }
 }

@@ -87,15 +87,15 @@ namespace NaiveSharp.View
             {
                 1 => MessageBox.Show(
                     "Port 1080 is in used! NaiveProxy may not work normally!\n" + "Do you still want to continue?",
-                    "Port is in used", MessageBoxButtons.YesNo, MessageBoxIcon.Warning),
+                    Msg.Title.WARNING, MessageBoxButtons.YesNo, MessageBoxIcon.Warning),
                 2 => MessageBox.Show(
                     "Port 1081 is in used! HTTP proxy and padding may not work normally!\n" +
-                    "Do you still want to continue?", "Port is in used", MessageBoxButtons.YesNo,
+                    "Do you still want to continue?", Msg.Title.WARNING, MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning),
                 3 => MessageBox.Show(
                     "Port 1080 is in used! NaiveProxy may not work normally!\n" +
                     "Port 1081 is in used! HTTP proxy and padding may not work normally!\n" +
-                    "Do you still want to continue?", "Port is in used", MessageBoxButtons.YesNo,
+                    "Do you still want to continue?", Msg.Title.WARNING, MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning),
                 _ => DialogResult.OK
             };
@@ -122,6 +122,7 @@ namespace NaiveSharp.View
             }
             catch
             {
+                // ignored
             }
         }
 
@@ -142,7 +143,7 @@ namespace NaiveSharp.View
             if (!File.Exists(PATH.CONFIG_NODELIST))
             {
                 File.Create(PATH.CONFIG_NODELIST).Close();
-                File.WriteAllText(PATH.CONFIG_NODELIST, "[Default]");
+                File.WriteAllText(PATH.CONFIG_NODELIST, @"[Default]");
                 LoadFromNodeListFile();
             }
             else
